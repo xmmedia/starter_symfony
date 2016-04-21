@@ -1,0 +1,43 @@
+Icon?
+.DS_Store
+.svn
+*~
+*.swp
+coverage
+html/coverage
+/app/bootstrap.php.cache
+/app/cache/*
+!app/cache/.gitkeep
+/app/config/parameters.yml
+/app/logs/*
+!app/logs/.gitkeep
+/app/phpunit.xml
+/bin/
+/composer.phar
+/vendor/
+/html/bundles/
+sftp-config.json
+.remote-sync.json
+.sass-cache
+node_modules
+
+# PhpStorm
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+.idea/webServers.xml
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
