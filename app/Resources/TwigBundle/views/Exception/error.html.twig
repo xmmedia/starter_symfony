@@ -1,0 +1,12 @@
+{% extends 'public.html.twig' %}
+
+{% set status_code_text = status_code ~ ' ' ~ status_text|trans %}
+
+{% block page_title %}{{ 'app.error.error_page_title'|trans({ '%status_code_text%' : status_code_text }) }} | {% endblock %}
+
+{% block content %}
+    <h1>{{ 'app.error.error_occurred'|trans }}</h1>
+    <h2>{{ 'app.error.server_returned'|trans({ '%status_code_text%' : status_code_text }) }}</h2>
+
+    <div>{{ 'app.error.error_msg'|trans }}</div>
+{% endblock %}

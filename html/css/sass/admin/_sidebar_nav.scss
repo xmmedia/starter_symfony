@@ -1,0 +1,90 @@
+.sidebar_nav-wrap {
+    position: fixed;
+    left: 0;
+    width: $sidebar-width;
+    height: 100%;
+    text-align: center;
+    color: $sidebar-link;
+    background: $color-dark-grey;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .sidebar_nav-submenu-open & {
+        width: $sidebar-width + $sidebar-submenu-width;
+    }
+}
+.sidebar_nav-link {
+    color: inherit;
+    fill: $sidebar-link;
+    opacity: 0.8;
+    &:hover { opacity: 1; }
+}
+// this is the logo and is a link
+.sidebar_nav-logo {
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 2.3em;
+        height: 2.3em;
+        margin-bottom: 0.3em;
+    }
+    display: block;
+    width: $sidebar-width;
+    height: 3.5rem;
+    padding: 0.65em 0;
+    color: rgba($sidebar-link, 0.8);
+    fill: $color-white;
+    opacity: 0.8;
+    border-bottom: 1px solid lighten($color-dark-grey, 35%);
+    &:hover { color: $sidebar-link; }
+}
+.sidebar_nav-nav {
+    width: $sidebar-width;
+    margin: 1.2rem 0;
+    padding: 0;
+    list-style: none;
+     // so we can control the positioning of the submenu arrow
+    li { position: relative; }
+}
+.sidebar_nav-nav_item {
+    display: block;
+    font-size: 0.8em;
+    margin: 2em 0;
+    text-align: center;
+    svg {
+        display: block;
+        margin: 0 auto;
+        width: 2.3em;
+        height: 2.3em;
+        margin-bottom: 0.3em;
+    }
+}
+
+.sidebar_nav-bottom_wrap {
+    position: absolute;
+    bottom: 0;
+    width: $sidebar-width;
+    text-align: center;
+    a { color: rgba($sidebar-link, 0.8); }
+}
+.sidebar_nav-copyright {
+    font-size: 0.7em;
+    padding: 0.5em 0;
+    border-top: 1px solid darken($sidebar-link, 50%);;
+    color: darken($sidebar-link, 50%);
+    a { color: inherit; }
+}
+ .sidebar_nav-logout {
+    padding: 0.5em;
+    font-size: 0.8em;
+}
+
+.sidebar_nav-profile {
+    font-size: 0.9em;
+}
+
+// @todo profile image in sidebar
+// .sidebar_nav-profile-img {
+//     margin-bottom: 0.25em;
+//     border-radius: 50%;
+//     overflow: hidden;
+// }

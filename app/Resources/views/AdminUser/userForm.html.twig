@@ -1,0 +1,22 @@
+<div class="form-form_wrap">
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        {{ form_row(form.email) }}
+        {{ form_row(form.firstName) }}
+        {{ form_row(form.lastName) }}
+
+        <div class="form-field_wrap js-admin_user-set_password">
+            {{ form_errors(form.set_password) }}
+            {{ form_widget(form.set_password) }}
+            {{ form_label(form.set_password) }}
+        </div>
+        <div class="form-field_wrap hidden js-admin_user-password">
+            {{ form_label(form.password) }}
+            {{ form_errors(form.password) }}
+            {{ form_widget(form.password) }}
+        </div>
+
+        {{ form_row(form.button) }}
+    {{ form_end(form) }}
+</div>

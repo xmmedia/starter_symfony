@@ -1,0 +1,15 @@
+{% extends '::admin.html.twig' %}
+
+{% block content %}
+    <h1>Create: User</h1>
+
+    {% include 'flashMessages.html.twig' %}
+
+    {% include 'AdminUser/userForm.html.twig' %}
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('admin_user') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

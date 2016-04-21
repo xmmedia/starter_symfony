@@ -1,0 +1,12 @@
+app:
+    validation:
+        user:
+            email_unique: The email address entered has already been used.
+            first_name:
+                blank: Please enter your first name
+                short: '[-Inf,Inf]The first name is too short'
+                long: '[-Inf,Inf]The first name is too long'
+            last_name:
+                blank: Please enter your last name
+                short: '[-Inf,Inf]The last name is too short'
+                long: '[-Inf,Inf]The last name is too long'

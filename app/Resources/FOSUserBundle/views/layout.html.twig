@@ -1,0 +1,9 @@
+{% extends '::admin.html.twig' %}
+
+{% block page_title %}Login | {% endblock %}
+
+{% block content %}
+    {% include 'flashMessages.html.twig' %}
+
+    {% block fos_user_content %}{% endblock %}
+{% endblock content %}

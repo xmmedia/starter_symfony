@@ -1,0 +1,152 @@
+.header_admin-wrap {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid $admin-header-border;
+    @include mq(wide_tablets) {
+        align-items: center;
+    }
+}
+
+.header_admin-page_title {
+    font-size: 1.7em;
+    flex: 1 0 10em;
+    // min-height should be the same as the first box on the top of sidebar nav
+    min-height: 3.4rem;
+    max-width: 60%;
+    padding: 0.7rem 1rem;
+    color: $admin-header-title;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @include mq(wide_handhelds) {
+        flex: 1 0 auto;
+        max-width: 18em;
+    }
+    @include mq(74em) {
+        max-width: 27em;
+    }
+}
+
+.header_admin-actions {
+    padding: 0 1.1rem 0 1.1rem;
+    text-align: right;
+}
+
+.header_admin-action {
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 1.5em 0;
+    padding: 0.5em 1.2em;
+    border-radius: 3px;
+    border: 1px solid $admin-header-action;
+    transition: background-color 0.15s ease-in-out;
+    &:hover {
+        text-decoration: none;
+        background-color: $admin-header-action-hover;
+    }
+}
+
+.header_admin-action-main {
+    margin: 0 0 1em 1.25em;
+    color: $admin-header-action-text;
+    background-color: $admin-header-action;
+    text-align: center;
+    &:hover {
+        background-color: darken($admin-header-action, 5%);
+    }
+    @include mq(tablets) {
+        margin-top: 1em;
+    }
+}
+
+.header_admin-action-secondary {
+    display: block;
+    padding: 0;
+    margin: 0.75em 0;
+    border: none;
+    @include mq(tablets) {
+        display: inline-block;
+        padding: 0 0.8em;
+    }
+    &:hover {
+        background-color: initial;
+        text-decoration: underline;
+    }
+}
+
+.header_admin-action-nav-wrap {
+    width: 100%;
+    margin: 0 0 0.75em;
+    white-space: nowrap;
+    @include mq(tablets) {
+        display: inline;
+    }
+}
+
+.header_admin-action-nav {
+    display: inline-block;
+    // the top magin is so these links line up with main link
+    // the negative margin is to bring the boxes closer together, so they overlap
+    margin: 0 -0.22em;
+    color: $admin-header-action;
+    border-color: rgba($admin-header-action, 0.5);
+    @include mq(tablets) { margin-top: 1em; }
+}
+
+.header_admin-action-nav-back {
+    margin-left: 0.5em;
+    border-radius: 3px 0 0 3px;
+}
+
+.header_admin-action-nav-forward {
+    margin-right: 0;
+    border-left: none;
+    border-radius: 0 3px 3px 0;
+}
+
+//these class names may be a bit much -hs
+.header_admin-action-nav-forward-inactive,
+.header_admin-action-nav-back-inactive {
+    color: $admin-header-inactive;
+    border-color: $admin-header-inactive;
+    &:hover { background-color: initial; }
+}
+
+.header_admin-action-nav-back-inactive ~ .header_admin-action-nav-forward-inactive {
+    border-left: none;
+}
+
+.header_admin-action-nav-forward-inactive {
+   border-radius: 0 3px 3px 0;
+}
+.header_admin-action-nav-back-inactive {
+    border-radius: 3px 0 0 3px;
+}
+
+.header_admin_small-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 3.5rem;
+    padding: 0 1em 0;
+    color: $admin-header-action-text;
+    background: $color-dark-grey;
+    border-bottom: 1px solid lighten($color-dark-grey, 35%);
+    z-index: 10;
+    a {  color: $admin-header-action-text; }
+    @include mq(tablets) { display: none; }
+}
+
+.header_admin_small-logo {
+    img {
+        width: 2.3em;
+        height: 2.6em;
+    }
+    // float is fall back for <IE9
+    float: right;
+    fill: $color-white;
+}

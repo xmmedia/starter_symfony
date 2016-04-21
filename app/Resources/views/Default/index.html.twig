@@ -1,0 +1,21 @@
+{% extends '::public.html.twig' %}
+
+{# @todo translation #}
+{% block page_title_wrap %}{{ 'app.parameter.name'|trans }}{% endblock %}
+
+{% block head %}
+    {# @todo-symfony #}
+    <meta name="description" content="">
+    <meta property="og:title" content="{{ 'app.parameter.name'|trans }}">
+    <meta property="og:type"  content="website">
+    <meta property="og:url"   content="{{ url('index') }}">
+    <meta property="og:site_name" content="{{ 'app.parameter.name'|trans }}">
+    <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() }}/images/logo-og.png">
+    <meta property="og:description" content="">
+{% endblock head %}
+
+{% block content %}
+    <h1>Symfony Starter</h1>
+
+    {% include 'flashMessages.html.twig' %}
+{% endblock content %}

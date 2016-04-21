@@ -1,0 +1,145 @@
+{% extends '::public.html.twig' %}
+
+{% block page_title %}Pattern Library | {% endblock %}
+
+{% block content %}
+    <h1>Pattern Library</h1>
+    <h2>Headings:</h2>
+    <h1>heading 1 - Maiden Orange - 32px</h1>
+    <h2>heading 2 - Maiden Orange - 28px</h2>
+    <h3>heading 3 - Maiden Orange - 24px</h3>
+    <h4>heading 4 - Maiden Orange - 20px</h4>
+    <h5>heading 5 – Open Sans – 18px</h5>
+    <h6>heading 6 – Open Sans – 10px</h6>
+
+    <h2>Text:</h2>
+    <p>Paragraph text – Open Sans – 16px – Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet tincidunt urna, ac molestie elit viverra sed. Maecenas rhoncus nisl purus, eget finibus mauris venenatis sit amet. Nunc tincidunt sed magna a tincidunt. Maecenas nunc ex, imperdiet in scelerisque in, sodales vel arcu. Pellentesque fringilla mattis est eget egestas. Mauris eu lorem quis nisl sagittis euismod. Sed ultricies, augue in condimentum venenatis, turpis lectus sagittis elit, vitae porttitor eros eros quis ipsum. Quisque sagittis enim quis nulla pretium, vel accumsan magna ullamcorper. Donec vitae sollicitudin libero.</p>
+    <p>Donec facilisis egestas nulla vel condimentum. Praesent quis lectus nec velit rhoncus ultricies ac quis mi. Mauris mattis lacus magna, venenatis faucibus nisi rhoncus non. Aenean ut facilisis nisl. Nam ullamcorper nunc augue, at dignissim neque cursus nec. Nunc ut lorem at tortor malesuada tempus ac sed felis. Mauris egestas leo eget justo vehicula iaculis. Cras rutrum malesuada pulvinar. Fusce porta augue quis feugiat consectetur. Nam pharetra erat eu efficitur placerat. Phasellus non placerat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+
+    <strong>Bold Text</strong><br>
+    <em>Italic Text</em><br>
+
+    <a href="">Link</a><br>
+    <a href=""><strong>Bold Link</strong></a><br>
+
+    <h2>Unordered List</h2>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+    </ul>
+
+    <h2>Ordered List</h2>
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+    </ol>
+
+    <h2>Colors</h2>
+    {# @todo #}
+
+    <h2>Buttons</h2>
+    <button>Button</button>
+    <div class="form-form_wrap">
+        <h2>Forms</h2>
+        <p>Some information</p>
+        <form>
+            <h4>Text Inputs</h4>
+            <div class="form-field_wrap">
+                <label for="text_field">Text Field</label>
+                <ul class="form-field_errors">
+                    <li>Error</li>
+                </ul>
+                <input type="text" id="text_field">
+                <div class="form-field_help">Use at least 8 characters.</div>
+            </div>
+            <div class="form-field_wrap form-field_wrap-no_width">
+                <label for="flex" class="form-field_prefix">Prefix Beside</label>
+                <input type="text" id="flex">
+                <span class="form-field-suffix">Suffix</span>
+            </div>
+            <div class="form-field_wrap form-field_wrap-no_width">
+                <label for="flex" class="form-field_prefix">Prefix Above</label>
+                <input type="text" id="flex">
+                <span class="form-field-suffix">Suffix</span>
+            </div>
+            <div class="form-field_wrap">
+                <label>Text Area</label>
+                <textarea></textarea>
+            </div>
+            <div class="form-field_wrap">
+                <label>Select</label>
+                <select name="">
+                    <option value="">Test 1</option>
+                    <option value="">Test 2</option>
+                </select>
+            </div>
+
+            <h4>Radio Buttons</h4>
+            <div class="form-field_wrap form-field_wrap-label_inline">
+                <label>Choose one:</label>
+                <div>
+                    <input type="radio" id="pattern-library-01" name="pattern-library">
+                    <label for="pattern-library-01">Radio Button</label>
+                </div>
+                <div>
+                    <input type="radio" id="pattern-library-02" name="pattern-library">
+                    <label for="pattern-library-02">Radio Button</label>
+                </div>
+                <div>
+                    <input type="radio" name="pattern-library" id="pattern-library-03">
+                    <label for="pattern-library-03">Radio Button</label>
+                </div>
+            </div>
+
+            <h4>Checkboxes</h4>
+            <div class="form-field_wrap form-field_wrap-label_inline">
+                <label>Choose multiple:</label>
+                <div>
+                    <input type="checkbox">
+                    <label>Checkbox</label>
+                </div>
+                <div>
+                    <input type="checkbox">
+                    <label>Checkbox</label>
+                </div>
+                <div>
+                    <input type="checkbox">
+                    <label>Checkbox</label>
+                </div>
+            </div>
+            <div class="form-button_wrap">
+                <button>Primary Button</button>
+                <a href="" class="form-action_link">Cancel Link</a>
+                <a href="" class="form-action_link">Go Back</a>
+            </div>
+
+        </form>
+    </div>
+
+    <h2>Pagination</h2>
+    {% do pagination.setPageRange(10) %}
+    {{ knp_pagination_render(pagination) }}
+
+    <h2>Warnings and Alerts</h2>
+    <div class="alert alert--success">
+        <div>Success Message!</div>
+        <a href="" class="alert-dismiss">Dismiss</a>
+    </div>
+
+    <div class="alert alert--info">
+        <div>Information Message<br>With two lines</div>
+        <a href="" class="alert-dismiss">Dismiss</a>
+    </div>
+    <div class="alert alert--warning">
+        <div>Warning Message<br>Don't do that</div>
+        <a href="" class="alert-dismiss">Dismiss</a>
+    </div>
+    <div class="alert alert--danger">
+        <div>Danger Warning – You are going to break something. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</div>
+        <a href="" class="alert-dismiss">Dismiss</a>
+    </div>
+{% endblock content %}

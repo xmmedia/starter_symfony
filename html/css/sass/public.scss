@@ -1,0 +1,22 @@
+// mixins + normalize + common
+@import "common/vars", "public/vars", "common/mixins", "public/mixins", "common/clearfix", "common/media", "common/common";
+
+// global styles on the most common elements
+html {
+    font: 100%/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: $text-color;
+}
+
+// load common styles
+@import "common/forms", "common/pagination", "common/alerts";
+
+// public only styles
+@import "public/content",
+    "public/buttons",
+    "public/header",
+    "public/footer",
+    "public/headings";
+
+// page specific
+//@import ;

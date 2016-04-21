@@ -1,0 +1,15 @@
+{% extends '::admin.html.twig' %}
+
+{% block page_title %}Admin | {% endblock %}
+
+{% block content %}
+    <h1>{{ "app.admin.content.title"|trans }}</h1>
+
+    {% include 'flashMessages.html.twig' %}
+
+    <h3>Manage</h3>
+    <ul>
+        <li><a href="{{ path('admin_user') }}">Users</a></li>
+        <li><a href="{{ path('admin_product_category') }}">Product Categories</a></li>
+    </ul>
+{% endblock %}

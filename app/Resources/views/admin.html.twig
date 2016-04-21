@@ -1,0 +1,72 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/admin.css', 'css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block javascripts %}
+    {# not using async because we need this to load before the other scripts #}
+    <script src="{{ asset('js/admin.min.js', 'js') }}"></script>
+{% endblock %}
+
+{% block header %}
+    <nav class="sidebar_nav-wrap js-sidebar_nav-wrap">
+        <a href="{{ path("index") }}" class="sidebar_nav-logo"><img src="/images/logo.svg" alt="{{ 'app.parameter.name'|trans }}"></a>
+        <ul class="sidebar_nav-nav">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li>
+                    <a href="" class="sidebar_nav-link sidebar_nav-nav_item">
+                        <svg><use xlink:href="#admin"></use></svg>
+                        Admin
+                    </a>
+                    <button class="sidebar_nav-link sidebar_nav-submenu_arrow js-sidebar_nav-submenu_trigger"><svg><use xlink:href="#gt"></use></svg></button>
+                    <div class="sidebar_nav-submenu-wrap js-sidebar_nav-submenu-wrap">
+                        <div class="sidebar_nav-submenu_header">Admin</div>
+                        <ul class="sidebar_nav-submenu">
+                            <li><a href="{{ path('admin_user') }}" class="sidebar_nav-link sidebar_nav-submenu_link">Users</a></li>
+                        </ul>
+                    </div>
+                </li>
+            {% endif %}
+        </ul>
+
+        <div class="sidebar_nav-bottom_wrap">
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <div class="sidebar_nav-profile">
+                <a href="{{ path('fos_user_profile_edit') }}">
+                    {# @todo profile image...maybe #}
+                    {# <img src="/images/person.jpg" width="40" height="40" class="sidebar_nav-profile-img"> #}
+                    <div>{{ app.user.name }}</div>
+                </a>
+            </div>
+            <div class="sidebar_nav-logout">
+                <a href="{{ path('fos_user_security_logout') }}">Logout</a>
+            </div>
+        {% endif %}
+        <div class="sidebar_nav-copyright">
+            <a href="{{ path('index') }}" target="_blank">©{{ 'now'|date('Y') }} {{ 'app.parameter.name'|trans }}</a>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content_wrap %}
+    <header class="header_admin_small-wrap">
+        <a href="" class="js-header_admin_small-menu">Menu</a>
+        <a href="" class="header_admin_small-logo"><img src="/images/logo.svg" alt="{{ 'app.parameter.name'|trans }}"></a>
+    </header>
+    <div class="content-wrap js-content-wrap">
+        <header class="header_admin-wrap">
+            <div class="header_admin-page_title">{% block header_page_title %}Admin{% endblock header_page_title %}</div>
+            <div class="header_admin-actions">{% block header_actions %}{% endblock header_actions %}</div>
+        </header>
+
+        <div class="content-wrap_inside">
+            {% block content %}
+                {% include 'flashMessages.html.twig' %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock content_wrap %}
+
+{# no footer atm #}
+{% block footer %}{% endblock %}

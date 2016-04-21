@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    <link href="{{ asset("css/public.css","css") }}" rel="stylesheet">
+{% endblock %}
+
+{% block javascripts %}
+    {# not using async because we need this to load before the other scripts #}
+    <script src="{{ asset("js/public.min.js","js") }}"></script>
+{% endblock %}
