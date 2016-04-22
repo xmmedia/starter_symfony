@@ -16,6 +16,7 @@ $admin-header-action: $color-green;
 $admin-header-action-text: $color-white;
 $admin-header-action-hover: rgba($color-dark-grey, 0.95);
 $admin-header-inactive: rgba($color-dark-grey, 0.2);
+$admin-header-height: 3.72rem;
 
 $sidebar-width: 6rem;
 $sidebar-submenu-width: 15rem;
@@ -25,3 +26,4 @@ $sidebar-header-border: lighten($color-dark-grey, 30%);
 
 $record-list-row-hover: rgb(234, 245, 252);
 $record-list-header-background: $color-light-grey;
+$record-list-lines: rgb(191, 191, 191);

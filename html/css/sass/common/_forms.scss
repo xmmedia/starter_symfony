@@ -65,7 +65,7 @@
     }
 }
 
-//for text elements
+// for text elements
 .form-field_wrap-flex {
     display: flex;
     flex-flow: row nowrap;
@@ -108,13 +108,15 @@
     padding-left: 0;
     li {
         padding: 0.5em;
+        // @todo should this be a variable
         background: #fafafa;
         border-left: 10px solid $status--danger;
+        // @todo seems like we don't need the "px"
         border-width: 0px 0px 0px 10px;
     }
 }
 
-// @todo - not sure if this is where this goes
+// @todo - not sure if this is where this goes and probably needs to be renamed
 .record_actions {
     display: flex;
     justify-content: space-around;

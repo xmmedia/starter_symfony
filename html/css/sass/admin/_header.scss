@@ -88,7 +88,7 @@
 
 .header_admin-action-nav {
     display: inline-block;
-    // the top magin is so these links line up with main link
+    // the top margin is so these links line up with main link
     // the negative margin is to bring the boxes closer together, so they overlap
     margin: 0 -0.22em;
     color: $admin-header-action;
@@ -107,7 +107,7 @@
     border-radius: 0 3px 3px 0;
 }
 
-//these class names may be a bit much -hs
+// @todo change to BEM
 .header_admin-action-nav-forward-inactive,
 .header_admin-action-nav-back-inactive {
     color: $admin-header-inactive;
@@ -120,18 +120,19 @@
 }
 
 .header_admin-action-nav-forward-inactive {
-   border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
 }
 .header_admin-action-nav-back-inactive {
     border-radius: 3px 0 0 3px;
 }
 
+// @todo change to BEM
 .header_admin_small-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    height: 3.5rem;
+    height: $admin-header-height;
     padding: 0 1em 0;
     color: $admin-header-action-text;
     background: $color-dark-grey;
@@ -142,7 +143,7 @@
 }
 
 .header_admin_small-logo {
-    img {
+    svg {
         width: 2.3em;
         height: 2.6em;
     }
