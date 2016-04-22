@@ -3,6 +3,7 @@
     flex: 1 0 auto;
     justify-content: space-between;
     align-items: flex-start;
+    height: $admin-header-height;
     background: rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid $admin-header-border;
     @include mq(wide_tablets) {
@@ -13,8 +14,6 @@
 .header_admin-page_title {
     font-size: 1.7em;
     flex: 1 0 10em;
-    // min-height should be the same as the first box on the top of sidebar nav
-    min-height: 3.4rem;
     max-width: 60%;
     padding: 0.7rem 1rem;
     color: $admin-header-title;
