@@ -53,9 +53,9 @@
 }
 
 .form-field-flex {
-    @extend %flex-row_wrap;
+    @include flex-row_wrap;
 }
-//for non-text elements
+// for non-text elements
 .form-field_wrap-label_inline {
     label {
         display: inline-block;

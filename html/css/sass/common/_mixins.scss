@@ -1,9 +1,9 @@
-%flex-row_wrap {
+@mixin flex-row_wrap {
     display: flex;
     flex-flow: row wrap;
 }
 
-%flex-column_wrap {
+@mixin flex-column_wrap {
     display: flex;
     flex-flow: column wrap;
 }
