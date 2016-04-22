@@ -1,0 +1,26 @@
+.admin_dashboard-link_wrap {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.admin_dashboard-link {
+    display: block;
+    width: 10em;
+    height: 10em;
+    margin: 0 1em 1em 0;
+    padding: 0.5em;
+    text-align: center;
+    border: 1px solid lighten($color-dark-grey, 70%);
+    transition: background-color 0.15s ease-in-out;
+    &:hover { background: rgba(0, 0, 0, 0.05); }
+    svg {
+        display: block;
+        width: 6em;
+        height: 6em;
+        margin: 0.5em auto 1em;
+        fill: $color-dark-grey;
+    }
+}

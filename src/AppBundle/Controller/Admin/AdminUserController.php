@@ -20,7 +20,7 @@ class AdminUserController extends Controller
     /**
      * Lists the users
      *
-     * @Route("/", name="admin_user")
+     * @Route("/", name="admin_user_list")
      * @Method("GET")
      */
     public function indexAction(Request $request)

@@ -2,6 +2,14 @@ app:
     resource: "@AppBundle/Controller/"
     type:     annotation
 
+admin_dashboard:
+    path: /admin
+    defaults:
+        _controller: FrameworkBundle:Template:template
+        template:    static/adminDashboard.html.twig
+        maxAge:      86400
+        sharedAge:   86400
+
 # @todo-symfony choose one of the following (either all or the individuals pieces)
 # by default, the registration is disabled
 #fos_user:
