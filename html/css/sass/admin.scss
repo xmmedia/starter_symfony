@@ -24,7 +24,7 @@ a {
 }
 
 // load common styles
-@import "common/forms", "common/alerts";
+@import "common/forms", "common/alerts", "common/modal";
 
 // admin only styles
 @import "admin/sidebar_nav",

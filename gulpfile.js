@@ -30,6 +30,8 @@ var paths = {
                 [
                     'node_modules/jquery/dist/jquery.js',
                     'html/js/src/common/svg_icons.js',
+                    'html/js/src/common/md.js',
+                    'html/js/src/admin/admin.js',
                     'html/js/src/admin/user.js',
                     'html/js/src/admin.js'
                 ],
