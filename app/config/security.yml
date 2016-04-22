@@ -21,12 +21,12 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: security.csrf.token_manager
-                default_target_path: /home
+                default_target_path: /admin
                 use_referer: true
                 # success_handler: app.authentication.login_success
             logout:
                 path:   fos_user_security_logout
-                target: /home
+                target: /login
                 delete_cookies:
                     # delete cart cookie on logout
                     cart: { path: null, domain: null }
