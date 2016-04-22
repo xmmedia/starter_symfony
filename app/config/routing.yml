@@ -25,3 +25,13 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
+
+# redirect for routes with a trailing slash
+# MUST BE THE LAST as to not affect routes from bundles or ones that need to have a trailing slash
+# also only redirect GET requests as 302 can break older browsers
+remove_trailing_slash:
+    path: /{url}
+    defaults: { _controller: AppBundle:Redirecting:removeTrailingSlash }
+    requirements:
+        url: .*/$
+    methods: [GET]
