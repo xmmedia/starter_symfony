@@ -20,68 +20,24 @@ class AdminUserController extends Controller
     /**
      * Lists the users
      *
-     * @Route("/", name="admin_user_list")
+     * @Route("/list", name="admin_user_list")
      * @Method("GET")
      */
-    public function indexAction(Request $request)
+    public function listAction(Request $request)
     {
-        $filterDefaults = array(
-            'hide_locked' => true,
-            'email' => null,
-            'user_type' => 'all',
-        );
-        $filterForm = $this->createFormBuilder($filterDefaults, array(
-                'method' => 'GET',
-                'csrf_protection' => false,
-                'attr' => array('novalidate' => 'novalidate'),
-            ))
-            ->add('email', 'email')
-            ->add('hide_locked', 'checkbox', array('label' => 'Hide Locked Users'))
-            ->add('user_type', 'choice', array(
-                'choices' => array(
-                    'all' => 'All Users',
-                    'non_admin' => 'Exclude Administrators',
-                    'admin_only' => 'Only Administrators',
-                ),
-                'label' => 'User Type',
-            ))
-            ->getForm();
-        $filterForm->handleRequest($request);
-        $filters = $filterForm->getData();
-
         $repo = $this->getDoctrine()
             ->getRepository('AppBundle:User');
-        $qb = $repo->createQueryBuilder('u')
-            ->andWhere('u.expired = false')
-            ->orderBy('u.email', 'ASC');
-        if ($filters['hide_locked']) {
-            $qb->andWhere('u.credentialsExpired = false');
-        }
-        if (!empty($filters['email'])) {
-            $qb->andWhere('u.email LIKE :email')
-                ->setParameter('email', '%' . $filters['email'] . '%');
-        }
-        if ($filters['user_type'] != 'all') {
-            if ($filters['user_type'] == 'admin_only') {
-                $role = 'ROLE_SUPER_ADMIN';
-            } else {
-                $role = 'ROLE_USER';
-            }
-            $qb->andWhere('u.roles LIKE :role')
-                // parameter includes double quotes so we don't accidentally get a different role
-                // such as ADMIN retrieving ROLE_ADMIN and ROLE_SUPER_ADMIN
-                ->setParameter('role', '%"' . $role . '"%');
-        }
+
+        $userFilter = $this->get('app.user_filter');
+        $filterForm = $userFilter->generateForm();
+        $userFilter->updateSession();
+
+        $qb = $userFilter->createQueryBuilder($repo);
+
         $query = $qb->getQuery();
+        $pagination = $userFilter->getPagination($query);
 
-        $paginator  = $this->get('knp_paginator');
-        $pagination = $paginator->paginate(
-            $query,
-            $request->query->getInt('page', 1)/*page number from query*/,
-            20/*limit per page*/
-        );
-
-        return $this->render('AdminUser/index.html.twig', array(
+        return $this->render('AdminUser/list.html.twig', array(
             'pagination' => $pagination,
             'user_filter_form' => $filterForm->createView(),
         ));
@@ -103,7 +59,7 @@ class AdminUserController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $setPassword = $form->get('set_password')->getData();
+            $setPassword = $form->get('setPassword')->getData();
             if (!$setPassword) {
                 $tokenGenerator = $this->get('fos_user.util.token_generator');
 
@@ -146,7 +102,7 @@ class AdminUserController extends Controller
             $msg_key = $setPassword ? 'created_set_password' : 'created';
             $this->addFlash('success', 'app.message.user.' . $msg_key);
 
-            return $this->redirectToRoute('admin_user');
+            return $this->redirectToList();
         }
 
         $this->addFlash('warning', 'app.message.validation_errors_continue');
@@ -214,8 +170,8 @@ class AdminUserController extends Controller
             'entity'      => $entity,
             'form'        => $editForm->createView(),
             'reset_password_form' => $resetPasswordForm->createView(),
-            'lock_unlock_form' => $lockUnlockForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'lock_unlock_form'    => $lockUnlockForm->createView(),
+            'delete_form'         => $deleteForm->createView(),
         ));
     }
 
@@ -298,7 +254,7 @@ class AdminUserController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
-            $setPassword = $editForm->get('set_password')->getData();
+            $setPassword = $editForm->get('setPassword')->getData();
             if ($setPassword) {
                 $password = $editForm->get('password')->getData();
                 $entity->setPlainPassword($password);
@@ -311,7 +267,7 @@ class AdminUserController extends Controller
             );
             $this->addFlash('success', $msg);
 
-            return $this->redirectToRoute('admin_user');
+            return $this->redirectToList();
         }
 
         $this->addFlash('warning', 'app.message.validation_errors_continue');
@@ -320,8 +276,8 @@ class AdminUserController extends Controller
             'entity'      => $entity,
             'form'        => $editForm->createView(),
             'reset_password_form' => $resetPasswordForm->createView(),
-            'lock_unlock_form' => $lockUnlockForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'lock_unlock_form'    => $lockUnlockForm->createView(),
+            'delete_form'         => $deleteForm->createView(),
         ));
     }
 
@@ -449,5 +405,40 @@ class AdminUserController extends Controller
             ->add('button', 'submit', array('label' => 'Delete'))
             ->getForm()
         ;
+    }
+
+    /**
+     * Displays the login history for a user.
+     *
+     * @Route("/login-history/{id}", name="admin_user_login_history")
+     * @Method("GET")
+     */
+    public function loginHistoryAction(Request $request, User $user)
+    {
+        $authLogs = $user->getAuthLogs();
+
+        $pagination = $this->get('knp_paginator')->paginate(
+            $authLogs,
+            $request->query->getInt('page', 1),
+            50
+        );
+
+        return $this->render('AdminUser/loginHistory.html.twig', array(
+            'user' => $user,
+            'auth_logs' => $pagination,
+        ));
+    }
+
+    /**
+     * Returns the redirect response to redirect back to the user list
+     * with the filter query.
+     *
+     * @return RedirectResponse
+     */
+    protected function redirectToList()
+    {
+        $redirectUrl = $this->generateUrl('admin_user_list');
+        $redirectUrl .= '?' . $this->get('app.user_filter')->query();
+        return $this->redirect($redirectUrl, 301);
     }
 }

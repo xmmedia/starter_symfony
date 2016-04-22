@@ -7,7 +7,6 @@
     {% include 'flashMessages.html.twig' %}
 
     <ul class="admin_dashboard-link_wrap">
-        {# ~ '?' ~ user_filter.query() #}
-        <li><a href="{{ path('admin_user_list') }}" class="admin_dashboard-link"><svg><use xlink:href="#users"></use></svg>Users</a></li>
+        <li><a href="{{ path('admin_user_list') ~ '?' ~ user_filter.query() }}" class="admin_dashboard-link"><svg><use xlink:href="#users"></use></svg>Users</a></li>
     </ul>
 {% endblock content %}

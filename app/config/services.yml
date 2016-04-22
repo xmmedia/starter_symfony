@@ -69,3 +69,7 @@ services:
     app.mail_manager:
         class:     AppBundle\Component\MailManager
         arguments: ["@mailer", "@twig", "@translator"]
+
+    app.user_filter:
+        class: AppBundle\Component\Filter\UserFilter
+        arguments: ["@request_stack", "@service_container"]

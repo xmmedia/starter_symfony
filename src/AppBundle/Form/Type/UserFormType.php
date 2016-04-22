@@ -33,7 +33,7 @@ class UserFormType extends AbstractType
             ->add('lastName', null, array(
                 'attr' => array('maxlength' => 255),
             ))
-            ->add('set_password', 'checkbox', array(
+            ->add('setPassword', 'checkbox', array(
                 'mapped' => false,
                 'label' => 'Set Password',
                 'required' => false,
