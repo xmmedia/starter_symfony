@@ -143,13 +143,16 @@ class User extends BaseUser
     }
 
     /**
-     * Get the combination of the first and last names
+     * Get the combination of the first and last names.
+     * If both first & last are empty, an empty string will be returned.
      *
      * @return string
      */
     public function getName()
     {
-        return $this->getFirstName().' '.$this->getLastName();
+        $name = $this->getFirstName().' '.$this->getLastName();
+
+        return trim($name);
     }
 
     /**

@@ -36,7 +36,11 @@
                 <a href="{{ path('fos_user_profile_edit') }}">
                     {# @todo profile image...maybe #}
                     {# <img src="/images/person.jpg" width="40" height="40" class="sidebar_nav-profile-img"> #}
-                    <div>{{ app.user.name }}</div>
+                    {% if app.user.name %}
+                        <div>{{ app.user.name }}</div>
+                    {% else %}
+                        <div>Profile</div>
+                    {% endif %}
                 </a>
             </div>
             <div class="sidebar_nav-logout">
