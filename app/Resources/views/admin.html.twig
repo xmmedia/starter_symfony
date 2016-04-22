@@ -15,7 +15,7 @@
         <ul class="sidebar_nav-nav">
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <li>
-                    <a href="" class="sidebar_nav-link sidebar_nav-nav_item">
+                    <a href="{{ path('admin_dashboard') }}" class="sidebar_nav-link sidebar_nav-nav_item">
                         <svg><use xlink:href="#gear"></use></svg>
                         Admin
                     </a>
