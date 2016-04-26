@@ -69,6 +69,8 @@ services:
     app.mail_manager:
         class:     AppBundle\Component\MailManager
         arguments: ["@mailer", "@twig", "@translator"]
+        calls:
+            - [setFrom, ["%from_email%", "%from_name%"]]
 
     app.user_filter:
         class: AppBundle\Component\Filter\UserFilter

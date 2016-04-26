@@ -34,8 +34,8 @@ monolog:
         swift:
             type:       swift_mailer
             # @todo-symfony
-            from_email: 'webmaster@example.com'
-            to_email:   'admin@xmmedia.com'
+            from_email: "%from_email%"
+            to_email:   "%admin_email%"
             subject:    Symfony Starter Error
             level:      debug
         console:

@@ -10,53 +10,51 @@ class MailManager
     protected $mailer;
     protected $twig;
     protected $translator;
-    protected $urlGenerator;
 
-    public function __construct(\Swift_Mailer $mailer, \Twig_Environment $twig, TranslatorInterface $translator, URL $urlGenerator)
+    protected $fromEmail;
+    protected $fromName;
+
+    public function __construct(\Swift_Mailer $mailer, \Twig_Environment $twig, TranslatorInterface $translator)
     {
         $this->mailer = $mailer;
         $this->twig = $twig;
         $this->translator = $translator;
-        $this->urlGenerator = $urlGenerator;
     }
 
     /**
-     * Send email
+     * Sets the from email & name.
      *
-     * @param   string   $template      email template (inside the Mail view folder)
+     * @param string $fromEmail The from email address.
+     * @param string $fromName  The from name.
+     */
+    public function setFrom($fromEmail, $fromName)
+    {
+        $this->fromEmail = $this->translator->trans($fromEmail);
+        $this->fromName = $this->translator->trans($fromName);
+    }
+
+    /**
+     * Renders and send an email.
+     *
+     * @param   string   $template      email template (inside the Mail view folder). Appended with ".html.twig".
      * @param   mixed    $parameters    custom params for template
      * @param   string   $to            to email address or array of email addresses
-     * @param   string   $from          from email address
-     * @param   string   $fromName      from name
      * @param   string   $replyTo       Reply to address
      *
      * @return  boolean                 send status
      */
-    public function sendEmail($template, $parameters, $to = null, $from = null, $fromName = null, $replyTo = null)
+    public function sendEmail($template, $parameters, $to = null, $replyTo = null)
     {
-        $parameters['url_generator'] = $this->urlGenerator;
-        // @todo translation
-        $parameters['locale'] = 'en_CA';
-
         // render the different blocks of the email
         $template = $this->twig->loadTemplate('Mail/' . $template . '.html.twig');
         $subject  = $template->renderBlock('subject', $parameters);
         $bodyHtml = $template->renderBlock('body_html', $parameters);
         $bodyText = $template->renderBlock('body_text', $parameters);
 
-        if (null === $from) {
-            $from = $this->translator->trans('app.parameter.from_email');
-            // only use the defualt from name if no from address passed
-            // that way we don't use the wrong name/email address association
-            if (null === $fromName) {
-                $fromName = $this->translator->trans('app.parameter.name');
-            }
-        }
-
         try {
             $message = \Swift_Message::newInstance()
                 ->setSubject($subject)
-                ->setFrom($from, $fromName)
+                ->setFrom($this->fromEmail, $this->fromName)
                 ->setTo($to)
             ;
             if (!empty($replyTo)) {

@@ -120,9 +120,8 @@ fos_user:
             type: app_user_profile
             validation_groups: [AppProfile]
     from_email:
-        # @todo-symfony
-        address:        info@example.com
-        sender_name:    Symfony Starter
+        address:        "%from_email%"
+        sender_name:    "%from_name%"
 
 vich_uploader:
     db_driver: orm

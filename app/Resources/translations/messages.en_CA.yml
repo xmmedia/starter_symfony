@@ -4,7 +4,6 @@ app:
         # @todo-symfony
         name: Symfony Starter
         name_full: Symfony Starter
-        from_email: info@example.com
 
     string:
         all_rights_reserved: All Rights Reserved.

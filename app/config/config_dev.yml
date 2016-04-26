@@ -46,7 +46,7 @@ assetic:
     use_controller: true
 
 swiftmailer:
-    delivery_address: admin@xmmedia.com
     # @todo-symfony
+    delivery_address: admin@xmmedia.com
     delivery_whitelist:
         - '/@xmmedia\.com$/'

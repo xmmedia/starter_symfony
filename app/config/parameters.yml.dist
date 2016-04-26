@@ -25,4 +25,6 @@ parameters:
     # this is just a string that's displayed in the message
     in_maintenance_until: tommorow 8 AM
 
-    # enquiry_to:        info@example.com
+    from_email:        info@example.com
+    from_name:         Symfony Starter
+    error_email:       admin@xmmedia.com
