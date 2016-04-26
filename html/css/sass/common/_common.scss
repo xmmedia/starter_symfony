@@ -1,7 +1,9 @@
 /* this file is for public and private/admin pages */
-@import "normalize";
 
+// include this before normalize as normalize override it for some elements
 *, *:after, *:before { box-sizing: border-box; }
+
+@import "normalize";
 
 input[type=radio], input[type=checkbox] { margin-right: 0.3em; }
 // make sure everything should h

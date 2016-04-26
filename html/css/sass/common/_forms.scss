@@ -34,16 +34,12 @@
     }
     @include text-input() {
         width: 100%;
-        // DH we're not why we have a min-width, so removing for now till the reason is found
-        // min-width: 10em;
         padding: 0.5em;
         border: 1px solid rgba($color-dark-grey, 0.15);
         border-radius: $border-radius;
         background-color: rgba(255, 255, 255, 0.9);
     }
     input[type=file] { width: 100%; }
-    //HS - I don't know why textarea height is here. So removing until there is a reason
-    // textarea { height: 10em; }
 }
 
 .form-field_wrap-no_width {
