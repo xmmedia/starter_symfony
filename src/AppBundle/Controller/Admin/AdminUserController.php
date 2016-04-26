@@ -8,7 +8,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\User;
 use AppBundle\Form\Type\UserFormType;
-use Hip\MandrillBundle\Message;
 
 /**
  * User controller.
