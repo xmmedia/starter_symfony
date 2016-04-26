@@ -127,8 +127,6 @@ class AdminUserController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('button', 'submit', array('label' => 'Create'));
-
         return $form;
     }
 
@@ -188,8 +186,6 @@ class AdminUserController extends Controller
             'action' => $this->generateUrl('admin_user_update', array('id' => $user->getId())),
             'method' => 'PUT',
         ));
-
-        $form->add('button', 'submit', array('label' => 'Update'));
 
         return $form;
     }
