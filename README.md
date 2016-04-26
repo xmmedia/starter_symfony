@@ -19,6 +19,7 @@ Used to create new projects using [Symfony](http://symfony.com/) at XM Media.
   5. `mkdir app/cache app/logs & chmod 0777 app/{cache,logs}`
   6. Set FACLs as root (see below).
   7. Create a user `php app/console fos:user:create` and then promote them (add the role `ROLE_SUPER_ADMIN`) `php app/console fos:user:promote`
+  8. Setup mail spooler: add cron task similar to: `* * * * * cd /<path> && php app/console swiftmailer:spool:send --message-limit=10 --time-limit=45 >> app/logs/mailer.log`
 
 **Dev site can be accessed at https://[domain]/app_dev.php/**
 
