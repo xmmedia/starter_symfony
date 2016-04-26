@@ -57,7 +57,7 @@ class UserFormType extends AbstractType
             FormEvents::SUBMIT,
             function(FormEvent $event) {
                 $form = $event->getForm();
-                $setPassword = $form->get('set_password')->getData();
+                $setPassword = $form->get('setPassword')->getData();
 
                 if (!$setPassword) {
                     $form->add('password', 'password', [
