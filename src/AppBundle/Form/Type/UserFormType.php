@@ -18,37 +18,37 @@ class UserFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', 'text', array(
-                'attr' => array('maxlength' => 254, 'autofocus' => true),
+            ->add('email', 'text', [
+                'attr' => ['maxlength' => 254, 'autofocus' => true],
                 'label' => 'Email/Username',
-                'constraints' => array(
+                'constraints' => [
                     new Assert\NotBlank(),
-                    new Assert\Length(array('min' => 3, 'max' => 254)),
+                    new Assert\Length(['min' => 3, 'max' => 254]),
                     new Assert\Email(),
-                ),
-            ))
-            ->add('firstName', null, array(
-                'attr' => array('maxlength' => 255),
-            ))
-            ->add('lastName', null, array(
-                'attr' => array('maxlength' => 255),
-            ))
-            ->add('setPassword', 'checkbox', array(
+                ],
+            ])
+            ->add('firstName', null, [
+                'attr' => ['maxlength' => 255],
+            ])
+            ->add('lastName', null, [
+                'attr' => ['maxlength' => 255],
+            ])
+            ->add('setPassword', 'checkbox', [
                 'mapped' => false,
                 'label' => 'Set Password',
                 'required' => false,
-            ))
+            ])
             // this field is re-added below, without the constraints
-            ->add('password', 'password', array(
+            ->add('password', 'password', [
                 'mapped' => false,
                 'label' => 'Password',
                 'required' => false,
-                'attr' => array('maxlength' => 4096),
-                'constraints' => array(
+                'attr' => ['maxlength' => 4096],
+                'constraints' => [
                     new Assert\NotBlank(),
-                    new Assert\Length(array('min' => 12, 'max' => 4096)),
-                ),
-            ))
+                    new Assert\Length(['min' => 12, 'max' => 4096]),
+                ],
+            ])
         ;
 
         // add a form event listener so the password field is not required
@@ -60,12 +60,12 @@ class UserFormType extends AbstractType
                 $setPassword = $form->get('set_password')->getData();
 
                 if (!$setPassword) {
-                    $form->add('password', 'password', array(
+                    $form->add('password', 'password', [
                         'mapped' => false,
                         'label' => 'Password',
                         'required' => false,
-                        'attr' => array('maxlength' => 4096),
-                    ));
+                        'attr' => ['maxlength' => 4096],
+                    ]);
                 }
             }
         );
@@ -76,9 +76,9 @@ class UserFormType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class' => 'AppBundle\Entity\User'
-        ));
+        ]);
     }
 
     /**

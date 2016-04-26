@@ -204,7 +204,7 @@ class User extends BaseUser
     {
         $roles = $this->getRoles();
 
-        $text = array();
+        $text = [];
         foreach ($roles as $role) {
             switch ($role) {
                 case 'ROLE_SUPER_ADMIN' :

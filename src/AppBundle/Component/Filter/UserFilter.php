@@ -30,21 +30,21 @@ class UserFilter extends FilterComponent
     {
         $formBuilder = $this->createFormBuilder();
 
-        $formBuilder->add('text', null, array(
+        $formBuilder->add('text', null, [
                 'label' => 'Search',
-                'attr' => array('maxlength' => 150),
-            ))
-            ->add('hide_locked', 'checkbox', array(
+                'attr' => ['maxlength' => 150],
+            ])
+            ->add('hide_locked', 'checkbox', [
                 'label' => 'Hide Locked Users',
-            ))
-            ->add('user_type', 'choice', array(
-                'choices' => array(
+            ])
+            ->add('user_type', 'choice', [
+                'choices' => [
                     'all' => 'All Users',
                     'non_admin' => 'Exclude Administrators',
                     'admin_only' => 'Only Administrators',
-                ),
+                ],
                 'label' => 'User Type',
-            ))
+            ])
         ;
 
         $this->form = $formBuilder->getForm();

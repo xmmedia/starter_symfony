@@ -25,9 +25,9 @@ class MaintenanceListener
 
         if ($maintenance) {
             $engine = $this->container->get('templating');
-            $content = $engine->render('::maintenance.html.twig', array(
+            $content = $engine->render('::maintenance.html.twig', [
                 'in_maintenance_until' => $inMaintenanceUntil,
-            ));
+            ]);
             $event->setResponse(new Response($content, 503));
             $event->stopPropagation();
         }

@@ -16,12 +16,12 @@ class AddressFormatter
     public static function full($entity, $hasPostalCode = true) {
         $address = '';
 
-        $addressData = array(
+        $addressData = [
             'address_line_1' => $entity->getAddressLine1(),
             'address_line_2' => $entity->getAddressLine2(),
             'municipality' => $entity->getMunicipality(),
             'state' => $entity->getState(),
-        );
+        ];
         if ($hasPostalCode) {
             $addressData['postal_code'] = $entity->getPostalCode();
         }

@@ -21,9 +21,9 @@ class RegistrationListener implements EventSubscriberInterface
     */
     public static function getSubscribedEvents()
     {
-        return array(
+        return [
             FOSUserEvents::REGISTRATION_COMPLETED => 'onRegistrationCompleted',
-        );
+        ];
     }
 
     /**
@@ -42,9 +42,9 @@ class RegistrationListener implements EventSubscriberInterface
 
        $template = 'userRegistered';
        $to = $this->container->getParameter('enquiry_to');
-       $mailParams = array(
+       $mailParams = [
            'user' => $user,
-       );
+       ];
 
        $mailManager = $this->container->get('app.mail_manager');
        $mailManager->sendEmail($template, $mailParams, $to);

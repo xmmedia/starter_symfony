@@ -176,11 +176,11 @@ class FilterComponent
         $formFactory = $this->container->get('form.factory');
         $defaults = $this->filterDefaults();
 
-        $formBuilder = $formFactory->createBuilder('form', $defaults, array(
+        $formBuilder = $formFactory->createBuilder('form', $defaults, [
             'method' => 'GET',
             'csrf_protection' => false,
-            'attr' => array('novalidate' => 'novalidate'),
-        ));
+            'attr' => ['novalidate' => 'novalidate'],
+        ]);
 
         return $formBuilder;
     }
@@ -262,7 +262,7 @@ class FilterComponent
             }
         }
 
-        return array($prevRecordId, $nextRecordId);
+        return [$prevRecordId, $nextRecordId];
     }
 
     /**

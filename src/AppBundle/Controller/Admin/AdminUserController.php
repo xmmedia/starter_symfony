@@ -37,10 +37,10 @@ class AdminUserController extends Controller
         $query = $qb->getQuery();
         $pagination = $userFilter->getPagination($query);
 
-        return $this->render('AdminUser/list.html.twig', array(
+        return $this->render('AdminUser/list.html.twig', [
             'pagination' => $pagination,
             'user_filter_form' => $filterForm->createView(),
-        ));
+        ]);
     }
 
     /**
@@ -81,9 +81,9 @@ class AdminUserController extends Controller
             if (!$setPassword) {
                 // send a link to the password reset page (from the forgot password function)
                 $view = 'welcome';
-                $path = $this->generateUrl('fos_user_resetting_reset', array(
+                $path = $this->generateUrl('fos_user_resetting_reset', [
                     'token' => $user->getConfirmationToken(),
-                ));
+                ]);
             } else {
                 // send an email that says they should have received the password from an admin
                 $view = 'welcomeSetPassword';
@@ -91,10 +91,10 @@ class AdminUserController extends Controller
             }
 
             $template = 'AdminUser/' . $view;
-            $mailParams = array(
+            $mailParams = [
                 'user' => $user,
                 'uri' => $request->getSchemeAndHttpHost() . $path,
-            );
+            ];
 
             $mailManager = $this->get('app.mail_manager');
             $mailManager->sendEmail($template, $mailParams, $user->getEmail());
@@ -107,10 +107,10 @@ class AdminUserController extends Controller
 
         $this->addFlash('warning', 'app.message.validation_errors_continue');
 
-        return $this->render('AdminUser/create.html.twig', array(
+        return $this->render('AdminUser/create.html.twig', [
             'entity' => $user,
             'form'   => $form->createView(),
-        ));
+        ]);
     }
 
     /**
@@ -122,10 +122,10 @@ class AdminUserController extends Controller
      */
     protected function createCreateForm(User $user)
     {
-        $form = $this->createForm(new UserFormType(), $user, array(
+        $form = $this->createForm(new UserFormType(), $user, [
             'action' => $this->generateUrl('admin_user_create'),
             'method' => 'POST',
-        ));
+        ]);
 
         return $form;
     }
@@ -144,10 +144,10 @@ class AdminUserController extends Controller
 
         $form = $this->createCreateForm($user);
 
-        return $this->render('AdminUser/create.html.twig', array(
+        return $this->render('AdminUser/create.html.twig', [
             'entity' => $user,
             'form'   => $form->createView(),
-        ));
+        ]);
     }
 
     /**
@@ -164,13 +164,13 @@ class AdminUserController extends Controller
         $lockUnlockForm = $this->createLockUnlockForm($user);
         $deleteForm = $this->createDeleteForm($user);
 
-        return $this->render('AdminUser/edit.html.twig', array(
+        return $this->render('AdminUser/edit.html.twig', [
             'entity'      => $user,
             'form'        => $editForm->createView(),
             'reset_password_form' => $resetPasswordForm->createView(),
             'lock_unlock_form'    => $lockUnlockForm->createView(),
             'delete_form'         => $deleteForm->createView(),
-        ));
+        ]);
     }
 
     /**
@@ -182,10 +182,11 @@ class AdminUserController extends Controller
     */
     protected function createEditForm(User $user)
     {
-        $form = $this->createForm(new UserFormType(), $user, array(
-            'action' => $this->generateUrl('admin_user_update', array('id' => $user->getId())),
+        $form = $this->createForm(new UserFormType(), $user, [
+            'action' => $this->generateUrl('admin_user_update', ['id' => $user->getId()]
+            ),
             'method' => 'PUT',
-        ));
+        ]);
 
         return $form;
     }
@@ -200,9 +201,10 @@ class AdminUserController extends Controller
     protected function createResetPasswordForm($user)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_user_reset_password', array('id' => $user->getId())))
+            ->setAction($this->generateUrl('admin_user_reset_password', ['id' => $user->getId()]
+            ))
             ->setMethod('POST')
-            ->add('button', 'submit', array('label' => 'Reset Password'))
+            ->add('button', 'submit', ['label' => 'Reset Password'])
             ->getForm()
         ;
     }
@@ -225,9 +227,9 @@ class AdminUserController extends Controller
         }
 
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl($route, array('id' => $user->getId())))
+            ->setAction($this->generateUrl($route, ['id' => $user->getId()]))
             ->setMethod('POST')
-            ->add('button', 'submit', array('label' => $buttonLabel))
+            ->add('button', 'submit', ['label' => $buttonLabel])
             ->getForm()
         ;
     }
@@ -259,7 +261,7 @@ class AdminUserController extends Controller
             $userManager->updateUser($user);
 
             $msg = $this->get('translator')->trans('app.message.entity_updated',
-                array('%name%' => 'user')
+                ['%name%' => 'user']
             );
             $this->addFlash('success', $msg);
 
@@ -268,13 +270,13 @@ class AdminUserController extends Controller
 
         $this->addFlash('warning', 'app.message.validation_errors_continue');
 
-        return $this->render('AdminUser/edit.html.twig', array(
+        return $this->render('AdminUser/edit.html.twig', [
             'entity'      => $user,
             'form'        => $editForm->createView(),
             'reset_password_form' => $resetPasswordForm->createView(),
             'lock_unlock_form'    => $lockUnlockForm->createView(),
             'delete_form'         => $deleteForm->createView(),
-        ));
+        ]);
     }
 
     /**
@@ -297,15 +299,15 @@ class AdminUserController extends Controller
             $userManager->updateUser($user);
 
             // send a password reset email
-            $path = $this->generateUrl('fos_user_resetting_reset', array(
+            $path = $this->generateUrl('fos_user_resetting_reset', [
                 'token' => $user->getConfirmationToken(),
-            ));
+            ]);
             
             $template = 'AdminUser/reset';
-            $mailParams = array(
+            $mailParams = [
                 'user' => $user,
                 'uri' => $request->getSchemeAndHttpHost() . $path,
-            );
+            ];
 
             $mailManager = $this->get('app.mail_manager');
             $mailManager->sendEmail($template, $mailParams, $user->getEmail());
@@ -378,7 +380,7 @@ class AdminUserController extends Controller
             $userManager->updateUser($user);
 
             $msg = $this->get('translator')->trans('app.message.entity_deleted',
-                array('%name%' => 'user')
+                ['%name%' => 'user']
             );
             $this->addFlash('success', $msg);
         }
@@ -396,9 +398,10 @@ class AdminUserController extends Controller
     protected function createDeleteForm($user)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_user_delete', array('id' => $user->getId())))
+            ->setAction($this->generateUrl('admin_user_delete', ['id' => $user->getId()]
+            ))
             ->setMethod('DELETE')
-            ->add('button', 'submit', array('label' => 'Delete'))
+            ->add('button', 'submit', ['label' => 'Delete'])
             ->getForm()
         ;
     }
@@ -419,10 +422,10 @@ class AdminUserController extends Controller
             50
         );
 
-        return $this->render('AdminUser/loginHistory.html.twig', array(
+        return $this->render('AdminUser/loginHistory.html.twig', [
             'user' => $user,
             'auth_logs' => $pagination,
-        ));
+        ]);
     }
 
     /**
