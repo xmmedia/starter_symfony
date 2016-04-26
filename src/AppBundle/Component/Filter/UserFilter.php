@@ -6,8 +6,14 @@ use AppBundle\Component\FilterComponent;
 
 class UserFilter extends FilterComponent
 {
+    /**
+     * {@inheritdoc}
+     */
     protected $sessionKey = 'user_list';
 
+    /**
+     * {@inheritdoc}
+     */
     public function filterDefaults()
     {
         return [
@@ -17,14 +23,17 @@ class UserFilter extends FilterComponent
         ];
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function generateForm()
     {
         $formBuilder = $this->createFormBuilder();
 
         $formBuilder->add('text', null, array(
-            'label' => 'Search',
-            'attr' => array('maxlength' => 150),
-        ))
+                'label' => 'Search',
+                'attr' => array('maxlength' => 150),
+            ))
             ->add('hide_locked', 'checkbox', array(
                 'label' => 'Hide Locked Users',
             ))
@@ -47,9 +56,9 @@ class UserFilter extends FilterComponent
     /**
      * Creates the query builder for the system list.
      *
-     * @param  SystemRepository $repo The system repo
+     * @param  \Doctrine\ORM\EntityRepository|AppBundle\Repository\UserRepository $repo The system repo
      *
-     * @return QueryBuilder
+     * @return \Doctrine\ORM\QueryBuilder
      */
     public function createQueryBuilder($repo)
     {
@@ -64,9 +73,10 @@ class UserFilter extends FilterComponent
         }
         if (!empty($filters['text'])) {
             $qb->andWhere($qb->expr()->orX(
-                $qb->expr()->like('u.email', ':text'),
-                $qb->expr()->like('u.name', ':text')
-            ))
+                    $qb->expr()->like('u.email', ':text'),
+                    $qb->expr()->like('u.firstName', ':text'),
+                    $qb->expr()->like('u.lastName', ':text')
+                ))
                 ->setParameter('text', '%' . $filters['text'] . '%')
             ;
         }
