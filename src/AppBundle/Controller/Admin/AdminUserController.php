@@ -53,9 +53,9 @@ class AdminUserController extends Controller
     {
         $userManager = $this->get('fos_user.user_manager');
 
-        $entity = $userManager->createUser();
+        $user = $userManager->createUser();
 
-        $form = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($user);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
@@ -64,25 +64,25 @@ class AdminUserController extends Controller
                 $tokenGenerator = $this->get('fos_user.util.token_generator');
 
                 // set the password to something crazy, that no one will know
-                $entity->setPlainPassword($tokenGenerator->generateToken());
+                $user->setPlainPassword($tokenGenerator->generateToken());
 
-                $entity->setConfirmationToken($tokenGenerator->generateToken());
-                $entity->setPasswordRequestedAt(new \DateTime());
+                $user->setConfirmationToken($tokenGenerator->generateToken());
+                $user->setPasswordRequestedAt(new \DateTime());
             } else {
                 $password = $form->get('password')->getData();
-                $entity->setPlainPassword($password);
+                $user->setPlainPassword($password);
                 // only enabled accounts that have a proper password
-                $entity->setEnabled(true);
+                $user->setEnabled(true);
             }
 
-            $userManager->updateUser($entity);
+            $userManager->updateUser($user);
 
             // send the welcome email
             if (!$setPassword) {
                 // send a link to the password reset page (from the forgot password function)
                 $view = 'welcome';
                 $path = $this->generateUrl('fos_user_resetting_reset', array(
-                    'token' => $entity->getConfirmationToken(),
+                    'token' => $user->getConfirmationToken(),
                 ));
             } else {
                 // send an email that says they should have received the password from an admin
@@ -92,12 +92,12 @@ class AdminUserController extends Controller
 
             $template = 'AdminUser/' . $view;
             $mailParams = array(
-                'user' => $entity,
+                'user' => $user,
                 'uri' => $request->getSchemeAndHttpHost() . $path,
             );
 
             $mailManager = $this->get('app.mail_manager');
-            $mailManager->sendEmail($template, $mailParams, $entity->getEmail());
+            $mailManager->sendEmail($template, $mailParams, $user->getEmail());
 
             $msg_key = $setPassword ? 'created_set_password' : 'created';
             $this->addFlash('success', 'app.message.user.' . $msg_key);
@@ -108,7 +108,7 @@ class AdminUserController extends Controller
         $this->addFlash('warning', 'app.message.validation_errors_continue');
 
         return $this->render('AdminUser/create.html.twig', array(
-            'entity' => $entity,
+            'entity' => $user,
             'form'   => $form->createView(),
         ));
     }
@@ -116,13 +116,13 @@ class AdminUserController extends Controller
     /**
      * Creates a form to create a User entity.
      *
-     * @param User $entity The entity
+     * @param User $user The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    protected function createCreateForm(User $entity)
+    protected function createCreateForm(User $user)
     {
-        $form = $this->createForm(new UserFormType(), $entity, array(
+        $form = $this->createForm(new UserFormType(), $user, array(
             'action' => $this->generateUrl('admin_user_create'),
             'method' => 'POST',
         ));
@@ -142,12 +142,12 @@ class AdminUserController extends Controller
     {
         $userManager = $this->get('fos_user.user_manager');
 
-        $entity = $userManager->createUser();
+        $user = $userManager->createUser();
 
-        $form = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($user);
 
         return $this->render('AdminUser/create.html.twig', array(
-            'entity' => $entity,
+            'entity' => $user,
             'form'   => $form->createView(),
         ));
     }
@@ -158,16 +158,16 @@ class AdminUserController extends Controller
      * @Route("/{id}/edit", name="admin_user_edit")
      * @Method("GET")
      */
-    public function editAction(User $entity)
+    public function editAction(User $user)
     {
-        $editForm = $this->createEditForm($entity);
+        $editForm = $this->createEditForm($user);
 
-        $resetPasswordForm = $this->createResetPasswordForm($entity);
-        $lockUnlockForm = $this->createLockUnlockForm($entity);
-        $deleteForm = $this->createDeleteForm($entity);
+        $resetPasswordForm = $this->createResetPasswordForm($user);
+        $lockUnlockForm = $this->createLockUnlockForm($user);
+        $deleteForm = $this->createDeleteForm($user);
 
         return $this->render('AdminUser/edit.html.twig', array(
-            'entity'      => $entity,
+            'entity'      => $user,
             'form'        => $editForm->createView(),
             'reset_password_form' => $resetPasswordForm->createView(),
             'lock_unlock_form'    => $lockUnlockForm->createView(),
@@ -178,14 +178,14 @@ class AdminUserController extends Controller
     /**
     * Creates a form to edit a User entity.
     *
-    * @param User $entity The entity
+    * @param User $user The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    protected function createEditForm(User $entity)
+    protected function createEditForm(User $user)
     {
-        $form = $this->createForm(new UserFormType(), $entity, array(
-            'action' => $this->generateUrl('admin_user_update', array('id' => $entity->getId())),
+        $form = $this->createForm(new UserFormType(), $user, array(
+            'action' => $this->generateUrl('admin_user_update', array('id' => $user->getId())),
             'method' => 'PUT',
         ));
 
@@ -201,10 +201,10 @@ class AdminUserController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    protected function createResetPasswordForm($entity)
+    protected function createResetPasswordForm($user)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_user_reset_password', array('id' => $entity->getId())))
+            ->setAction($this->generateUrl('admin_user_reset_password', array('id' => $user->getId())))
             ->setMethod('POST')
             ->add('button', 'submit', array('label' => 'Reset Password'))
             ->getForm()
@@ -218,9 +218,9 @@ class AdminUserController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    protected function createLockUnlockForm($entity)
+    protected function createLockUnlockForm($user)
     {
-        if ($entity->isLocked()) {
+        if ($user->isLocked()) {
             $route = 'admin_user_unlock';
             $buttonLabel = 'Unlock Account';
         } else {
@@ -229,7 +229,7 @@ class AdminUserController extends Controller
         }
 
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl($route, array('id' => $entity->getId())))
+            ->setAction($this->generateUrl($route, array('id' => $user->getId())))
             ->setMethod('POST')
             ->add('button', 'submit', array('label' => $buttonLabel))
             ->getForm()
@@ -242,25 +242,25 @@ class AdminUserController extends Controller
      * @Route("/{id}", name="admin_user_update")
      * @Method("PUT")
      */
-    public function updateAction(Request $request, User $entity)
+    public function updateAction(Request $request, User $user)
     {
         $userManager = $this->get('fos_user.user_manager');
 
-        $resetPasswordForm = $this->createResetPasswordForm($entity);
-        $lockUnlockForm = $this->createLockUnlockForm($entity);
-        $deleteForm = $this->createDeleteForm($entity);
+        $resetPasswordForm = $this->createResetPasswordForm($user);
+        $lockUnlockForm = $this->createLockUnlockForm($user);
+        $deleteForm = $this->createDeleteForm($user);
 
-        $editForm = $this->createEditForm($entity);
+        $editForm = $this->createEditForm($user);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
             $setPassword = $editForm->get('setPassword')->getData();
             if ($setPassword) {
                 $password = $editForm->get('password')->getData();
-                $entity->setPlainPassword($password);
+                $user->setPlainPassword($password);
             }
 
-            $userManager->updateUser($entity);
+            $userManager->updateUser($user);
 
             $msg = $this->get('translator')->trans('app.message.entity_updated',
                 array('%name%' => 'user')
@@ -273,7 +273,7 @@ class AdminUserController extends Controller
         $this->addFlash('warning', 'app.message.validation_errors_continue');
 
         return $this->render('AdminUser/edit.html.twig', array(
-            'entity'      => $entity,
+            'entity'      => $user,
             'form'        => $editForm->createView(),
             'reset_password_form' => $resetPasswordForm->createView(),
             'lock_unlock_form'    => $lockUnlockForm->createView(),
@@ -287,38 +287,38 @@ class AdminUserController extends Controller
      * @Route("/{id}/reset-password", name="admin_user_reset_password")
      * @Method("POST")
      */
-    public function resetPasswordAction(Request $request, User $entity)
+    public function resetPasswordAction(Request $request, User $user)
     {
-        $form = $this->createLockUnlockForm($entity);
+        $form = $this->createLockUnlockForm($user);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $tokenGenerator = $this->get('fos_user.util.token_generator');
-            $entity->setConfirmationToken($tokenGenerator->generateToken());
-            $entity->setPasswordRequestedAt(new \DateTime());
+            $user->setConfirmationToken($tokenGenerator->generateToken());
+            $user->setPasswordRequestedAt(new \DateTime());
 
             $userManager = $this->get('fos_user.user_manager');
-            $userManager->updateUser($entity);
+            $userManager->updateUser($user);
 
             // send a password reset email
             $path = $this->generateUrl('fos_user_resetting_reset', array(
-                'token' => $entity->getConfirmationToken(),
+                'token' => $user->getConfirmationToken(),
             ));
             
             $template = 'AdminUser/reset';
             $mailParams = array(
-                'user' => $entity,
+                'user' => $user,
                 'uri' => $request->getSchemeAndHttpHost() . $path,
             );
 
             $mailManager = $this->get('app.mail_manager');
-            $mailManager->sendEmail($template, $mailParams, $entity->getEmail());
+            $mailManager->sendEmail($template, $mailParams, $user->getEmail());
 
             // this is escaped on output in the template
-            $this->addFlash('success', 'An email containing a reset password link has been sent to ' . $entity->getEmail() . '.');
+            $this->addFlash('success', 'An email containing a reset password link has been sent to ' . $user->getEmail() . '.');
         }
 
-        return $this->redirectToRoute('admin_user');
+        return $this->redirectToList();
     }
 
     /**
@@ -328,37 +328,37 @@ class AdminUserController extends Controller
      * @Route("/{id}/lock", name="admin_user_lock")
      * @Method("POST")
      */
-    public function lockUnlockAction(Request $request, User $entity)
+    public function lockUnlockAction(Request $request, User $user)
     {
-        $form = $this->createLockUnlockForm($entity);
+        $form = $this->createLockUnlockForm($user);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             if ($request->get('_route') == 'admin_user_unlock') {
-                $entity->setLocked(false);
-                $entity->setExpired(false);
-                $entity->setCredentialsExpired(false);
-                $entity->setCredentialsExpireAt(null);
+                $user->setLocked(false);
+                $user->setExpired(false);
+                $user->setCredentialsExpired(false);
+                $user->setCredentialsExpireAt(null);
                 $msg = 'app.message.user.unlocked';
             } else {
                 // only credentialsExpired actually stops the user from logging in
                 // but we'll set the other ones becuase they have meaning as well
                 // see: https://github.com/FriendsOfSymfony/FOSUserBundle/issues/1413#issuecomment-36443185
-                $entity->setLocked(true);
-                $entity->setExpired(true);
-                $entity->setCredentialsExpired(true);
-                $entity->setCredentialsExpireAt(new \DateTime());
+                $user->setLocked(true);
+                $user->setExpired(true);
+                $user->setCredentialsExpired(true);
+                $user->setCredentialsExpireAt(new \DateTime());
                 $msg = 'app.message.user.locked';
             }
 
             $this->get('fos_user.user_manager')
-                ->updateUser($entity)
+                ->updateUser($user)
             ;
 
             $this->addFlash('success', $msg);
         }
 
-        return $this->redirectToRoute('admin_user');
+        return $this->redirectToList();
     }
 
     /**
@@ -368,18 +368,18 @@ class AdminUserController extends Controller
      * @Route("/{id}", name="admin_user_delete")
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request, User $entity)
+    public function deleteAction(Request $request, User $user)
     {
-        $form = $this->createDeleteForm($entity);
+        $form = $this->createDeleteForm($user);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
             $userManager = $this->get('fos_user.user_manager');
 
-            $entity->setExpired(true);
-            $entity->setCredentialsExpired(true);
-            $entity->setCredentialsExpireAt(new \DateTime());
-            $userManager->updateUser($entity);
+            $user->setExpired(true);
+            $user->setCredentialsExpired(true);
+            $user->setCredentialsExpireAt(new \DateTime());
+            $userManager->updateUser($user);
 
             $msg = $this->get('translator')->trans('app.message.entity_deleted',
                 array('%name%' => 'user')
@@ -387,7 +387,7 @@ class AdminUserController extends Controller
             $this->addFlash('success', $msg);
         }
 
-        return $this->redirectToRoute('admin_user');
+        return $this->redirectToList();
     }
 
     /**
@@ -397,10 +397,10 @@ class AdminUserController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    protected function createDeleteForm($entity)
+    protected function createDeleteForm($user)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('admin_user_delete', array('id' => $entity->getId())))
+            ->setAction($this->generateUrl('admin_user_delete', array('id' => $user->getId())))
             ->setMethod('DELETE')
             ->add('button', 'submit', array('label' => 'Delete'))
             ->getForm()
