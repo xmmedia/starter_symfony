@@ -92,7 +92,7 @@ class AdminUserController extends Controller
         }
 
         return $this->render('AdminUser/create.html.twig', [
-            'entity' => $user,
+            'user' => $user,
             'form'   => $form->createView(),
         ]);
     }
@@ -142,10 +142,6 @@ class AdminUserController extends Controller
     {
         $userManager = $this->get('fos_user.user_manager');
 
-        $resetPasswordForm = $this->createResetPasswordForm($user);
-        $lockUnlockForm = $this->createLockUnlockForm($user);
-        $deleteForm = $this->createDeleteForm($user);
-
         $editForm = $this->createForm(new UserFormType(), $user, [
             'action' => $this->generateUrl('admin_user_edit', ['id' => $user->getId()]),
             'method' => 'PUT',
@@ -172,10 +168,16 @@ class AdminUserController extends Controller
             $this->addFlash('warning', 'app.message.validation_errors_continue');
         }
 
+        $resetPasswordForm = $this->createResetPasswordForm($user);
+        $lockUnlockForm = $this->createLockUnlockForm($user);
+        $activateForm = $this->createActivateForm($user);
+        $deleteForm = $this->createDeleteForm($user);
+
         return $this->render('AdminUser/edit.html.twig', [
-            'entity'      => $user,
-            'form'        => $editForm->createView(),
+            'user' => $user,
+            'form' => $editForm->createView(),
             'reset_password_form' => $resetPasswordForm->createView(),
+            'activate_form'       => $activateForm->createView(),
             'lock_unlock_form'    => $lockUnlockForm->createView(),
             'delete_form'         => $deleteForm->createView(),
         ]);
@@ -316,6 +318,49 @@ class AdminUserController extends Controller
             ->setAction($this->generateUrl($route, ['id' => $user->getId()]))
             ->setMethod('POST')
             ->add('button', 'submit', ['label' => $buttonLabel])
+            ->getForm()
+        ;
+
+        return $form;
+    }
+
+    /**
+     * Activate a user's account.
+     *
+     * @Route("/{id}/activate", name="admin_user_activate")
+     * @Method("POST")
+     */
+    public function activateAction(Request $request, User $user)
+    {
+        $form = $this->createLockUnlockForm($user);
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $user->setEnabled(true);
+
+            $this->get('fos_user.user_manager')
+                ->updateUser($user)
+            ;
+
+            $this->addFlash('success', 'app.message.user.activated');
+        }
+
+        return $this->redirectToList();
+    }
+
+    /**
+     * Creates a form to activate a user's account.
+     *
+     * @param User $user The user entity.
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    protected function createActivateForm(User $user)
+    {
+        $form = $this->createFormBuilder()
+            ->setAction($this->generateUrl('admin_user_activate', ['id' => $user->getId()]))
+            ->setMethod('POST')
+            ->add('button', 'submit', ['label' => 'Activate Account'])
             ->getForm()
         ;
 

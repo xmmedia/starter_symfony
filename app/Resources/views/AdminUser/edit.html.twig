@@ -1,5 +1,11 @@
 {% extends '::admin.html.twig' %}
 
+{% set action_link_options = {
+    'attr' : {
+        'class' : 'button-as_link form-action_link'
+    }
+} %}
+
 {% block page_title %}Edit | Users | {% endblock %}
 {% block header_page_title %}Edit User{% endblock %}
 
@@ -10,26 +16,21 @@
 
         {% block extra_actions %}
             <ul class="form-extra_actions">
+                {% if user.isEnabled == false %}
+                    <li>
+                        {{ form_start(activate_form) }}
+                        {{ form_widget(activate_form.button, action_link_options) }}
+                        {{ form_end(activate_form) }}
+                    </li>
+                {% endif %}
                 <li>
                     {{ form_start(reset_password_form) }}
-                        {{
-                            form_widget(reset_password_form.button, {
-                                'attr' : {
-                                    'class' : 'button-as_link form-action_link'
-                                }
-                            })
-                        }}
+                        {{ form_widget(reset_password_form.button, action_link_options) }}
                     {{ form_end(reset_password_form) }}
                 </li>
                 <li>
                     {{ form_start(lock_unlock_form) }}
-                        {{
-                            form_widget(lock_unlock_form.button, {
-                                'attr' : {
-                                    'class' : 'button-as_link form-action_link'
-                                }
-                            })
-                        }}
+                        {{ form_widget(lock_unlock_form.button, action_link_options) }}
                     {{ form_end(lock_unlock_form) }}
                 </li>
                 <li>
@@ -41,13 +42,7 @@
                             }
                         })
                     }}
-                        {{
-                            form_widget(delete_form.button, {
-                                'attr' : {
-                                    'class' : 'button-as_link form-action_link'
-                                }
-                            })
-                        }}
+                        {{ form_widget(delete_form.button, action_link_options) }}
                     {{ form_end(delete_form) }}
                 </li>
             </ul>

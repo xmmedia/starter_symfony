@@ -26,6 +26,7 @@ app:
         entity_deleted: The %name% has been deleted.
         validation_errors_continue: Please fix the validation errors before continuing.
         user:
+            activated: The user's account has been activated.
             unlocked: The user's account was unlocked.
             locked: The user's account has been locked. They will no longer be able to use their account.
             created: The user was created and a welcome email was sent with a link to set their password.
