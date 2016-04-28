@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="app.validation.user.email_unique">
+                <source>app.validation.user.email_unique</source>
+                <target>The email address entered has already been used.</target>
+            </trans-unit>
+            <trans-unit id="app.validation.user.first_name.blank">
+                <source>app.validation.user.first_name.blank</source>
+                <target>Please enter your first name</target>
+            </trans-unit>
+            <trans-unit id="app.validation.user.first_name.short">
+                <source>app.validation.user.first_name.short</source>
+                <target>[-Inf,Inf]The first name is too short</target>
+            </trans-unit>
+            <trans-unit id="app.validation.user.first_name.long">
+                <source>app.validation.user.first_name.long</source>
+                <target>[-Inf,Inf]The first name is too long</target>
+            </trans-unit>
+            <trans-unit id="app.validation.user.last_name.blank">
+                <source>app.validation.user.last_name.blank</source>
+                <target>Please enter your last name</target>
+            </trans-unit>
+            <trans-unit id="app.validation.user.last_name.short">
+                <source>app.validation.user.last_name.short</source>
+                <target>[-Inf,Inf]The last name is too short</target>
+            </trans-unit>
+            <trans-unit id="app.validation.user.last_name.long">
+                <source>app.validation.user.last_name.long</source>
+                <target>[-Inf,Inf]The last name is too long</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

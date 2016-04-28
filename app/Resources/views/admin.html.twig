@@ -17,11 +17,11 @@
                 <li>
                     <a href="{{ path('admin_dashboard') }}" class="sidebar_nav-link sidebar_nav-nav_item">
                         <svg><use xlink:href="#gear"></use></svg>
-                        Admin
+                        {{ 'app.admin.menu.admin'|trans }}
                     </a>
                     <button class="sidebar_nav-link sidebar_nav-submenu_arrow js-sidebar_nav-submenu_trigger"><svg><use xlink:href="#gt"></use></svg></button>
                     <div class="sidebar_nav-submenu-wrap js-sidebar_nav-submenu-wrap">
-                        <div class="sidebar_nav-submenu_header">Admin</div>
+                        <div class="sidebar_nav-submenu_header">{{ 'app.admin.menu.admin'|trans }}</div>
                         <ul class="sidebar_nav-submenu">
                             <li><a href="{{ path('admin_user_list') }}" class="sidebar_nav-link sidebar_nav-submenu_link">Users</a></li>
                         </ul>
@@ -31,24 +31,25 @@
         </ul>
 
         <div class="sidebar_nav-bottom_wrap">
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <div class="sidebar_nav-profile">
-                <a href="{{ path('fos_user_profile_edit') }}">
-                    {# @todo profile image...maybe #}
-                    {# <img src="/images/person.jpg" width="40" height="40" class="sidebar_nav-profile-img"> #}
-                    {% if app.user.name %}
-                        <div>{{ app.user.name }}</div>
-                    {% else %}
-                        <div>Profile</div>
-                    {% endif %}
-                </a>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <div class="sidebar_nav-profile">
+                    <a href="{{ path('fos_user_profile_edit') }}">
+                        {# @todo profile image...maybe #}
+                        {# <img src="/images/person.jpg" width="40" height="40" class="sidebar_nav-profile-img"> #}
+                        {% if app.user.name %}
+                            <div>{{ app.user.name }}</div>
+                        {% else %}
+                            <div>Profile</div>
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="sidebar_nav-logout">
+                    <a href="{{ path('fos_user_security_logout') }}">Logout</a>
+                </div>
+            {% endif %}
+            <div class="sidebar_nav-copyright">
+                <a href="{{ path('index') }}" target="_blank">©{{ 'now'|date('Y') }} {{ 'app.parameter.name'|trans }}</a>
             </div>
-            <div class="sidebar_nav-logout">
-                <a href="{{ path('fos_user_security_logout') }}">Logout</a>
-            </div>
-        {% endif %}
-        <div class="sidebar_nav-copyright">
-            <a href="{{ path('index') }}" target="_blank">©{{ 'now'|date('Y') }} {{ 'app.parameter.name'|trans }}</a>
         </div>
     </nav>
 {% endblock %}
