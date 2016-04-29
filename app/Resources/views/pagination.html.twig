@@ -1,7 +1,7 @@
 {# default Sliding pagination control implementation #}
 
 {% if pageCount > 1 %}
-    <div class="pagination">
+    <div class="pagination-wrap">
         {% if first is defined and current != first %}
             <a href="{{ path(route, query|merge({(pageParameterName): first})) }}" class="pagination-item pagination-item-mobile">&lt;&lt;</a>
         {% else %}
