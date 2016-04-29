@@ -16,18 +16,24 @@ var admin = {
     confirm_delete : function(el)
     {
         var $el = $(el),
-            md = md.get_md(),
+            md_wrap = md.get_md(),
             record_desc = $el.data('record-desc'),
-            form_action = $el.attr('action') ? $el.attr('action') : $el.attr('href'),
             msg = 'Are you sure you want to delete this '+record_desc+'? This cannot be undone.',
-            delete_form = '<form action="'+form_action+'" method="POST"><input type="hidden" name="_method" value="DELETE"><button>Delete</button></form>';
+            delete_form;
 
-        md.find('.js-md-content_wrap').html('<p class="md-content-center">'+msg+'</p>');
-        md.find('.js-md-button_wrap').html(delete_form);
+        if ($el.is('form')) {
+            delete_form = $el.clone();
+            delete_form.find('button').removeClass();
+        } else {
+            delete_form = '<form action="'+$el.attr('href')+'" method="POST"><input type="hidden" name="_method" value="DELETE"><button>Delete</button></form>';
+        }
+
+        md_wrap.find('.js-md-content_wrap').html('<p class="md-content-center">'+msg+'</p>');
+        md_wrap.find('.js-md-button_wrap').html(delete_form);
 
         md.open();
 
-        md.find('.js-md-button_wrap').find('button').focus();
+        md_wrap.find('.js-md-button_wrap').find('button').focus();
     },
 
     setup_menu : function()
