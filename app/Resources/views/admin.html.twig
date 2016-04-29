@@ -23,7 +23,7 @@
                     <div class="sidebar_nav-submenu-wrap js-sidebar_nav-submenu-wrap">
                         <div class="sidebar_nav-submenu_header">{{ 'app.admin.menu.admin'|trans }}</div>
                         <ul class="sidebar_nav-submenu">
-                            <li><a href="{{ path('admin_user_list') }}" class="sidebar_nav-link sidebar_nav-submenu_link">Users</a></li>
+                            <li><a href="{{ path('admin_user_list') ~ '?' ~ user_filter.query() }}" class="sidebar_nav-link sidebar_nav-submenu_link">Users</a></li>
                         </ul>
                     </div>
                 </li>
