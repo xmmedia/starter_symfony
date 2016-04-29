@@ -15,7 +15,10 @@
     text-align: center;
     border: 1px solid lighten($color-dark-grey, 70%);
     transition: background-color 0.15s ease-in-out;
-    &:hover { background: rgba(0, 0, 0, 0.05); }
+    &:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+
     svg {
         display: block;
         width: 6em;
