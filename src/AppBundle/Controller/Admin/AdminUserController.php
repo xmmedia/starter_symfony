@@ -225,7 +225,6 @@ class AdminUserController extends Controller
                 'id' => $user->getId()
             ]))
             ->setMethod('POST')
-            ->add('button', 'submit', ['label' => 'Reset Password'])
             ->getForm()
         ;
 
@@ -360,7 +359,6 @@ class AdminUserController extends Controller
         $form = $this->createFormBuilder()
             ->setAction($this->generateUrl('admin_user_activate', ['id' => $user->getId()]))
             ->setMethod('POST')
-            ->add('button', 'submit', ['label' => 'Activate Account'])
             ->getForm()
         ;
 
@@ -369,7 +367,8 @@ class AdminUserController extends Controller
 
     /**
      * "Deletes" a User entity.
-     * Never actually deletes the user, but instead expires and expires the credentials.
+     * Never actually deletes the user, but instead expires the entity and
+     * expires the credentials.
      *
      * @Route("/{id}", name="admin_user_delete")
      * @Method("DELETE")
@@ -410,7 +409,6 @@ class AdminUserController extends Controller
                 'id' => $user->getId()
             ]))
             ->setMethod('DELETE')
-            ->add('button', 'submit', ['label' => 'Delete'])
             ->getForm()
         ;
 
