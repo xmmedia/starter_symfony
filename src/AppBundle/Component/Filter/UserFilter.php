@@ -63,6 +63,7 @@ class UserFilter extends FilterComponent
     public function createQueryBuilder($repo)
     {
         $qb = $repo->createQueryBuilder('u')
+            ->andWhere('u.expired = false')
             ->orderBy('u.email', 'ASC')
         ;
 
