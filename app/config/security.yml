@@ -23,6 +23,9 @@ security:
                 csrf_provider: security.csrf.token_manager
                 default_target_path: /admin
                 use_referer: true
+                login_path: fos_user_security_login
+                failure_path: fos_user_security_login
+                check_path: fos_user_security_check
                 # success_handler: app.authentication.login_success
             logout:
                 path:   fos_user_security_logout
