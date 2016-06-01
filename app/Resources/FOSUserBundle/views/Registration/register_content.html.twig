@@ -13,7 +13,8 @@
         <div class="form-field_wrap">
             {{ form_label(form.plainPassword.first) }}
             {{ form_errors(form.plainPassword.first) }}
-            {{ form_widget(form.plainPassword.first) }}
+            {# the autocomplete attr is for Safari & autofill #}
+            {{ form_widget(form.plainPassword.first, { 'attr' : { 'autocomplete' : 'new-password' }}) }}
             {# @todo translation #}
             <div class="form-field_help">Use at least 8 characters.</div>
         </div>
