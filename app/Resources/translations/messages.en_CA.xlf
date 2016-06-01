@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" datatype="plaintext" original="file.ext">
+    <file source-language="en" target-language="en-CA" datatype="plaintext" original="file.ext">
         <body>
             <!-- ****** PARAMETERS ****** -->
             <!-- @todo-symfony -->
@@ -57,7 +57,7 @@
             <!-- User Messages -->
             <trans-unit id="app.message.user.activated">
                 <source>app.message.user.activated</source>
-                <target>Login</target>
+                <target>The user's account has been activated.</target>
             </trans-unit>
             <trans-unit id="app.message.user.unlocked">
                 <source>app.message.user.unlocked</source>
