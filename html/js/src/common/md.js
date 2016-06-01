@@ -36,7 +36,7 @@ var md = {
     },
     add_scroll : function() {
         var md_wrap = md.get_md();
-        if ($('.js-md-content_wrap').height() > md.height()) {
+        if ($('.js-md-content_wrap').height() > md_wrap.height()) {
             md_wrap.addClass('md-modal-scroll');
         } else {
             md_wrap.removeClass('md-modal-scroll');
