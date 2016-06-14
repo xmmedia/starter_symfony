@@ -13,7 +13,7 @@
     margin: 0;
     padding-left: 0;
     list-style: none;
-   li { flex: 0 1 1.5em; }
+    li { flex: 0 1 1.5em; }
 
     // if embed inside the extra actions, because they're floated the right
     // we need to remove the margin on the left (it's on the <li>)
