@@ -13,7 +13,8 @@ Used to create new projects using [Symfony](http://symfony.com/) at XM Media.
 6. Find and make changes near `@todo-symfony` comments throughout the site.
 7. Setup server:
   1. Upload the files (exclude files that are OS dependent like `node_modules` & `app/config/parameters.yml` or that are only for editing like `.idea` and a lot of what's in `.gitignore`).
-  2. Create the database.
+  2. Install NVM: https://github.com/creationix/nvm#install-script
+  2. Create the database: php app/console doctrine:schema:create
   4. [Install Composer](https://getcomposer.org/download/).
   3. Run `. ./deploy.sh` (this will setup node & gulp and run gulp & composer). It will ask for the parameter values including database & SMTP. A secret can be retrieved from http://nux.net/secret
   5. `mkdir app/cache app/logs & chmod 0777 app/{cache,logs}`
