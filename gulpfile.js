@@ -8,7 +8,20 @@ var gulp = require('gulp'),
     svgmin = require('gulp-svgmin'),
     size = require('gulp-size'),
     Q = require('q'),
-    colors = require('colors');
+    colors = require('colors'),
+    argv = require('yargs').argv,
+    gulpif = require('gulp-if');
+
+var scripts;
+if (argv.dev) {
+    scripts = {
+        'jquery' : 'node_modules/jquery/dist/jquery.js'
+    };
+} else {
+    scripts = {
+        'jquery' : 'node_modules/jquery/dist/jquery.min.js'
+    };
+}
 
 // paths & options used within the tasks
 var paths = {
@@ -18,7 +31,7 @@ var paths = {
             destFile : 'public.min.js',
             files :
                 [
-                    'node_modules/jquery/dist/jquery.js',
+                    scripts.jquery,
                     'html/js/src/common/svg_icons.js',
                     'html/js/src/public.js'
                 ]
@@ -28,7 +41,7 @@ var paths = {
             destFile : 'admin.min.js',
             files :
                 [
-                    'node_modules/jquery/dist/jquery.js',
+                    scripts.jquery,
                     'html/js/src/common/svg_icons.js',
                     'html/js/src/common/md.js',
                     'html/js/src/admin/admin.js',
@@ -71,7 +84,7 @@ gulp.task('scripts', function() {
                     console.log('   ' + 'Concat JS ERROR'.underline.red);
                     console.log('   ' + err.message.underline.red);
                 })
-                .pipe(uglify(uglify_options))
+                .pipe(gulpif(!argv.dev, uglify(uglify_options)))
                 .on('error', function (err) {
                     console.log('   ' + 'Uglify JS ERROR'.underline.red);
                     console.log('   Line ' + err.lineNumber + ': ' + err.message.underline.red);
