@@ -17,7 +17,7 @@ Used to create new projects using [Symfony](http://symfony.com/) at XM Media.
   2. Create the database: php app/console doctrine:schema:create
   4. [Install Composer](https://getcomposer.org/download/).
   3. Run `. ./deploy.sh` (this will setup node & gulp and run gulp & composer). It will ask for the parameter values including database & SMTP. A secret can be retrieved from http://nux.net/secret
-  5. `mkdir app/cache app/logs & chmod 0777 app/{cache,logs}`
+  5. `mkdir var & chmod -R 0777 var`
   6. Set FACLs as root (see below).
   7. Create a user `php app/console fos:user:create` and then promote them (add the role `ROLE_SUPER_ADMIN`) `php app/console fos:user:promote`
   8. Setup mail spooler: add cron task similar to: `* * * * * cd /<path> && php app/console swiftmailer:spool:send --message-limit=10 --time-limit=45 >> app/logs/mailer.log`
@@ -27,7 +27,7 @@ Used to create new projects using [Symfony](http://symfony.com/) at XM Media.
 
 **Set FACLs**
 ```
-HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1\`
-setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs
-setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX app/cache app/logs
+HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
+setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var
+setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var
 ```
