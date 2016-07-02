@@ -130,10 +130,14 @@ gulp.task('styles', function() {
                     includeContent : false,
                     sourceRoot : 'sass/'
                 }))
-                // inline any files with extensions: svg, png#datauri, or jpg#datauri
+                // inline any files with extensions: svg#datauri, png#datauri, or jpg#datauri
                 .pipe(base64({
                     baseDir : 'html',
-                    extensions : ['svg', /\.png#datauri$/i, /\.jpg#datauri$/i],
+                    extensions : [
+                        /\.svg#datauri$/i,
+                        /\.png#datauri$/i,
+                        /\.jpg#datauri$/i
+                    ],
                     maxImageSize : 8*1024 // bytes
                 }))
                 .on('error', function (err) {
