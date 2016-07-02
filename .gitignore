@@ -5,21 +5,28 @@ Icon?
 *.swp
 coverage
 html/coverage
-/app/bootstrap.php.cache
-/app/cache/*
-!app/cache/.gitkeep
-/app/config/parameters.yml
-/app/logs/*
-!app/logs/.gitkeep
-/app/phpunit.xml
-/bin/
-/composer.phar
-/vendor/
-/html/bundles/
+
 sftp-config.json
 .remote-sync.json
 .sass-cache
 node_modules
+
+# Symfony
+/app/config/parameters.yml
+/var/*
+!/var/cache
+/var/cache/*
+!var/cache/.gitkeep
+!/var/logs
+/var/logs/*
+!var/logs/.gitkeep
+!/var/sessions
+/var/sessions/*
+!var/sessions/.gitkeep
+!var/SymfonyRequirements.php
+/composer.phar
+/vendor/
+/html/bundles/
 
 # PhpStorm
 # User-specific stuff:
