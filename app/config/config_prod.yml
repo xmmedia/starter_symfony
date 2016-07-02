@@ -1,12 +1,6 @@
 imports:
     - { resource: config.yml }
 
-#framework:
-#    validation:
-#        cache: validator.mapping.cache.apc
-#    serializer:
-#        cache: serializer.mapping.cache.apc
-
 #doctrine:
 #    orm:
 #        metadata_cache_driver: apc
@@ -33,7 +27,6 @@ monolog:
             handler: swift
         swift:
             type:       swift_mailer
-            # @todo-symfony
             from_email: "%from_email%"
             to_email:   "%error_email%"
             subject:    Symfony Starter Error
