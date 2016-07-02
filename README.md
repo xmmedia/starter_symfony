@@ -14,13 +14,13 @@ Used to create new projects using [Symfony](http://symfony.com/) at XM Media.
 7. Setup server:
   1. Upload the files (exclude files that are OS dependent like `node_modules` & `app/config/parameters.yml` or that are only for editing like `.idea` and a lot of what's in `.gitignore`).
   2. Install NVM: https://github.com/creationix/nvm#install-script
-  2. Create the database: php app/console doctrine:schema:create
+  2. Create the database: `php bin/console doctrine:schema:create`
   4. [Install Composer](https://getcomposer.org/download/).
   3. Run `. ./deploy.sh` (this will setup node & gulp and run gulp & composer). It will ask for the parameter values including database & SMTP. A secret can be retrieved from http://nux.net/secret
-  5. `mkdir var & chmod -R 0777 var`
+  5. `mkdir var && chmod -R 0777 var`
   6. Set FACLs as root (see below).
-  7. Create a user `php app/console fos:user:create` and then promote them (add the role `ROLE_SUPER_ADMIN`) `php app/console fos:user:promote`
-  8. Setup mail spooler: add cron task similar to: `* * * * * cd /<path> && php app/console swiftmailer:spool:send --message-limit=10 --time-limit=45 >> app/logs/mailer.log`
+  7. Create a user `php bin/console fos:user:create` and then promote them (add the role `ROLE_SUPER_ADMIN`) `php bin/console fos:user:promote`
+  8. Setup mail spooler: add cron task similar to: `* * * * * cd /<path> && php bin/console swiftmailer:spool:send --message-limit=10 --time-limit=45 >> app/logs/mailer.log`
 
 **Dev site can be accessed at https://[domain]/app_dev.php/**
 
