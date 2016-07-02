@@ -29,6 +29,7 @@ monolog:
             type:       swift_mailer
             from_email: "%from_email%"
             to_email:   "%error_email%"
+            # @todo-symfony
             subject:    Symfony Starter Error
             level:      debug
         console:
