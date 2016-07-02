@@ -128,22 +128,10 @@ vich_uploader:
 
     mappings:
         # !!! The upload destinations are also in the entities
-        product_category_photo:
-            uri_prefix:         /images/product_category
-            upload_destination: %kernel.root_dir%/../uploads/product_category
-            namer:              vich_uploader.namer_uniqid
-        product_subcategory_photo:
-            uri_prefix:         /images/product_subcategory
-            upload_destination: %kernel.root_dir%/../uploads/product_subcategory
-            namer:              vich_uploader.namer_uniqid
-        producer_logo:
-            uri_prefix:         /images/producer/logo
-            upload_destination: %kernel.root_dir%/../uploads/producer/logo
-            namer:              vich_uploader.namer_uniqid
-        product_photo:
-            uri_prefix:         /images/product
-            upload_destination: %kernel.root_dir%/../uploads/product
-            namer:              vich_uploader.namer_uniqid
+#        column_name:
+#            uri_prefix:         /images/column_name
+#            upload_destination: %kernel.root_dir%/../uploads/column_name
+#            namer:              vich_uploader.namer_uniqid
 
 #liip_imagine:
 #    resolvers:
