@@ -1,6 +1,6 @@
 {
     "name": "xm_starter_symfony",
-    "license": "GPL-3.0",
+    "license": "MIT",
     "type": "project",
     "description": "Starter for creating Symfony sites at XM Media",
     "autoload": {

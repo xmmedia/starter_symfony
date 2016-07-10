@@ -6,8 +6,8 @@
     "type": "git",
     "url": "https://github.com/xmmedia/starter_symfony"
   },
-  "license": "GPL-3.0",
-  "private": true,
+  "license": "MIT",
+  "//private": true,
   "devDependencies": {
     "colors": "~1.1.2",
     "gulp": "~3.9.0",
