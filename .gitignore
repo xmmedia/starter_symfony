@@ -11,6 +11,11 @@ sftp-config.json
 .sass-cache
 node_modules
 
+/html/css/*
+!/html/css/sass
+/html/js/*
+!/html/js/src
+
 # Symfony
 /app/config/parameters.yml
 /var/*
