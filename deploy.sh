@@ -19,7 +19,7 @@ php composer.phar install --no-dev --optimize-autoloader --no-interaction --no-p
 
 # run db migrations
 echo "-- Run DB Migrations"
-php app/console doctrine:migrations:migrate --no-interaction --no-debug --allow-no-migration || exit 1
+php bin/console doctrine:migrations:migrate --no-interaction --no-debug --allow-no-migration || exit 1
 
 # remove some extra files that we don't want on production
 echo "-- Remove unwanted public PHP files"
