@@ -44,10 +44,6 @@ twig:
     form_themes:
         - 'Form/fields.html.twig'
         - 'VichUploaderBundle:Form:fields.html.twig'
-    # default timezone, but can be overridden per datetime
-    date:
-        # this is also in the AppKernel
-        timezone: America/Edmonton
 
 knp_paginator:
     template:

@@ -8,7 +8,6 @@ Used to create new projects using [Symfony](http://symfony.com/) at XM Media.
 2. [Install Composer](https://getcomposer.org/download/)
 3. `composer.json` changes:
   - update the `name`, `license` and `description`
-4. Set the timezone in `app/AppKernel.php`.
 5. Composer update: `php composer.phar update --no-autoloader --no-scripts`
 6. Find and make changes near `@todo-symfony` comments throughout the site.
 7. Setup server:
