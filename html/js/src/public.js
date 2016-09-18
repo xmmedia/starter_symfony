@@ -1,15 +1,12 @@
-$(function() {
-    svg_icons.load('/images/icons-public.svg');
+import Vue from 'vue';
+import VueResource from 'vue-resource';
 
-    // mobile nav show/hide
-    // $('.js-header-nav-item-more, .js-header-nav-item-less').on('click', function(e) {
-    //     e.preventDefault();
-    //     $('.js-header').toggleClass('header-mobile-open');
-    //     $('.internal-anchor').toggleClass('internal-anchor-mobile')
-    // });
+import svg_icons from './common/svg_icons';
 
-    // on window resize, we want to "close" the mobile menu
-    // $(window).on('resize', function() {
-    //     $('.js-header').removeClass('header-mobile-open');
-    // });
+Vue.use(VueResource);
+new Vue({
+    el: 'body',
+    components: {
+        'svg-icons': svg_icons,
+    }
 });

@@ -9,8 +9,13 @@
     <script src="{{ asset('js/admin.min.js', 'js') }}"></script>
 {% endblock %}
 
+{% block body %}
+    <svg-icons src="/images/icons-admin.svg"></svg-icons>
+    {{ parent() }}
+{% endblock body %}
+
 {% block header %}
-    <nav class="sidebar_nav-wrap js-sidebar_nav-wrap">
+    <nav class="sidebar_nav-wrap">
         <a href="{{ path('index') }}" class="sidebar_nav-logo"><img src="/images/logo.svg" alt="{{ 'app.parameter.name'|trans }}"></a>
         <ul class="sidebar_nav-nav">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
@@ -19,13 +24,15 @@
                         <svg><use xlink:href="#gear"></use></svg>
                         {{ 'app.admin.menu.admin'|trans }}
                     </a>
-                    <button class="sidebar_nav-link sidebar_nav-submenu_arrow js-sidebar_nav-submenu_trigger"><svg><use xlink:href="#gt"></use></svg></button>
-                    <div class="sidebar_nav-submenu-wrap js-sidebar_nav-submenu-wrap">
-                        <div class="sidebar_nav-submenu_header">{{ 'app.admin.menu.admin'|trans }}</div>
-                        <ul class="sidebar_nav-submenu">
-                            <li><a href="{{ path('admin_user_list') ~ '?' ~ user_filter.query() }}" class="sidebar_nav-link sidebar_nav-submenu_link">Users</a></li>
-                        </ul>
-                    </div>
+
+                    {%
+                        set items = {
+                            'Users' : path('admin_user_list') ~ '?' ~ user_filter.query()
+                        }
+                    %}
+                    <menu-subnav name="{{ 'app.admin.menu.admin'|trans }}"
+                         :items="{{ items|json_encode }}">
+                    </menu-subnav>
                 </li>
             {% endif %}
         </ul>
@@ -56,7 +63,7 @@
 
 {% block content_wrap %}
     <header class="header_admin_small-wrap">
-        <a href="" class="js-header_admin_small-menu">Menu</a>
+        <menu-small></menu-small>
     </header>
     <div class="content-wrap js-content-wrap">
         <header class="header_admin-wrap">
@@ -70,8 +77,6 @@
             {% endblock %}
         </div>
     </div>
-
-    {% include 'modal.html.twig' %}
 {% endblock content_wrap %}
 
 {# no footer atm #}

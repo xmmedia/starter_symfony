@@ -35,16 +35,11 @@
                     {{ form_end(lock_unlock_form) }}
                 </li>
                 <li>
-                    {{
-                        form_start(delete_form, {
-                            'attr' : {
-                                'class' : 'js-form-delete',
-                                'data-record-desc' : 'User'
-                            }
-                        })
-                    }}
-                        <button class="button-as_link form-action_link">Delete</button>
-                    {{ form_end(delete_form) }}
+                    <admin-delete
+                        action="{{ delete_form.vars.action }}"
+                        record-desc="User"
+                        csrf-token="{{ delete_form._token.vars.value }}">
+                    </admin-delete>
                 </li>
             </ul>
         {% endblock extra_actions %}

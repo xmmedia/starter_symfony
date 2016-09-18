@@ -8,3 +8,8 @@
     {# not using async because we need this to load before the other scripts #}
     <script src="{{ asset('js/public.min.js', 'js') }}"></script>
 {% endblock %}
+
+{% block body %}
+    <svg-icons src="/images/icons-public.svg"></svg-icons>
+    {{ parent() }}
+{% endblock body %}

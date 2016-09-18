@@ -1,8 +1,18 @@
-$(function() {
-    svg_icons.load('/images/icons-admin.svg');
+import Vue from 'vue';
+import VueResource from 'vue-resource';
 
-    admin.setup_menu();
-    admin.setup_deletes();
+import svg_icons from './common/svg_icons';
+import admin_menu_subnav from './admin/admin_menu_subnav';
+import admin_menu_small from './admin/admin_menu_small';
+import admin_user from './admin/admin_user';
 
-    admin_user.setup_user_edit();
+Vue.use(VueResource);
+new Vue({
+    el: 'body',
+    components: {
+        'svg-icons': svg_icons,
+        'menu-subnav': admin_menu_subnav,
+        'menu-small': admin_menu_small,
+        'admin-user': admin_user,
+    }
 });
