@@ -3,6 +3,9 @@
 namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\FormEvent;
@@ -18,7 +21,7 @@ class UserFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', 'text', [
+            ->add('email', TextType::class, [
                 'attr' => ['maxlength' => 254, 'autofocus' => true],
                 'label' => 'Email/Username',
                 'constraints' => [
@@ -33,13 +36,13 @@ class UserFormType extends AbstractType
             ->add('lastName', null, [
                 'attr' => ['maxlength' => 255],
             ])
-            ->add('setPassword', 'checkbox', [
+            ->add('setPassword', CheckboxType::class, [
                 'mapped' => false,
                 'label' => 'Set Password',
                 'required' => false,
             ])
             // this field is re-added below, without the constraints
-            ->add('password', 'password', [
+            ->add('password', PasswordType::class, [
                 'mapped' => false,
                 'label' => 'Password',
                 'required' => false,
