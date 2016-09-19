@@ -1,29 +1,43 @@
-<div class="form-form_wrap">
-    {{ form_start(form) }}
-        {{ form_errors(form) }}
+<admin-user inline-template>
+    <div class="form-form_wrap">
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
 
-        {{ form_row(form.email) }}
-        {{ form_row(form.firstName) }}
-        {{ form_row(form.lastName) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.firstName) }}
+            {{ form_row(form.lastName) }}
 
-        <div class="form-field_wrap form-field_wrap-label_inline js-admin_user-set_password">
-            {{ form_errors(form.setPassword) }}
-            {{ form_widget(form.setPassword) }}
-            {{ form_label(form.setPassword) }}
-        </div>
-        <div class="form-field_wrap hidden js-admin_user-password">
-            {{ form_label(form.password) }}
-            {{ form_errors(form.password) }}
-            {{ form_widget(form.password) }}
-        </div>
+            <div class="form-field_wrap form-field_wrap-label_inline">
+                {{ form_errors(form.setPassword) }}
+                {{
+                    form_widget(form.setPassword, {
+                        'attr' : {
+                            'v-model' : 'setPassword',
+                        }
+                    })
+                }}
+                {{ form_label(form.setPassword) }}
+            </div>
+            <div class="form-field_wrap" v-show="setPassword">
+                {{ form_label(form.password) }}
+                {{ form_errors(form.password) }}
+                {{
+                    form_widget(form.password, {
+                        'attr' : {
+                            'v-el:password' : null
+                        }
+                    })
+                }}
+            </div>
 
-        <div class="form-button_wrap">
-            <button>Save</button>
-            {% block form_actions %}
-                <a href="{{ path('admin_user_list') ~ '?' ~ user_filter.query() }}" class="form-action_link">Cancel</a>
-            {% endblock form_actions %}
-        </div>
-    {{ form_end(form) }}
+            <div class="form-button_wrap">
+                <button>Save</button>
+                {% block form_actions %}
+                    <a href="{{ path('admin_user_list') ~ '?' ~ user_filter.query() }}" class="form-action_link">Cancel</a>
+                {% endblock form_actions %}
+            </div>
+        {{ form_end(form) }}
 
-    {% block extra_actions %}{% endblock %}
-</div>
+        {% block extra_actions %}{% endblock %}
+    </div>
+</admin-user>
