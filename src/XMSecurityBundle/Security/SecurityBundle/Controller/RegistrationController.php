@@ -9,7 +9,7 @@ class RegistrationController extends BaseRegistrationController
 {
     public function registerAction(Request $request)
     {
-        if ($this->get('security.context')->isGranted('IS_AUTHENTICATED_FULLY')) {
+        if ($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
             return $this->redirect($this->generateUrl('index'));
         }
 
