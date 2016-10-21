@@ -15,4 +15,18 @@ class RegistrationController extends BaseRegistrationController
 
         return parent::registerAction($request);
     }
+
+    public function confirmAction(Request $request, $token)
+    {
+        /** @var $userManager \FOS\UserBundle\Model\UserManagerInterface */
+        $userManager = $this->get('fos_user.user_manager');
+
+        $user = $userManager->findUserByConfirmationToken($token);
+
+        if (null === $user) {
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
+        return parent::confirmAction($request, $token);
+    }
 }
