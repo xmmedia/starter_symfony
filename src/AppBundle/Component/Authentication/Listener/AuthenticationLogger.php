@@ -11,63 +11,69 @@ use Symfony\Component\Security\Core\Event\AuthenticationFailureEvent;
 use AppBundle\Entity\AuthLog;
 
 /**
- * Idea from: http://stackoverflow.com/questions/11180351/symfony2-after-successful-login-event-perform-set-of-actions
+ * Idea from:
+ * http://stackoverflow.com/questions/11180351/symfony2-after-successful-login-event-perform-set-of-actions
  */
 class AuthenticationLogger
 {
-   protected $tokenStorage;
-   protected $requestStack;
-   protected $userManager;
-   protected $em;
+    protected $tokenStorage;
+    protected $requestStack;
+    protected $userManager;
+    protected $em;
 
-   public function __construct(TokenStorage $tokenStorage, RequestStack $requestStack, UserManager $userManager, ObjectManager $em)
-   {
-      $this->tokenStorage = $tokenStorage;
-      $this->requestStack = $requestStack;
-      $this->userManager = $userManager;
-      $this->em = $em;
-   }
+    public function __construct(
+        TokenStorage $tokenStorage,
+        RequestStack $requestStack,
+        UserManager $userManager,
+        ObjectManager $em
+    ) {
+        $this->tokenStorage = $tokenStorage;
+        $this->requestStack = $requestStack;
+        $this->userManager = $userManager;
+        $this->em = $em;
+    }
 
-   public function success(InteractiveLoginEvent $event)
-   {
-      $user = $this->tokenStorage->getToken()->getUser();
-      $request = $this->requestStack->getCurrentRequest();
+    public function success(InteractiveLoginEvent $event)
+    {
+        /** @var \AppBundle\Entity\User $user */
+        $user = $this->tokenStorage->getToken()->getUser();
 
-      $user->incrementLoginCount();
+        $user->incrementLoginCount();
 
-      $this->userManager->updateUser($user);
+        $this->userManager->updateUser($user);
 
-      $authLog = $this->createAuthLog();
-      $authLog->setSuccess(true);
-      $authLog->setUser($user);
-      $authLog->setUsername($user->getUsername());
+        $authLog = $this->createAuthLog();
+        $authLog->setSuccess(true);
+        $authLog->setUser($user);
+        $authLog->setUsername($user->getUsername());
 
-      $this->em->persist($authLog);
-      $this->em->flush();
-   }
+        $this->em->persist($authLog);
+        $this->em->flush();
+    }
 
-   public function failure(AuthenticationFailureEvent $event)
-   {
-      $request = $this->requestStack->getCurrentRequest();
-      $exceptionMsg = $event->getAuthenticationException()->getPrevious()->getMessage();
+    public function failure(AuthenticationFailureEvent $event)
+    {
+        $request = $this->requestStack->getCurrentRequest();
+        $exceptionMsg = $event->getAuthenticationException()->getPrevious(
+        )->getMessage();
 
-      $authLog = $this->createAuthLog();
-      $authLog->setSuccess(false);
-      $authLog->setUsername($request->request->get('_username'));
-      $authLog->setMessage($exceptionMsg);
+        $authLog = $this->createAuthLog();
+        $authLog->setSuccess(false);
+        $authLog->setUsername($request->request->get('_username'));
+        $authLog->setMessage($exceptionMsg);
 
-      $this->em->persist($authLog);
-      $this->em->flush();
-   }
+        $this->em->persist($authLog);
+        $this->em->flush();
+    }
 
-   protected function createAuthLog()
-   {
-      $request = $this->requestStack->getCurrentRequest();
+    protected function createAuthLog()
+    {
+        $request = $this->requestStack->getCurrentRequest();
 
-      $authLog = new AuthLog();
-      $authLog->setUserAgent($request->headers->get('User-Agent'));
-      $authLog->setIpAddress($request->getClientIp());
+        $authLog = new AuthLog();
+        $authLog->setUserAgent($request->headers->get('User-Agent'));
+        $authLog->setIpAddress($request->getClientIp());
 
-      return $authLog;
-   }
+        return $authLog;
+    }
 }
