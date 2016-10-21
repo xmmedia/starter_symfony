@@ -41,8 +41,6 @@
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                 <div class="sidebar_nav-profile">
                     <a href="{{ path('fos_user_profile_edit') }}">
-                        {# @todo profile image...maybe #}
-                        {# <img src="/images/person.jpg" width="40" height="40" class="sidebar_nav-profile-img"> #}
                         {% if app.user.name %}
                             <div>{{ app.user.name }}</div>
                         {% else %}
