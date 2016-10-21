@@ -6,7 +6,7 @@
 @import "normalize";
 
 input[type=radio], input[type=checkbox] { margin-right: 0.3em; }
-// make sure everything should h
+// make sure everything shows a pointer on hover
 a[href], input[type='submit'], input[type='image'], label[for], select, button {
     cursor: pointer;
 }
