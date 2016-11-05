@@ -9,7 +9,10 @@ html {
 }
 
 // load common styles
-@import "common/forms", "common/pagination", "common/alerts";
+@import "common/forms",
+    "common/pagination",
+    "common/alerts",
+    "common/ie8_warning";
 
 // public only styles
 @import "public/content",

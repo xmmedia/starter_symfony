@@ -24,7 +24,11 @@ a {
 }
 
 // load common styles
-@import "common/forms", "common/pagination", "common/alerts", "common/modal";
+@import "common/forms",
+    "common/pagination",
+    "common/alerts",
+    "common/modal",
+    "common/ie8_warning";
 
 // admin only styles
 @import "admin/sidebar_nav",
