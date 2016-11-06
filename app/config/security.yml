@@ -30,9 +30,8 @@ security:
             logout:
                 path:   fos_user_security_logout
                 target: /login
-                delete_cookies:
-                    # delete cart cookie on logout
-                    cart: { path: null, domain: null }
+#                delete_cookies:
+#                    cart: { path: null, domain: null }
             anonymous:    true
 
     access_control:
