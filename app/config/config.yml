@@ -3,19 +3,22 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: doctrine_extensions.yml }
-    - { resource: assets_version.php }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en_CA
+    web_root: '%kernel.root_dir%/../html'
+    # upload paths
+    upload.private.root_dir: '%kernel.root_dir%/../var/uploads'
+    upload.public.root_dir: '%web_root%/uploads'
 
 framework:
     #esi:             ~
-    translator:      { fallbacks: ["%locale%"] }
-    secret:          "%secret%"
+    translator:      { fallbacks: ['%locale%'] }
+    secret:          '%secret%'
     router:
-        resource: "%kernel.root_dir%/config/routing.yml"
+        resource: '%kernel.root_dir%/config/routing.yml'
         strict_requirements: ~
     form:            ~
     csrf_protection: ~
@@ -23,54 +26,47 @@ framework:
     #serializer:      { enable_annotations: true }
     templating:
         engines: ['twig']
-    assets:
-        version_format: version-%%2$s/%%1$s
-    default_locale:  "%locale%"
+    default_locale:  '%locale%'
     trusted_hosts:   ~
     trusted_proxies: ~
     session:
+        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
         handler_id:  session.handler.native_file
-        save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
+        save_path:   '%kernel.root_dir%/../var/sessions/%kernel.environment%'
     fragments:       ~
     http_method_override: true
+    assets:
+        version_strategy: assets.version_strategy
 
 # Twig Configuration
 twig:
-    debug:            "%kernel.debug%"
-    strict_variables: "%kernel.debug%"
+    debug:            '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
     globals:
-        ga_tracking_id: "%ga_tracking_id%"
-        user_filter:    "@app.user_filter"
+        ga_tracking_id: '%ga_tracking_id%'
+        # needed because it's used in the menu to generate the link to the previous user filters
+        user_filter:    '@xm_user_admin.filter.user'
     form_themes:
         - 'Form/fields.html.twig'
-        - 'VichUploaderBundle:Form:fields.html.twig'
+#        - 'VichUploaderBundle:Form:fields.html.twig'
 
 knp_paginator:
     template:
         pagination: pagination.html.twig
 
-# Assetic Configuration
-assetic:
-    debug:          "%kernel.debug%"
-    read_from:      "%kernel.root_dir%/../html"
-    use_controller: false
-    bundles:        [ ]
-    filters:
-        cssrewrite: ~
-
 # Doctrine Configuration
 doctrine:
     dbal:
         driver:   pdo_mysql
-        host:     "%database_host%"
-        port:     "%database_port%"
-        dbname:   "%database_name%"
-        user:     "%database_user%"
-        password: "%database_password%"
+        host:     '%database_host%'
+        port:     '%database_port%'
+        dbname:   '%database_name%'
+        user:     '%database_user%'
+        password: '%database_password%'
         charset:  UTF8
 
     orm:
-        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_generate_proxy_classes: '%kernel.debug%'
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
@@ -79,22 +75,22 @@ doctrine:
                 type:   annotation
                 alias:  Gedmo
                 prefix: Gedmo\Loggable\Entity
-                dir:    "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
+                dir:    '%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity'
 
 doctrine_migrations:
-    dir_name: %kernel.root_dir%/DoctrineMigrations
+    dir_name: '%kernel.root_dir%/DoctrineMigrations'
     namespace: Application\Migrations
     table_name: migration_versions
     name: Migrations
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport:  "%mailer_transport%"
-    host:       "%mailer_host%"
-    encryption: "%mailer_encryption%"
-    port:       "%mailer_port%"
-    username:   "%mailer_user%"
-    password:   "%mailer_password%"
+    transport:  '%mailer_transport%'
+    host:       '%mailer_host%'
+    encryption: '%mailer_encryption%'
+    port:       '%mailer_port%'
+    username:   '%mailer_user%'
+    password:   '%mailer_password%'
     spool:
         type: file
         path: '%kernel.root_dir%/../var/mail_spool'
@@ -104,29 +100,21 @@ fos_user:
     firewall_name: main
     user_class: AppBundle\Entity\User
     # custom forms below come from http://stackoverflow.com/a/21064627/5441
-    registration:
-        confirmation:
-            enabled:    true
-        form:
-            type: app_user_registration
-            validation_groups: [AppRegistration]
-    profile:
-        form:
-            type: app_user_profile
-            validation_groups: [AppProfile]
+#    profile:
+#        form:
+#            type: AppBundle\Form\Type\ProfileFormType
     from_email:
-        address:        "%from_email%"
-        sender_name:    "%from_name%"
+        address:        '%from_email%'
+        sender_name:    '%from_name%'
 
-vich_uploader:
-    db_driver: orm
-
-    mappings:
-        # !!! The upload destinations are also in the entities
-#        column_name:
-#            uri_prefix:         /images/column_name
-#            upload_destination: %kernel.root_dir%/../uploads/column_name
+#vich_uploader:
+#    db_driver: orm
+#
+#    mappings:
+#        photo:
+#            upload_destination: '%upload.private.root_dir%'
 #            namer:              vich_uploader.namer_uniqid
+#            inject_on_load:     true
 
 #liip_imagine:
 #    resolvers:
@@ -138,14 +126,26 @@ vich_uploader:
 #    loaders:
 #        default:
 #            filesystem:
-#                data_root: %kernel.root_dir%/..
+#                data_root: '%upload.private.root_dir%'
 #
 #    filter_sets:
 #        cache: ~
-#        photo:
+#        photo_thumbnail:
+#            data_loader: ???
 #            quality: 70
 #            filters:
-#                thumbnail:
-#                    size: [500, 500]
-#                    mode: outbound
-#                    allow_upscale: true
+#                upscale: { min: [540, 400] }
+#                thumbnail: { size: [540, 400], mode: outbound }
+#        photo_og:
+#            data_loader: ???
+#            quality: 70
+#            filters:
+#                upscale: { min: [1200, 500] }
+#                relative_resize:
+#                    widen: 1200
+#        photo:
+#            data_loader: fund_photo
+#            quality: 70
+#            filters:
+#                relative_resize:
+#                    widen: 900

@@ -4,22 +4,7 @@ parameters:
 #    parameter_name: value
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
-
-# vendor services
-    app_user.registration.form.type:
-        class: AppBundle\Form\Type\RegistrationFormType
-        tags:
-            - { name: form.type, alias: app_user_registration }
-
-    app_user.profile.form.type:
-        class: AppBundle\Form\Type\ProfileFormType
-        tags:
-            - { name: form.type, alias: app_user_profile }
-
-    # twig extensions: http://twig.sensiolabs.org/doc/extensions/index.html
+# twig extensions: http://twig.sensiolabs.org/doc/extensions/index.html
 #    app.twig_extension.intl:
 #        class: Twig_Extensions_Extension_Intl
 #        public: false
@@ -33,20 +18,6 @@ services:
 #            - { name: twig.extension }
 
 # app services
-    # authentication listeners
-    app.authentication.authentication_logger:
-        class: AppBundle\Component\Authentication\Listener\AuthenticationLogger
-        arguments: ["@security.token_storage", "@request_stack", "@fos_user.user_manager", "@doctrine.orm.entity_manager"]
-        tags:
-            - { name: kernel.event_listener, event: security.interactive_login, method: success }
-            - { name: kernel.event_listener, event: security.authentication.failure, method: failure }
-
-    app.authentication.registration_listener:
-        class: AppBundle\Component\Authentication\Listener\RegistrationListener
-        arguments: ["@service_container"]
-        tags:
-            - { name: kernel.event_subscriber }
-
     # general listeners
     app.maintenance:
         class: AppBundle\EventListener\MaintenanceListener
@@ -71,7 +42,3 @@ services:
         arguments: ["@mailer", "@twig", "@translator"]
         calls:
             - [setFrom, ["%from_email%", "%from_name%"]]
-
-    app.user_filter:
-        class: AppBundle\Component\Filter\UserFilter
-        arguments: ["@request_stack", "@service_container"]

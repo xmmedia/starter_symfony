@@ -1,14 +1,20 @@
 app:
-    resource: "@AppBundle/Controller/"
+    resource: '@AppBundle/Controller/'
     type:     annotation
 
 admin_dashboard:
     path: /admin
     defaults:
         _controller: FrameworkBundle:Template:template
-        template:    static/adminDashboard.html.twig
+        template:    static/admin_dashboard.html.twig
         maxAge:      86400
         sharedAge:   86400
+
+xm_security:
+    resource: '@XMSecurityBundle/Resources/config/routing.yml'
+
+xm_user_admin:
+    resource: '@XMUserAdminBundle/Resources/config/routing.yml'
 
 # @todo-symfony choose one of the following (either all or the individuals pieces)
 # by default, the registration is disabled

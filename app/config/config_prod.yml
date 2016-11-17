@@ -20,15 +20,15 @@ monolog:
             members: [streamed, buffered]
         streamed:
             type:  stream
-            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            path:  '%kernel.logs_dir%/%kernel.environment%.log'
             level: debug
         buffered:
             type:    buffer
             handler: swift
         swift:
             type:       swift_mailer
-            from_email: "%from_email%"
-            to_email:   "%error_email%"
+            from_email: '%from_email%'
+            to_email:   '%error_email%'
             # @todo-symfony
             subject:    Symfony Starter Error
             level:      debug

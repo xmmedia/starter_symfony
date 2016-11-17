@@ -23,16 +23,17 @@ security:
                 csrf_token_generator: security.csrf.token_manager
                 default_target_path: /admin
                 use_referer: true
-                login_path: fos_user_security_login
+                success_handler: xm_security.auth.authentication_success_handler
+                login_path:   fos_user_security_login
                 failure_path: fos_user_security_login
-                check_path: fos_user_security_check
-                # success_handler: app.authentication.login_success
+                check_path:   fos_user_security_check
             logout:
                 path:   fos_user_security_logout
+                # @todo-symfony change to correct path
                 target: /login
 #                delete_cookies:
 #                    cart: { path: null, domain: null }
-            anonymous:    true
+            anonymous: true
 
     access_control:
         # @todo-symfony
