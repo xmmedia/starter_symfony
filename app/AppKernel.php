@@ -5,11 +5,6 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
-    public function __construct($environment, $debug)
-    {
-        parent::__construct($environment, $debug);
-    }
-
     public function registerBundles()
     {
         $bundles = [
@@ -18,15 +13,16 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            new Vich\UploaderBundle\VichUploaderBundle(),
+            new XM\AssetVersionBundle\XMAssetVersionBundle(),
+            new XM\FilterBundle\XMFilterBundle(),
+            new XM\SecurityBundle\XMSecurityBundle(),
+            new XM\UserAdminBundle\XMUserAdminBundle(),
             new AppBundle\AppBundle(),
-            new XMSecurityBundle\Security\SecurityBundle\XMSecurityBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'])) {
@@ -34,6 +30,7 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+            $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
             $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
         }
 
