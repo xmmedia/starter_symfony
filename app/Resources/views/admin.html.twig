@@ -1,23 +1,25 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
-    <link href="{{ asset('css/admin.css', 'css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block javascripts %}
-    {# not using async because we need this to load before the other scripts #}
-    <script src="{{ asset('js/admin.min.js', 'js') }}"></script>
+    <script src="{{ asset('js/admin.min.js') }}" async></script>
 {% endblock %}
 
 {% block body %}
-    <svg-icons src="/images/icons-admin.svg"></svg-icons>
+    {# icons will only work in IE10+ because of no JS FileReader API #}
+    <svg-icons src="{{ asset('images/icons-admin.svg') }}"></svg-icons>
 
     {{ parent() }}
 {% endblock body %}
 
 {% block header %}
     <nav class="sidebar_nav-wrap">
-        <a href="{{ path('index') }}" class="sidebar_nav-logo"><img src="/images/logo.svg" alt="{{ 'app.parameter.name'|trans }}"></a>
+        <a href="{{ path('index') }}" class="sidebar_nav-logo">
+            <img src="/images/logo.svg" alt="{{ 'app.parameter.name'|trans }}">
+        </a>
         <ul class="sidebar_nav-nav">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                 <li>
@@ -28,11 +30,12 @@
 
                     {%
                         set items = {
-                            'Users' : path('admin_user_list') ~ '?' ~ user_filter.query()
+                            'Users': path('xm_user_admin_user_list') ~ '?' ~ user_filter.query(),
+                            'Login History': path('xm_user_admin_login_history')
                         }
                     %}
                     <menu-subnav name="{{ 'app.admin.menu.admin'|trans }}"
-                         :items="{{ items|json_encode }}">
+                        :items="{{ items|json_encode }}">
                     </menu-subnav>
                 </li>
             {% endif %}
@@ -72,7 +75,7 @@
 
         <div class="content-wrap_inside">
             {% block content %}
-                {% include 'flashMessages.html.twig' %}
+                {% include 'flash_messages.html.twig' %}
             {% endblock %}
         </div>
     </div>
