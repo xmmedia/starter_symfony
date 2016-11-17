@@ -13,7 +13,7 @@
     margin: 0 1em 1em 0;
     padding: 0.5em;
     text-align: center;
-    border: 1px solid lighten($color-dark-grey, 70%);
+    border: 1px solid lighten($color-grey-dark, 70%);
     transition: background-color 0.15s ease-in-out;
     &:hover {
         background: rgba(0, 0, 0, 0.05);
@@ -24,6 +24,6 @@
         width: 6em;
         height: 6em;
         margin: 0.5em auto 1em;
-        fill: $color-dark-grey;
+        fill: $color-grey-dark;
     }
 }

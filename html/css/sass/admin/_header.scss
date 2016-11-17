@@ -134,8 +134,8 @@
     height: $admin-header-height;
     padding: 0 1em 0;
     color: $admin-header-action-text;
-    background: $color-dark-grey;
-    border-bottom: 1px solid lighten($color-dark-grey, 35%);
+    background: $color-grey-dark;
+    border-bottom: 1px solid lighten($color-grey-dark, 35%);
     z-index: 10;
     a {  color: $admin-header-action-text; }
     @include mq(tablets) { display: none; }

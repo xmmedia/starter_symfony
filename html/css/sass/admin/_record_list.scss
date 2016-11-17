@@ -27,13 +27,18 @@
     a { opacity: 1; }
 }
 
+.record_list-heading {
+    margin-top: 2.5em;
+    margin-bottom: 0;
+}
+
 .record_list-mobile_heading {
     font-weight: 700;
     @include mq(tablets) { display: none; }
 }
 
 .record_list-item-inactive {
-    color: lighten($text-color, 40%);
+    color: lighten($text-color, 30%);
     a { opacity: 0.4; }
 }
 // the following 3 are in decending importance
@@ -58,6 +63,7 @@
 }
 .record_list-col-no_wrap { white-space: nowrap; }
 .record_list-col-center { text-align: center; }
+.record_list-col-right { text-align: right; }
 
 .record_list-headers {
     display: none;
@@ -68,6 +74,7 @@
         background: #d8d8d9;
     }
 }
+
 .record_list-record_count {
     font-size: 0.8em;
     margin-bottom: 1.5em;
@@ -80,4 +87,19 @@
     align-items: flex-end;
     margin: 2em 0 0;
     h3 { margin: 0; }
+}
+
+// @todo ...not really the right place, but works for now
+.record_list-icon_wrap {
+    width: 1.1em;
+    height: 1.1em;
+}
+.record_list-icon-green {
+    fill: green;
+}
+.record_list-icon-red {
+    fill: red;
+}
+.record_list-icon-grey {
+    fill: lightgrey;
 }

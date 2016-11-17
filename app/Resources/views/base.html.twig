@@ -19,7 +19,7 @@
         <div id="app">
             {% block body %}
                 {% block header %}
-                    <header class="header">
+                    <header class="header-wrap">
                         <div><a href="{{ path('index') }}"><img src="/images/logo.svg" alt="{{ 'app.parameter.name'|trans }}"></a></div>
                     </header>
                 {% endblock header %}
@@ -31,7 +31,11 @@
                     </div>
                 {% endblock content_wrap %}
                 {% block footer %}
-                    <footer>©{{ 'now'|date('Y') }} {{ 'app.parameter.name'|trans }} {{ "app.string.all_rights_reserved"|trans }}</footer>
+                    <footer class="footer-wrap">
+                        <div class="footer-copyright">
+                            ©{{ 'now'|date('Y') }} {{ 'app.parameter.name'|trans }} {{ "app.string.all_rights_reserved"|trans }}
+                        </div>
+                    </footer>
                 {% endblock footer %}
             {% endblock body %}
         </div>

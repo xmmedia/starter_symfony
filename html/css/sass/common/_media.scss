@@ -17,7 +17,6 @@
     }
 }
 
-// from: https://css-tricks.com/snippets/css/retina-display-media-query/
 @mixin mq_retina() {
     @media
         (-webkit-min-device-pixel-ratio: 2),

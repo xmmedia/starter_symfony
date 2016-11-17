@@ -19,3 +19,11 @@
     // we need to remove the margin on the left (it's on the <li>)
     .form-action_link { margin-right: 0; }
 }
+
+.form-extra_actions_text {
+    // not entirely sure why the padding is needed,
+    // but it keeps the links evenly spaced
+    padding-top: 0.2em;
+    font-size: 0.8em;
+    color: lighten($text-color, 20%);
+}

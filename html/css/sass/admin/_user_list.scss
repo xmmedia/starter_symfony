@@ -22,3 +22,7 @@
     display: none;
     @include mq(tablets) { display: table-cell; }
 }
+.user_list-instructions {
+    font-size: 0.8em;
+    color: lighten($text-color, 20%);
+}

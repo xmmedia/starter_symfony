@@ -15,7 +15,7 @@ button, .button {
 }
 
 // a button for deletion specifically, turns red when hovered
-.button--delete {
+.button-action-delete {
     font-size: 0.8em;
     color: $button-delete-color;
     border: 1px solid rgba($button-delete-color, 0.5);
@@ -28,7 +28,7 @@ button, .button {
 }
 
 // @todo doesn't seem like a good name; used in view for things like adding a sub record
-.button--view {
+.button-action-view {
     font-size: 0.8em;
 }
 

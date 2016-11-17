@@ -1,0 +1,42 @@
+.record_view-item_wrap {
+    max-width: 45em;
+    margin: 0 auto;
+    padding: 0.5em;
+    border: 4px solid rgba($color-grey-dark, 0.9);
+    border-radius: 5px;
+}
+.record_view-item {
+    @include flex-row_wrap();
+    padding: 0.3em;
+    &:hover {
+        background: rgba($color-red-light, 0.2);
+    }
+}
+.record_view-item-no_hover:hover {
+    background: inherit;
+}
+.record_view-item_label {
+    width: 20%;
+    min-width: 5em;
+    color: rgba($color-grey-dark, 0.6);
+}
+.record_view-item_value {
+    width: 80%;
+    word-wrap: break-word;
+}
+.record_view-actions_wrap {
+    width: 100%;
+    margin: 0.3em 0 0.5em;
+    text-align: right;
+}
+
+.record_view-icon_wrap {
+    width: 1.1em;
+    height: 1.1em;
+}
+.record_view-icon-green {
+    fill: green;
+}
+.record_view-icon-red {
+    fill: red;
+}
