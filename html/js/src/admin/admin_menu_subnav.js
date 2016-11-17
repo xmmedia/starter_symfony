@@ -12,19 +12,13 @@ export default {
             v-bind:class="{ 'sidebar_nav-submenu-wrap-open' : open }">
             <div class="sidebar_nav-submenu_header">{{ name }}</div>
             <ul class="sidebar_nav-submenu">
-                <li v-for="(anchor, href) in items">
-                    <a href="{{ href }}" class="sidebar_nav-link sidebar_nav-submenu_link">{{ anchor }}</a>
+                <li v-for="(href, anchor) in items">
+                    <a v-bind:href="href" class="sidebar_nav-link sidebar_nav-submenu_link">{{ anchor }}</a>
                 </li>
             </ul>
         </div>
     </span>`,
 
-    data: function() {
-        return {
-            open: false,
-            bodyClass: 'sidebar_nav-submenu-open',
-        }
-    },
     props: {
         name: {
             type: String,
@@ -33,6 +27,12 @@ export default {
         items: {
             type: Object,
             required: true,
+        }
+    },
+    data: function() {
+        return {
+            open: false,
+            bodyClass: 'sidebar_nav-submenu-open',
         }
     },
     watch: {
@@ -45,8 +45,10 @@ export default {
         }
     },
 
-    ready: function() {
-        document.documentElement.addEventListener('click', this.htmlClick);
+    mounted: function() {
+        this.$nextTick(() => {
+            document.documentElement.addEventListener('click', this.htmlClick);
+        });
     },
     methods: {
         htmlClick: function() {

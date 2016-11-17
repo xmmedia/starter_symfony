@@ -11,7 +11,7 @@ export default {
     },
     watch: {
         'setPassword': function() {
-            this.$els.password.focus();
+            this.$refs.password.focus();
         }
     }
 }

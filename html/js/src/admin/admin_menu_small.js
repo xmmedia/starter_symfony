@@ -18,9 +18,11 @@ export default {
         }
     },
 
-    ready: function () {
-        this.setContentHeight();
-        window.addEventListener('resize', this.windowResize);
+    mounted: function () {
+        this.$nextTick(() => {
+            this.setContentHeight();
+            window.addEventListener('resize', this.windowResize);
+        });
     },
     methods: {
         windowResize: function () {
