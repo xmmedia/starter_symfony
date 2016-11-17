@@ -10,7 +10,7 @@ The new view:
 {% block header_page_title %}Add Category{% endblock %}
 
 {% block content %}
-    {% include 'flashMessages.html.twig' %}
+    {% include 'flash_messages.html.twig' %}
 
     {% embed 'AdminCategory/form.html.twig' %}{% endembed %}
 {% endblock content %}
@@ -24,7 +24,7 @@ The edit view:
 {% block header_page_title %}Add Category{% endblock %}
 
 {% block content %}
-    {% include 'flashMessages.html.twig' %}
+    {% include 'flash_messages.html.twig' %}
 
     {% embed 'AdminCategory/form.html.twig' %}
         {% block extra_actions %}
