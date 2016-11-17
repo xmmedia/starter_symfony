@@ -28,4 +28,5 @@ parameters:
 
     from_email:        info@example.com
     from_name:         Symfony Starter
+    admin_email:       info@example.com
     error_email:       admin@xmmedia.com
