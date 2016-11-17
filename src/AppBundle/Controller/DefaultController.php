@@ -28,7 +28,7 @@ class DefaultController extends Controller
             1 /* limit per page */
         );
 
-        return $this->render('Default/patternLibrary.html.twig', [
+        return $this->render('Default/pattern_library.html.twig', [
             'pagination' => $pagination,
         ]);
     }

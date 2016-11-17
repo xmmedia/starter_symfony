@@ -35,6 +35,7 @@ class MailManager
 
     /**
      * Renders and send an email.
+     * For the email template, if ".html.twig" is included, it will be assumed the $template var contains the entire template path/name.
      *
      * @param   string   $template      email template (inside the Mail view folder). Appended with ".html.twig".
      * @param   mixed    $parameters    custom params for template
@@ -45,17 +46,22 @@ class MailManager
      */
     public function sendEmail($template, $parameters, $to = null, $replyTo = null)
     {
+        if (strrpos($template, '.html.twig') === false) {
+            $template = 'Mail/'.$template.'.html.twig';
+        }
+
         // render the different blocks of the email
-        $template = $this->twig->loadTemplate('Mail/' . $template . '.html.twig');
+        /** @var \Twig_TemplateInterface $template */
+        $template = $this->twig->loadTemplate($template);
         $subject  = $template->renderBlock('subject', $parameters);
         $bodyHtml = $template->renderBlock('body_html', $parameters);
         $bodyText = $template->renderBlock('body_text', $parameters);
 
         try {
             $message = \Swift_Message::newInstance()
-                ->setSubject($subject)
-                ->setFrom($this->fromEmail, $this->fromName)
-                ->setTo($to)
+                 ->setSubject($subject)
+                 ->setFrom($this->fromEmail, $this->fromName)
+                 ->setTo($to)
             ;
             if (!empty($replyTo)) {
                 $message->setReplyTo($replyTo);
