@@ -42,3 +42,8 @@ services:
         arguments: ["@mailer", "@twig", "@translator"]
         calls:
             - [setFrom, ["%from_email%", "%from_name%"]]
+
+# assets
+    assets.version_strategy:
+        class: XM\AssetVersionBundle\Asset\VersionStrategy\FileModifiedTimestampVersionStrategy
+        arguments: ['%web_root%']
