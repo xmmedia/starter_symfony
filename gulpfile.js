@@ -47,7 +47,7 @@ stylesConfig = [
 ];
 
 // Webpack/scripts
-gulp.task('webpack', ['copyfiles'], function(callback) {
+gulp.task('webpack', function(callback) {
     return webpack(webpackConfig, function(err, stats) {
         if(err) throw new gutil.PluginError('webpack:build', err);
 
@@ -63,7 +63,7 @@ gulp.task('webpack', ['copyfiles'], function(callback) {
 });
 
 // Styles
-gulp.task('styles', ['copyfiles'], function() {
+gulp.task('styles', function() {
     var stream = new merge();
 
     var style;
@@ -114,16 +114,16 @@ gulp.task('svgs', function() {
 });
 
 // copy files into place as needed
-gulp.task('copyfiles', function() {
-    var stream = new merge();
-
-    // Flatpickr
-    // stream.add(gulp.src('./node_modules/flatpickr/dist/flatpickr.min.css')
-    //     .pipe(rename('flatpickr.scss'))
-    //     .pipe(gulp.dest('./html/css/sass/lib/flatpickr')));
-
-    return stream;
-});
+// gulp.task('copyfiles', function() {
+//     var stream = new merge();
+//
+//     Flatpickr
+//     stream.add(gulp.src('./node_modules/flatpickr/dist/flatpickr.min.css')
+//         .pipe(rename('flatpickr.scss'))
+//         .pipe(gulp.dest('./html/css/sass/lib/flatpickr')));
+//
+//     return stream;
+// });
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
