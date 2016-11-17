@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     size = require('gulp-size'),
     colors = require('colors'),
     argv = require('yargs').argv,
+    rename = require('gulp-rename'),
     gutil = require('gulp-util'),
     webpack = require('webpack'),
     merge = require('merge-stream');
@@ -26,7 +27,7 @@ if (argv.dev) {
     webpackConfig.plugins.unshift(
         new webpack.DefinePlugin({
             'process.env': {
-                // This has effect on the react lib size
+                // This has effect on the lib size
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
@@ -46,7 +47,7 @@ stylesConfig = [
 ];
 
 // Webpack/scripts
-gulp.task('webpack', function(callback) {
+gulp.task('webpack', ['copyfiles'], function(callback) {
     return webpack(webpackConfig, function(err, stats) {
         if(err) throw new gutil.PluginError('webpack:build', err);
 
@@ -62,7 +63,7 @@ gulp.task('webpack', function(callback) {
 });
 
 // Styles
-gulp.task('styles', function() {
+gulp.task('styles', ['copyfiles'], function() {
     var stream = new merge();
 
     var style;
@@ -110,6 +111,18 @@ gulp.task('svgs', function() {
     return gulp.src('html/images/**/*.svg')
         .pipe(svgmin())
         .pipe(gulp.dest('html/images'));
+});
+
+// copy files into place as needed
+gulp.task('copyfiles', function() {
+    var stream = new merge();
+
+    // Flatpickr
+    // stream.add(gulp.src('./node_modules/flatpickr/dist/flatpickr.min.css')
+    //     .pipe(rename('flatpickr.scss'))
+    //     .pipe(gulp.dest('./html/css/sass/lib/flatpickr')));
+
+    return stream;
 });
 
 // Rerun the task when a file changes
