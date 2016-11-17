@@ -10,14 +10,12 @@ sftp-config.json
 .remote-sync.json
 .sass-cache
 node_modules
-
-/html/css/*
-!/html/css/sass
-/html/js/*
-!/html/js/src
+/composer.phar
 
 # Symfony
 /app/config/parameters.yml
+/build/
+/phpunit.xml
 /var/*
 !/var/cache
 /var/cache/*
@@ -29,9 +27,12 @@ node_modules
 /var/sessions/*
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
-/composer.phar
 /vendor/
 /html/bundles/
+# ignore everything in bin, except...
+/bin/*
+!/bin/console
+!/bin/symfony_requirements
 
 # PhpStorm
 # User-specific stuff:
