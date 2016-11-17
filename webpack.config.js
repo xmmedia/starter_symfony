@@ -1,7 +1,5 @@
 var path = require('path'),
-    webpack = require('webpack'),
-    UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin'),
-    CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+    webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -13,21 +11,28 @@ module.exports = {
         filename: '[name].min.js'
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            loader: 'babel'
-        }, {
-            test: /\.json$/,
-            loader: 'json'
-        }]
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                exclude: /node_modules/
+            }, {
+                test: /\.json$/,
+                loader: 'json'
+            }
+        ]
     },
     plugins: [
         // always uglify so we're actually testing real world code in the browser
-        new UglifyJsPlugin({
+        new webpack.optimize.UglifyJsPlugin({
             compress: {
                 warnings: false
             }
         })
-    ]
+    ],
+    resolve: {
+        alias: {
+            vue: 'vue/dist/vue.js'
+        }
+    }
 };
