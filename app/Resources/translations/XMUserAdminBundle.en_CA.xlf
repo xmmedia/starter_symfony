@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en-CA" datatype="plaintext" original="file.ext">
+        <body>
+            <!-- ****** PARAMETERS ****** -->
+            <!-- @todo-symfony -->
+            <trans-unit id="xm_user_admin.parameter.name">
+                <source>xm_user_admin.parameter.name</source>
+                <target>Symfony Starter</target>
+            </trans-unit>
+            <trans-unit id="xm_user_admin.parameter.name_full">
+                <source>xm_user_admin.parameter.name_full</source>
+                <target>Symfony Starter</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
