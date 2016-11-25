@@ -17,20 +17,22 @@ monolog:
             handler:      grouped
         grouped:
             type:    group
-            members: [streamed, buffered]
+            members: [streamed, deduplicated]
         streamed:
             type:  stream
             path:  '%kernel.logs_dir%/%kernel.environment%.log'
             level: debug
-        buffered:
-            type:    buffer
+        deduplicated:
+            type:    deduplication
             handler: swift
         swift:
-            type:       swift_mailer
-            from_email: '%from_email%'
-            to_email:   '%error_email%'
+            type:         swift_mailer
+            from_email:   '%from_email%'
+            to_email:     '%error_email%'
             # @todo-symfony
-            subject:    Symfony Starter Error
-            level:      debug
+            subject:      'Symfony Starter Error: %%message%%'
+            level:        debug
+            formatter:    monolog.formatter.html
+            content_type: text/html
         console:
-            type:  console
+            type: console
