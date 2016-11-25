@@ -1,5 +1,10 @@
 // mixins + normalize + common
-@import "common/vars", "public/vars", "common/mixins", "public/mixins", "common/media", "common/common";
+@import "common/vars",
+    "public/vars",
+    "common/mixins",
+    "public/mixins",
+    "common/media",
+    "common/common";
 
 // global styles on the most common elements
 html {
