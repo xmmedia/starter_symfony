@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new XM\FilterBundle\XMFilterBundle(),
             new XM\SecurityBundle\XMSecurityBundle(),
             new XM\UserAdminBundle\XMUserAdminBundle(),
+            new XM\MailManagerBundle\XMMailManagerBundle(),
             new AppBundle\AppBundle(),
         ];
 

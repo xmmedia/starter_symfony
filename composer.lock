@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "da2ec6baac5fea93c7b162ddfeb84bc8",
-    "content-hash": "1b7845e49f5e0403709da535e7ff62b2",
+    "hash": "f5d26eef295abfe3f64ed6150c9fb614",
+    "content-hash": "f2e228d707ad42ee01f518916c105ecd",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2676,12 +2676,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMAssetVersionBundle.git",
-                "reference": "73dfdfebcd48a02465ac7803994c2b9e070bd702"
+                "reference": "6fc0db326f9d3cf80d3e06d53d43a8d119da0a9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMAssetVersionBundle/zipball/73dfdfebcd48a02465ac7803994c2b9e070bd702",
-                "reference": "73dfdfebcd48a02465ac7803994c2b9e070bd702",
+                "url": "https://api.github.com/repos/xmmedia/XMAssetVersionBundle/zipball/6fc0db326f9d3cf80d3e06d53d43a8d119da0a9c",
+                "reference": "6fc0db326f9d3cf80d3e06d53d43a8d119da0a9c",
                 "shasum": ""
             },
             "require": {
@@ -2710,10 +2710,10 @@
             "description": "Provides a asset version strategy based on the file modification time for the Symfony Asset Component",
             "homepage": "https://github.com/xmmedia/XMAssetVersionBundle",
             "support": {
-                "source": "https://github.com/xmmedia/XMAssetVersionBundle/tree/0.1",
+                "source": "https://github.com/xmmedia/XMAssetVersionBundle/tree/master",
                 "issues": "https://github.com/xmmedia/XMAssetVersionBundle/issues"
             },
-            "time": "2016-11-16 22:41:20"
+            "time": "2016-11-23 01:03:11"
         },
         {
             "name": "xm/filter-bundle",
@@ -2721,20 +2721,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMFilterBundle.git",
-                "reference": "464f25039528ab50086cf4fefb9540c58e7f0437"
+                "reference": "701e0a0b986a61799dde83a189d55a934267f5db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMFilterBundle/zipball/464f25039528ab50086cf4fefb9540c58e7f0437",
-                "reference": "464f25039528ab50086cf4fefb9540c58e7f0437",
+                "url": "https://api.github.com/repos/xmmedia/XMFilterBundle/zipball/701e0a0b986a61799dde83a189d55a934267f5db",
+                "reference": "701e0a0b986a61799dde83a189d55a934267f5db",
                 "shasum": ""
             },
             "require": {
-                "doctrine/orm": "^2.5",
-                "knplabs/knp-paginator-bundle": "^2.5",
+                "doctrine/orm": "~2.5",
+                "knplabs/knp-paginator-bundle": "~2.5",
                 "php": "^5.6 || ^7.0",
-                "symfony/form": "^3.0",
-                "symfony/framework-bundle": "^3.0"
+                "symfony/form": "~3.0",
+                "symfony/framework-bundle": "~3.0"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -2760,7 +2760,52 @@
                 "source": "https://github.com/xmmedia/XMFilterBundle/tree/master",
                 "issues": "https://github.com/xmmedia/XMFilterBundle/issues"
             },
-            "time": "2016-11-15 23:30:47"
+            "time": "2016-11-23 01:05:24"
+        },
+        {
+            "name": "xm/mail-manager-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xmmedia/XMMailManagerBundle.git",
+                "reference": "0b308872e875b87df2015b778e230891529c5e10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xmmedia/XMMailManagerBundle/zipball/0b308872e875b87df2015b778e230891529c5e10",
+                "reference": "0b308872e875b87df2015b778e230891529c5e10",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "symfony/swiftmailer-bundle": "~2.3",
+                "symfony/symfony": "~3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "XM\\MailManagerBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Darryl Hein",
+                    "email": "dhein@xmmedia.com"
+                }
+            ],
+            "description": "Uses Twig and SwiftMailer to create emails based on templates/views.",
+            "homepage": "https://github.com/xmmedia/XMMailManagerBundle",
+            "support": {
+                "source": "https://github.com/xmmedia/XMMailManagerBundle/tree/master",
+                "issues": "https://github.com/xmmedia/XMMailManagerBundle/issues"
+            },
+            "time": "2016-11-29 22:42:37"
         },
         {
             "name": "xm/security-bundle",
@@ -2768,20 +2813,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMSecurityBundle.git",
-                "reference": "6e4f5545143723e26c9cc666aa4e8caf6490552d"
+                "reference": "6ff8ad80c2acf4a38515f6e62ad0b50cefc38eaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMSecurityBundle/zipball/6e4f5545143723e26c9cc666aa4e8caf6490552d",
-                "reference": "6e4f5545143723e26c9cc666aa4e8caf6490552d",
+                "url": "https://api.github.com/repos/xmmedia/XMSecurityBundle/zipball/6ff8ad80c2acf4a38515f6e62ad0b50cefc38eaf",
+                "reference": "6ff8ad80c2acf4a38515f6e62ad0b50cefc38eaf",
                 "shasum": ""
             },
             "require": {
-                "doctrine/orm": "^2.5",
+                "doctrine/orm": "~2.5",
                 "friendsofsymfony/user-bundle": "~2.0@dev",
                 "php": "^5.6 || ^7.0",
-                "symfony/form": "^3.0",
-                "symfony/framework-bundle": "^3.0"
+                "symfony/form": "~3.0",
+                "symfony/framework-bundle": "~3.0",
+                "xm/mail-manager-bundle": "dev-master"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -2807,7 +2853,7 @@
                 "source": "https://github.com/xmmedia/XMSecurityBundle/tree/master",
                 "issues": "https://github.com/xmmedia/XMSecurityBundle/issues"
             },
-            "time": "2016-11-15 23:30:39"
+            "time": "2016-11-29 22:53:41"
         },
         {
             "name": "xm/user-admin-bundle",
@@ -2815,21 +2861,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMUserAdminBundle.git",
-                "reference": "af001d9a80890269a5d2fcd4ca6ae0a1b94eba8d"
+                "reference": "ea104c123b83a4acbf81109d3bf866326fb75eae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMUserAdminBundle/zipball/af001d9a80890269a5d2fcd4ca6ae0a1b94eba8d",
-                "reference": "af001d9a80890269a5d2fcd4ca6ae0a1b94eba8d",
+                "url": "https://api.github.com/repos/xmmedia/XMUserAdminBundle/zipball/ea104c123b83a4acbf81109d3bf866326fb75eae",
+                "reference": "ea104c123b83a4acbf81109d3bf866326fb75eae",
                 "shasum": ""
             },
             "require": {
-                "doctrine/orm": "^2.5",
+                "doctrine/orm": "~2.5",
                 "friendsofsymfony/user-bundle": "~2.0@dev",
                 "php": "^5.6 || ^7.0",
-                "symfony/form": "^3.0",
-                "symfony/framework-bundle": "^3.0",
-                "xm/filter-bundle": "dev-master"
+                "symfony/form": "~3.0",
+                "symfony/framework-bundle": "~3.0",
+                "xm/filter-bundle": "dev-master",
+                "xm/mail-manager-bundle": "dev-master"
             },
             "type": "symfony-bundle",
             "autoload": {
@@ -2855,7 +2902,7 @@
                 "source": "https://github.com/xmmedia/XMUserAdminBundle/tree/master",
                 "issues": "https://github.com/xmmedia/XMUserAdminBundle/issues"
             },
-            "time": "2016-11-16 22:49:07"
+            "time": "2016-11-29 21:25:01"
         },
         {
             "name": "zendframework/zend-code",
@@ -4580,7 +4627,8 @@
         "xm/asset-version-bundle": 20,
         "xm/filter-bundle": 20,
         "xm/security-bundle": 20,
-        "xm/user-admin-bundle": 20
+        "xm/user-admin-bundle": 20,
+        "xm/mail-manager-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
