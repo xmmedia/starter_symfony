@@ -25,18 +25,6 @@ services:
         tags:
             - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
 
-    gedmo_doctrine_extensions.listener.ip_traceable:
-        class: Gedmo\IpTraceable\IpTraceableListener
-        arguments: ["@annotation_reader"]
-        tags:
-            - { name: doctrine.event_subscriber, method: setAnnotationReader }
-
-    app.event_listener.ip_trace:
-        class: AppBundle\EventListener\IpTraceSubscriber
-        arguments: ["@gedmo_doctrine_extensions.listener.ip_traceable", "@request_stack"]
-        tags:
-            - { name: kernel.event_subscriber }
-
 # assets
     assets.version_strategy:
         class: XM\AssetVersionBundle\Asset\VersionStrategy\FileModifiedTimestampVersionStrategy
