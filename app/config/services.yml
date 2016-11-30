@@ -37,12 +37,6 @@ services:
         tags:
             - { name: kernel.event_subscriber }
 
-    app.mail_manager:
-        class:     AppBundle\Component\MailManager
-        arguments: ["@mailer", "@twig", "@translator"]
-        calls:
-            - [setFrom, ["%from_email%", "%from_name%"]]
-
 # assets
     assets.version_strategy:
         class: XM\AssetVersionBundle\Asset\VersionStrategy\FileModifiedTimestampVersionStrategy
