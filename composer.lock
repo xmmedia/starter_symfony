@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fd324a02739b3d9494e5136dee9dba37",
-    "content-hash": "594f2a586360fa4b0e49cef4c6c76cd9",
+    "hash": "6e4ac2cf18a84a8456d5e2357a189190",
+    "content-hash": "c9854181c0d0df566fd882361f3545d0",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -911,16 +911,16 @@
         },
         {
             "name": "friendsofsymfony/user-bundle",
-            "version": "dev-master",
+            "version": "v2.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "3c89d4f01ec2852ad7e3d6ac02031fe32f70a536"
+                "reference": "28151dcb25de663c05ce26917fd6a0b5cb2787cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/3c89d4f01ec2852ad7e3d6ac02031fe32f70a536",
-                "reference": "3c89d4f01ec2852ad7e3d6ac02031fe32f70a536",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/28151dcb25de663c05ce26917fd6a0b5cb2787cf",
+                "reference": "28151dcb25de663c05ce26917fd6a0b5cb2787cf",
                 "shasum": ""
             },
             "require": {
@@ -981,7 +981,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2016-11-30 17:06:29"
+            "time": "2016-11-29 14:53:27"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -2691,17 +2691,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMSecurityBundle.git",
-                "reference": "204d59b19a6936e849103f1afdb4d074d50a4bcc"
+                "reference": "39f33cffcdf62829c9310a4cf832721966ffc380"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMSecurityBundle/zipball/204d59b19a6936e849103f1afdb4d074d50a4bcc",
-                "reference": "204d59b19a6936e849103f1afdb4d074d50a4bcc",
+                "url": "https://api.github.com/repos/xmmedia/XMSecurityBundle/zipball/39f33cffcdf62829c9310a4cf832721966ffc380",
+                "reference": "39f33cffcdf62829c9310a4cf832721966ffc380",
                 "shasum": ""
             },
             "require": {
                 "doctrine/orm": "~2.5",
-                "friendsofsymfony/user-bundle": "~2.0@dev",
+                "friendsofsymfony/user-bundle": "~2.0.0-beta1",
                 "php": "^5.6 || ^7.0",
                 "symfony/form": "~3.0",
                 "symfony/framework-bundle": "~3.0",
@@ -2731,7 +2731,7 @@
                 "source": "https://github.com/xmmedia/XMSecurityBundle/tree/master",
                 "issues": "https://github.com/xmmedia/XMSecurityBundle/issues"
             },
-            "time": "2016-12-01 18:18:27"
+            "time": "2016-12-01 18:48:53"
         },
         {
             "name": "xm/user-admin-bundle",
@@ -2739,17 +2739,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMUserAdminBundle.git",
-                "reference": "9a99f02fe3d805d3622e405fcccacfbe0d77bad3"
+                "reference": "01539c64d2ca7c6d17acda5d41764006995fe35b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMUserAdminBundle/zipball/9a99f02fe3d805d3622e405fcccacfbe0d77bad3",
-                "reference": "9a99f02fe3d805d3622e405fcccacfbe0d77bad3",
+                "url": "https://api.github.com/repos/xmmedia/XMUserAdminBundle/zipball/01539c64d2ca7c6d17acda5d41764006995fe35b",
+                "reference": "01539c64d2ca7c6d17acda5d41764006995fe35b",
                 "shasum": ""
             },
             "require": {
                 "doctrine/orm": "~2.5",
-                "friendsofsymfony/user-bundle": "~2.0@dev",
+                "friendsofsymfony/user-bundle": "~2.0.0-beta1",
                 "php": "^5.6 || ^7.0",
                 "symfony/form": "~3.0",
                 "symfony/framework-bundle": "~3.0",
@@ -2780,7 +2780,7 @@
                 "source": "https://github.com/xmmedia/XMUserAdminBundle/tree/master",
                 "issues": "https://github.com/xmmedia/XMUserAdminBundle/issues"
             },
-            "time": "2016-12-01 18:18:49"
+            "time": "2016-12-01 18:49:45"
         },
         {
             "name": "zendframework/zend-code",
@@ -4504,7 +4504,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofsymfony/user-bundle": 20,
+        "friendsofsymfony/user-bundle": 10,
         "roave/security-advisories": 20,
         "xm/asset-version-bundle": 20,
         "xm/filter-bundle": 20,
