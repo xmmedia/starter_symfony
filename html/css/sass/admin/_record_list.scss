@@ -68,13 +68,15 @@
 .record_list-col-center { text-align: center; }
 .record_list-col-right { text-align: right; }
 .record_list-col-actions {
-    //font-size: 0.8em;
     text-align: right;
-    opacity: 0.5;
+    // 0.6 matches the form action links
+    opacity: 0.6;
+    transition: opacity 0.25s ease;
 
     // on row hover, "reset" opacity
     .record_list-wrap li:hover & {
         opacity: inherit;
+        transition: opacity 0.25s ease;
     }
 
     a {
