@@ -2691,12 +2691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMSecurityBundle.git",
-                "reference": "c9bbfee87d8d8697bc521b8f2104a342b1d1f912"
+                "reference": "204d59b19a6936e849103f1afdb4d074d50a4bcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMSecurityBundle/zipball/c9bbfee87d8d8697bc521b8f2104a342b1d1f912",
-                "reference": "c9bbfee87d8d8697bc521b8f2104a342b1d1f912",
+                "url": "https://api.github.com/repos/xmmedia/XMSecurityBundle/zipball/204d59b19a6936e849103f1afdb4d074d50a4bcc",
+                "reference": "204d59b19a6936e849103f1afdb4d074d50a4bcc",
                 "shasum": ""
             },
             "require": {
@@ -2731,7 +2731,7 @@
                 "source": "https://github.com/xmmedia/XMSecurityBundle/tree/master",
                 "issues": "https://github.com/xmmedia/XMSecurityBundle/issues"
             },
-            "time": "2016-11-30 00:27:15"
+            "time": "2016-12-01 18:18:27"
         },
         {
             "name": "xm/user-admin-bundle",
@@ -2739,12 +2739,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMUserAdminBundle.git",
-                "reference": "5168e880777e17b4aa8b564534b14aee818e1adc"
+                "reference": "9a99f02fe3d805d3622e405fcccacfbe0d77bad3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMUserAdminBundle/zipball/5168e880777e17b4aa8b564534b14aee818e1adc",
-                "reference": "5168e880777e17b4aa8b564534b14aee818e1adc",
+                "url": "https://api.github.com/repos/xmmedia/XMUserAdminBundle/zipball/9a99f02fe3d805d3622e405fcccacfbe0d77bad3",
+                "reference": "9a99f02fe3d805d3622e405fcccacfbe0d77bad3",
                 "shasum": ""
             },
             "require": {
@@ -2780,7 +2780,7 @@
                 "source": "https://github.com/xmmedia/XMUserAdminBundle/tree/master",
                 "issues": "https://github.com/xmmedia/XMUserAdminBundle/issues"
             },
-            "time": "2016-11-30 23:08:27"
+            "time": "2016-12-01 18:18:49"
         },
         {
             "name": "zendframework/zend-code",
