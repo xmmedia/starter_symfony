@@ -5,6 +5,7 @@ Used to create new projects using [Symfony](http://symfony.com/) at XM Media.
 ## Setting Up a New Site
 
 1. Download a copy of this repo (probably as a ZIP).
+2. Remove or update the `LICENSE` file.
 2. [Install Composer](https://getcomposer.org/download/)
 3. `composer.json` changes:
   - update the `name`, `license` and `description`
