@@ -49,7 +49,7 @@ stylesConfig = [
 // Webpack/scripts
 gulp.task('webpack', function(callback) {
     return webpack(webpackConfig, function(err, stats) {
-        if(err) throw new gutil.PluginError('webpack:build', err);
+        if (err) throw new gutil.PluginError('webpack:build', err);
 
         gutil.log('[webpack]', stats.toString({
             colors: true
