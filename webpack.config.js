@@ -32,7 +32,8 @@ module.exports = {
     ],
     resolve: {
         alias: {
-            vue: 'vue/dist/vue.js'
+            // see: https://github.com/vuejs/vue/blob/dev/dist/README.md
+            vue: 'vue/dist/vue.common.js',
         }
     }
 };
