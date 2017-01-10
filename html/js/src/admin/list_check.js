@@ -1,3 +1,5 @@
+import axios from '../common/axios';
+
 export default {
     template: `<a v-bind:href="href" class="-link-no_underline" @click.prevent="change">
         <svg class="record_list-icon_wrap" v-bind:class="[ isChecked ? 'record_list-icon-green' : 'record_list-icon-grey' ]">
@@ -18,20 +20,17 @@ export default {
 
     methods: {
         change: function () {
-            var originalVal = this.isChecked;
+            let self = this;
+            let originalVal = this.isChecked;
 
             this.isChecked = !this.isChecked;
 
-            this.$http.post(this.href).then(
-                (response) => {
-                    return response.json();
-                },
-                () => {
-                    this.isChecked = originalVal;
-                }
-            ).then((json) => {
-                this.isChecked = json.is_checked;
-            });
+            axios.post(this.href)
+                .then((response) => {
+                    self.isChecked = response.data.is_checked
+                }).catch(() => {
+                    self.isChecked = originalVal;
+                });
         }
     }
 }

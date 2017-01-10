@@ -3,8 +3,14 @@ var path = require('path'),
 
 module.exports = {
     entry: {
-        admin : './html/js/src/admin.js',
-        public : './html/js/src/public.js'
+        admin : [
+            'babel-polyfill',
+            './html/js/src/admin.js'
+        ],
+        public : [
+            'babel-polyfill',
+            './html/js/src/public.js'
+        ]
     },
     output: {
         path: path.resolve(__dirname, './html/js'),
