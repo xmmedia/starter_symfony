@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+let gulp = require('gulp'),
     concat = require('gulp-concat-sourcemap'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
@@ -14,7 +14,7 @@ var gulp = require('gulp'),
     webpack = require('webpack'),
     merge = require('merge-stream');
 
-var firstRun = true,
+let firstRun = true,
     webpackConfig = require('./webpack.config'),
     stylesConfig;
 
@@ -64,10 +64,10 @@ gulp.task('webpack', function(callback) {
 
 // Styles
 gulp.task('styles', function() {
-    var stream = new merge();
+    let stream = new merge();
 
-    var style;
-    for (var key in stylesConfig) {
+    let style;
+    for (let key in stylesConfig) {
         style = stylesConfig[key];
 
         stream.add(gulp.src(style.src)
@@ -115,7 +115,7 @@ gulp.task('svgs', function() {
 
 // copy files into place as needed
 // gulp.task('copyfiles', function() {
-//     var stream = new merge();
+//     let stream = new merge();
 //
 //     Flatpickr
 //     stream.add(gulp.src('./node_modules/flatpickr/dist/flatpickr.min.css')
