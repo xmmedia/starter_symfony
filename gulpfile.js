@@ -30,8 +30,7 @@ if (argv.dev) {
                 // This has effect on the lib size
                 'NODE_ENV': JSON.stringify('production')
             }
-        }),
-        new webpack.optimize.DedupePlugin()
+        })
     );
 }
 

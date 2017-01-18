@@ -1,5 +1,5 @@
-let path = require('path'),
-    webpack = require('webpack');
+const { resolve }= require('path');
+const webpack = require('webpack');
 
 module.exports = {
     entry: {
@@ -13,24 +13,24 @@ module.exports = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, './html/js'),
+        path: resolve(__dirname, './html/js'),
         filename: '[name].min.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                loader: 'babel',
-                exclude: /node_modules/
-            }, {
-                test: /\.json$/,
-                loader: 'json'
+                exclude: /node_modules/,
+                use: [
+                    'babel-loader'
+                ]
             }
         ]
     },
     plugins: [
         // always uglify so we're actually testing real world code in the browser
         new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true,
             compress: {
                 warnings: false
             }
