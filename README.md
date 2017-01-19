@@ -1,6 +1,6 @@
 # Symfony Starter
 
-Used to create new projects using [Symfony](http://symfony.com/) at XM Media.
+Used to create new projects using [Symfony](http://symfony.com/) at [XM Media](https://www.xmmedia.com/).
 
 ## Setting Up a New Site
 
