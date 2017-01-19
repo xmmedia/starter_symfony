@@ -25,7 +25,7 @@ Used to create new projects using [Symfony](http://symfony.com/) at [XM Media](h
   9. `mkdir var && chmod -R 0777 var`
   10. Set FACLs as root (if needed, see below).
   11. Create a user `php bin/console fos:user:create` and then promote them (add the role `ROLE_SUPER_ADMIN`) `php bin/console fos:user:promote`
-  12. Setup mail spool: add cron task similar to: `* * * * * cd <path> && php bin/console swiftmailer:spool:send --message-limit=10 --time-limit=45 >> var/logs/mailer.log`
+  12. Setup mail spool: add cron task similar to: `* * * * * cd <path> && php bin/console swiftmailer:spool:send --message-limit=10 --time-limit=45 >> var/logs/mailer.log 2>&1`
 9. Delete starter files: `README.md` (or update), `TEMPLATES.md`.
 
 **Dev site can be accessed at https://[domain]/app_dev.php/**
