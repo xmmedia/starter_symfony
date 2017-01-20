@@ -26,6 +26,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-components" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-paginator-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/liip/functional-test-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/matthimatiker/opcache-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
@@ -58,10 +59,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sensio/generator-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sensiolabs/security-checker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/smart-core/accelerator-cache-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/monolog-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/phpunit-bridge" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-apcu" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-icu" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php56" />
@@ -75,6 +76,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/asset-version-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/filter-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/mail-manager-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/xm/mailer-test-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/security-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/user-admin-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
@@ -95,14 +97,18 @@
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
-          <root url="phar://$MODULE_DIR$/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
           <root url="phar://$MODULE_DIR$/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
           <root url="phar://$MODULE_DIR$/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/composer/dec7bd10/symfony-symfony-8d80e33/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
         </CLASSES>
         <SOURCES>
-          <root url="phar://$MODULE_DIR$/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
           <root url="phar://$MODULE_DIR$/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
           <root url="phar://$MODULE_DIR$/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/composer/dec7bd10/symfony-symfony-8d80e33/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+          <root url="phar://$MODULE_DIR$/vendor/phpunit/phpunit/tests/_files/phpunit-example-extension/tools/phpunit.d/phpunit-example-extension-1.0.0.phar/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -132,6 +138,7 @@
           <root url="file://$MODULE_DIR$/vendor/knplabs/knp-components" />
           <root url="file://$MODULE_DIR$/vendor/knplabs/knp-paginator-bundle" />
           <root url="file://$MODULE_DIR$/vendor/liip/functional-test-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/matthimatiker/opcache-bundle" />
           <root url="file://$MODULE_DIR$/vendor/mockery/mockery" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
@@ -164,10 +171,10 @@
           <root url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
           <root url="file://$MODULE_DIR$/vendor/sensio/generator-bundle" />
           <root url="file://$MODULE_DIR$/vendor/sensiolabs/security-checker" />
+          <root url="file://$MODULE_DIR$/vendor/smart-core/accelerator-cache-bundle" />
           <root url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
           <root url="file://$MODULE_DIR$/vendor/symfony/monolog-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/phpunit-bridge" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-apcu" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-icu" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-php56" />
@@ -181,6 +188,7 @@
           <root url="file://$MODULE_DIR$/vendor/xm/asset-version-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/filter-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/mail-manager-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/xm/mailer-test-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/security-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/user-admin-bundle" />
           <root url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
@@ -210,6 +218,7 @@
           <root url="file://$MODULE_DIR$/vendor/knplabs/knp-components" />
           <root url="file://$MODULE_DIR$/vendor/knplabs/knp-paginator-bundle" />
           <root url="file://$MODULE_DIR$/vendor/liip/functional-test-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/matthimatiker/opcache-bundle" />
           <root url="file://$MODULE_DIR$/vendor/mockery/mockery" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
           <root url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
@@ -242,10 +251,10 @@
           <root url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
           <root url="file://$MODULE_DIR$/vendor/sensio/generator-bundle" />
           <root url="file://$MODULE_DIR$/vendor/sensiolabs/security-checker" />
+          <root url="file://$MODULE_DIR$/vendor/smart-core/accelerator-cache-bundle" />
           <root url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
           <root url="file://$MODULE_DIR$/vendor/symfony/monolog-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/phpunit-bridge" />
-          <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-apcu" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-icu" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-php56" />
@@ -259,6 +268,7 @@
           <root url="file://$MODULE_DIR$/vendor/xm/asset-version-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/filter-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/mail-manager-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/xm/mailer-test-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/security-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/user-admin-bundle" />
           <root url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
