@@ -39,7 +39,8 @@
         "mockery/mockery": "^0.9",
         "liip/functional-test-bundle": "^1.6",
         "doctrine/doctrine-fixtures-bundle": "2.3.*",
-        "xm/mailer-test-bundle": "dev-master"
+        "xm/mailer-test-bundle": "dev-master",
+        "matthimatiker/opcache-bundle": "^0.4.3"
     },
     "scripts": {
         "symfony-scripts": [
