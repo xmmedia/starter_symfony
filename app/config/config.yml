@@ -141,3 +141,7 @@ fos_user:
 #            filters:
 #                relative_resize:
 #                    widen: 900
+
+accelerator_cache:
+    host: '%router.request_context.scheme%://%router.request_context.host%'
+    web_dir: '%web_root%'

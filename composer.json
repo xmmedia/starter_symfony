@@ -23,6 +23,7 @@
         "incenteev/composer-parameter-handler": "^2.1",
         "friendsofsymfony/user-bundle": "^2.0.0-beta1",
         "twig/extensions": "^1.3",
+        "smart-core/accelerator-cache-bundle": "^1.2",
         "roave/security-advisories": "dev-master",
         "xm/asset-version-bundle": "dev-master",
         "xm/filter-bundle": "dev-master",
