@@ -19,7 +19,7 @@ export default {
     },
 
     methods: {
-        change: function () {
+        change() {
             let self = this;
             let originalVal = this.isChecked;
 
@@ -27,8 +27,9 @@ export default {
 
             axios.post(this.href)
                 .then((response) => {
-                    self.isChecked = response.data.is_checked
-                }).catch(() => {
+                    self.isChecked = response.data.is_checked;
+                })
+                .catch(() => {
                     self.isChecked = originalVal;
                 });
         }

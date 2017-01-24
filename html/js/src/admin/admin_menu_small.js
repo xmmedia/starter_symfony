@@ -1,7 +1,7 @@
 export default {
     template: `<a href="" @click.stop.prevent="open = true">Menu</a>`,
 
-    data: function() {
+    data() {
         return {
             open: false,
             bodyClass: 'sidebar_nav-visible',
@@ -9,7 +9,7 @@ export default {
     },
 
     watch: {
-        open: function() {
+        open() {
             if (this.open) {
                 document.body.classList.add(this.bodyClass);
             } else {
@@ -18,24 +18,24 @@ export default {
         }
     },
 
-    mounted: function () {
+    mounted() {
         this.$nextTick(() => {
             this.setContentHeight();
             window.addEventListener('resize', this.windowResize);
         });
     },
     methods: {
-        windowResize: function () {
+        windowResize() {
             this.open = false;
 
             this.setContentHeight();
         },
-        setContentHeight: function () {
+        setContentHeight() {
             document.querySelectorAll('.js-content-wrap')[0]
                 .style.minHeight = this.getWindowHeight() + 'px';
         },
-        getWindowHeight: function () {
-            var w = window,
+        getWindowHeight() {
+            let w = window,
                 d = document,
                 e = d.documentElement,
                 g = d.body;

@@ -33,7 +33,7 @@ export default {
             required: true
         }
     },
-    data: function() {
+    data() {
         return {
             showModal: false,
         }

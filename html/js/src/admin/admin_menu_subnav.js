@@ -29,14 +29,14 @@ export default {
             required: true,
         }
     },
-    data: function() {
+    data() {
         return {
             open: false,
             bodyClass: 'sidebar_nav-submenu-open',
         }
     },
     watch: {
-        open: function() {
+        open() {
             if (this.open) {
                 document.body.classList.add(this.bodyClass);
             } else {
@@ -45,13 +45,13 @@ export default {
         }
     },
 
-    mounted: function() {
+    mounted() {
         this.$nextTick(() => {
             document.documentElement.addEventListener('click', this.htmlClick);
         });
     },
     methods: {
-        htmlClick: function() {
+        htmlClick() {
             this.open = false;
         }
     }
