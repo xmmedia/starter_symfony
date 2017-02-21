@@ -7,6 +7,9 @@ import admin_delete from './admin/admin_delete';
 import admin_user from './admin/admin_user';
 import list_check from './admin/list_check';
 
+// SASS/CSS
+import '../../css/sass/admin.scss';
+
 // global components
 Vue.component('admin-delete', admin_delete);
 
