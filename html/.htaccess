@@ -479,14 +479,14 @@ Options -MultiViews
 # address bar.
 #
 # (!) Remove the `includeSubDomains` optional directive if the website's
-# subdomains are not using HTTPS.
+# subdomains are not using HTTPS or add to force HTTPS on all subdomains.
 #
 # http://www.html5rocks.com/en/tutorials/security/transport-layer-security/
 # https://tools.ietf.org/html/draft-ietf-websec-strict-transport-sec-14#section-6.1
 # http://blogs.msdn.com/b/ieinternals/archive/2014/08/18/hsts-strict-transport-security-attacks-mitigations-deployment-https.aspx
 
  <IfModule mod_headers.c>
-     Header always set Strict-Transport-Security "max-age=16070400; includeSubDomains"
+     Header always set Strict-Transport-Security "max-age=16070400"
  </IfModule>
 
 # ----------------------------------------------------------------------
