@@ -1,6 +1,7 @@
 import Vue from 'vue';
 
 import svg_icons from './common/svg_icons';
+import local_time from './common/local_time.vue';
 import admin_menu_subnav from './admin/admin_menu_subnav';
 import admin_menu_small from './admin/admin_menu_small';
 import admin_delete from './admin/admin_delete';
@@ -17,6 +18,7 @@ new Vue({
     el: '#app',
     components: {
         'svg-icons': svg_icons,
+        'local-time': local_time,
         'menu-subnav': admin_menu_subnav,
         'menu-small': admin_menu_small,
         'list-check': list_check,
