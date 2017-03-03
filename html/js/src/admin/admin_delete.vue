@@ -1,12 +1,9 @@
-import modal from '../common/modal';
-
-export default {
-    template: `
+<template>
     <span>
         <div>
             <a href="" @click.prevent="showModal = true" class="form-action_link">Delete</a>
         </div>
-        
+
         <modal v-if="showModal" @close="showModal = false">
             <p slot="content">Are you sure you want to delete this {{ recordDesc }}? This cannot be undone.</p>
             <div slot="button">
@@ -17,8 +14,11 @@ export default {
                 </form>
             </div>
         </modal>
-    </span>`,
+    </span>
+</template>
 
+<script>
+export default {
     props: {
         action: {
             type: String,
@@ -38,8 +38,5 @@ export default {
             showModal: false,
         }
     },
-
-    components: {
-        'modal': modal,
-    }
 }
+</script>

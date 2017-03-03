@@ -1,14 +1,13 @@
-export default {
-    // only have the <span> because we need a single root el for Vue
-    template: `<span>
-        <button 
-            class="sidebar_nav-link sidebar_nav-submenu_arrow" 
-            @click.stop="open = !open" 
+<template>
+    <span>
+        <button
+            class="sidebar_nav-link sidebar_nav-submenu_arrow"
+            @click.stop="open = !open"
             v-bind:class="{ 'sidebar_nav-submenu_arrow-open' : open }">
             <svg><use xlink:href="#gt"></use></svg>
         </button>
-        <div 
-            class="sidebar_nav-submenu-wrap" 
+        <div
+            class="sidebar_nav-submenu-wrap"
             v-bind:class="{ 'sidebar_nav-submenu-wrap-open' : open }">
             <div class="sidebar_nav-submenu_header">{{ name }}</div>
             <ul class="sidebar_nav-submenu">
@@ -17,8 +16,11 @@ export default {
                 </li>
             </ul>
         </div>
-    </span>`,
+    </span>
+</template>
 
+<script>
+export default {
     props: {
         name: {
             type: String,
@@ -56,3 +58,4 @@ export default {
         }
     }
 }
+</script>

@@ -1,12 +1,15 @@
-import axios from '../common/axios';
-
-export default {
-    template: `<a v-bind:href="href" class="-link-no_underline" @click.prevent="change">
+<template>
+    <a :href="href" class="-link-no_underline" @click.prevent="change">
         <svg class="record_list-icon_wrap" v-bind:class="[ isChecked ? 'record_list-icon-green' : 'record_list-icon-grey' ]">
             <use xlink:href="#check"></use>
         </svg>
-    </a>`,
+    </a>
+</template>
 
+<script>
+import axios from '../common/axios';
+
+export default {
     props: {
         href: {
             type: String,
@@ -35,3 +38,4 @@ export default {
         }
     }
 }
+</script>

@@ -1,6 +1,9 @@
-export default {
-    template: `<a href="" @click.stop.prevent="open = true">Menu</a>`,
+<template>
+    <a href="" @click.stop.prevent="open = true">Menu</a>
+</template>
 
+<script>
+export default {
     data() {
         return {
             open: false,
@@ -44,3 +47,4 @@ export default {
         }
     }
 }
+</script>
