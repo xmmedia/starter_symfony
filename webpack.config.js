@@ -85,6 +85,7 @@ module.exports = {
     resolve: {
         alias: {
             // see: https://github.com/vuejs/vue/blob/dev/dist/README.md
+            // can't use runtime version because we have inline-templates
             'vue$': 'vue/dist/vue.common.js',
         }
     },
