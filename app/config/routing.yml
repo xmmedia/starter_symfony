@@ -7,8 +7,10 @@ admin_dashboard:
     defaults:
         _controller: FrameworkBundle:Template:template
         template:    static/admin_dashboard.html.twig
-        maxAge:      86400
-        sharedAge:   86400
+        # this is very short because the page has link that may change
+        maxAge:      60
+        # 1 hour
+        sharedAge:   3600
 
 xm_security:
     resource: '@XMSecurityBundle/Resources/config/routing.yml'
