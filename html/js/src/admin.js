@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import store from './admin/store';
 
 import svg_icons from './common/svg_icons.vue';
 import modal from './common/modal.vue';
@@ -18,6 +19,7 @@ Vue.component('admin-delete', admin_delete);
 
 new Vue({
     el: '#app',
+    store,
     components: {
         'svg-icons': svg_icons,
         'local-time': local_time,
@@ -25,5 +27,10 @@ new Vue({
         'menu-small': admin_menu_small,
         'list-check': list_check,
         'admin-user': admin_user,
+    },
+    methods: {
+        setServerData (data) {
+            this.$store.dispatch('updateServerData', data);
+        }
     }
 });

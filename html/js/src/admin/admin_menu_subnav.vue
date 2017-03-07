@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
     props: {
         name: {
@@ -30,6 +32,11 @@ export default {
             type: Object,
             required: true,
         }
+    },
+    computed: {
+        ...mapState({
+            mobileMenuOpen: state => state.adminMenu.mobileMenuOpen
+        })
     },
     data() {
         return {
@@ -42,7 +49,12 @@ export default {
             if (this.open) {
                 document.body.classList.add(this.bodyClass);
             } else {
-                document.body.classList.remove(this.bodyClass);
+                this.close();
+            }
+        },
+        mobileMenuOpen(mobileMenuOpen) {
+            if (!mobileMenuOpen) {
+                this.close();
             }
         }
     },
@@ -55,6 +67,11 @@ export default {
     methods: {
         htmlClick() {
             this.open = false;
+            this.$store.dispatch('mobileMenuOpen', false);
+        },
+        close() {
+            this.open = false;
+            document.body.classList.remove(this.bodyClass);
         }
     }
 }

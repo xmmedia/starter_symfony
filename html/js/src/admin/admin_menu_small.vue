@@ -1,14 +1,24 @@
 <template>
-    <a href="" @click.stop.prevent="open = true">Menu</a>
+    <a href="" @click.stop.prevent="open = !open">Menu</a>
 </template>
 
 <script>
 export default {
     data() {
         return {
-            open: false,
             bodyClass: 'sidebar_nav-visible',
         };
+    },
+
+    computed: {
+        open: {
+            get () {
+                return this.$store.state.adminMenu.mobileMenuOpen;
+            },
+            set (open) {
+                this.$store.dispatch('mobileMenuOpen', open);
+            }
+        }
     },
 
     watch: {
