@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+
 import Vue from 'vue';
 import store from './admin/store';
 
