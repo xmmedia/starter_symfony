@@ -74,6 +74,7 @@ module.exports = {
         new ExtractTextPlugin('css/[name].css')
     ],
     resolve: {
+        extensions: ['.js', '.vue', '.json'],
         alias: {
             // see: https://github.com/vuejs/vue/blob/dev/dist/README.md
             // can't use runtime version because we have inline-templates
