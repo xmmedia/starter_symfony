@@ -15,6 +15,9 @@ import list_check from './admin/list_check.vue';
 // SASS/CSS
 import '../../css/sass/admin.scss';
 
+// disable the warning about dev/prod
+Vue.config.productionTip = false;
+
 // global components
 Vue.component('modal', modal);
 Vue.component('admin-delete', admin_delete);
