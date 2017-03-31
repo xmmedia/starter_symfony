@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './html'),
         // only for JS files
-        filename: 'js/[name].min.js',
+        filename: 'js/[name].js',
     },
     module: {
         rules: [
