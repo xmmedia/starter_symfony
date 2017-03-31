@@ -3,14 +3,14 @@ import 'babel-polyfill';
 import Vue from 'vue';
 import store from './admin/store';
 
-import svg_icons from './common/svg_icons.vue';
+import svgIcons from './common/svg_icons.vue';
 import modal from './common/modal.vue';
-import local_time from './common/local_time.vue';
-import admin_menu_subnav from './admin/admin_menu_subnav.vue';
-import admin_menu_small from './admin/admin_menu_small.vue';
-import admin_delete from './admin/admin_delete.vue';
-import admin_user from './admin/admin_user';
-import list_check from './admin/list_check.vue';
+import localTime from './common/local_time.vue';
+import adminMenuSubnav from './admin/menu/subnav.vue';
+import adminMenuSmall from './admin/menu/small.vue';
+import adminDelete from './admin/admin_delete.vue';
+import adminUserForm from './admin/user/form';
+import listCheck from './admin/list_check.vue';
 
 // SASS/CSS
 import '../../css/sass/admin.scss';
@@ -20,18 +20,18 @@ Vue.config.productionTip = false;
 
 // global components
 Vue.component('modal', modal);
-Vue.component('admin-delete', admin_delete);
+Vue.component('admin-delete', adminDelete);
+Vue.component('list-check', listCheck);
+Vue.component('local-time', localTime);
 
 new Vue({
     el: '#app',
     store,
     components: {
-        'svg-icons': svg_icons,
-        'local-time': local_time,
-        'menu-subnav': admin_menu_subnav,
-        'menu-small': admin_menu_small,
-        'list-check': list_check,
-        'admin-user': admin_user,
+        'svg-icons': svgIcons,
+        'menu-subnav': adminMenuSubnav,
+        'menu-small': adminMenuSmall,
+        'admin-user': adminUserForm,
     },
     methods: {
         setServerData (data) {

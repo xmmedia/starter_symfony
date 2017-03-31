@@ -1,4 +1,4 @@
-import * as types from './mutation_types';
+import * as types from '../store/mutation_types';
 
 const state = {
     mobileMenuOpen: false,

@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 
 import * as types from './store/mutation_types';
-import adminMenu from './store/admin_menu';
+import adminMenu from './menu/store';
 
 Vue.use(Vuex);
 
