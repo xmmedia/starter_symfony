@@ -3,13 +3,6 @@
 </template>
 
 <script>
-import moment from 'moment';
-import 'moment/locale/en-ca';
-import 'moment-timezone';
-
-// set the moment.js locale
-moment.locale('en-ca');
-
 export default {
     props: {
         datetime: {
@@ -19,13 +12,28 @@ export default {
         format: {
             type: String,
             default: 'YYYY-MM-DD HH:mm'
+        },
+        locale: {
+            type: String,
+            default: 'en-ca',
+        }
+    },
+    data () {
+        return {
+            displayTime: '',
         }
     },
 
-    computed: {
-        displayTime : function() {
-            let tz_time = moment.tz(this.datetime, moment.tz.guess());
-            return tz_time.format(this.format);
+    mounted () {
+        import('moment-timezone').then(this.setDisplayTime);
+    },
+
+    methods: {
+        setDisplayTime (moment) {
+            moment.locale(this.locale);
+
+            this.displayTime = moment.tz(this.datetime, moment.tz.guess())
+                .format(this.format);
         }
     }
 }

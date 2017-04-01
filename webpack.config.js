@@ -9,8 +9,11 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, './html'),
+        publicPath: '/',
         // only for JS files
         filename: 'js/[name].js',
+        // chunkhash will be 12 chars long
+        chunkFilename: 'js/[id].[chunkhash:12].js',
     },
     module: {
         rules: [
