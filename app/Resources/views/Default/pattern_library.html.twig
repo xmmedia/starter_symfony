@@ -52,11 +52,17 @@
         <a href="" class="button">Button</a>
     </div>
 
+    {#
+    IMPORTANT
+    Spaces between inputs and labels that are inline with each other (beside)
+    cause issues with formatting. Leave the HTML formatting as is!
+    Use the dashes in the Twig output tags, such as `{{- var -}}`
+    #}
     <div class="form-form_wrap">
         <h2>Forms</h2>
-        <p>Some information</p>
+        <p>Some instructions...</p>
         <form>
-            <h4>Text Inputs</h4>
+
             <div class="form-field_wrap">
                 <label for="text_field">Text Field</label>
                 <ul class="form-field_errors">
@@ -66,60 +72,85 @@
                 <div class="form-field_help">Use at least 8 characters.</div>
             </div>
             <div class="form-field_wrap form-field_wrap-no_width">
-                <label for="flex" class="form-field_prefix">Prefix Beside</label>
-                <input type="text" id="flex">
-                <span class="form-field-suffix">Suffix</span>
+                <label for="flex">Field with Prefix Beside</label>
+                <span class="form-field_prefix">Prefix Beside</span><input type="text" id="flex"><span class="form-field_suffix">Suffix</span>
             </div>
             <div class="form-field_wrap form-field_wrap-no_width">
-                <label for="flex" class="form-field_prefix">Prefix Above</label>
-                <input type="text" id="flex">
-                <span class="form-field-suffix">Suffix</span>
+                <label for="flex" >Field with Prefix Above</label>
+                <div>Prefix Above</div>
+                <input type="text" id="flex"><span class="form-field_suffix">Suffix</span>
             </div>
             <div class="form-field_wrap">
-                <label>Text Area</label>
-                <textarea></textarea>
+                <label for="pattern-library-textarea">Text Area</label>
+                <textarea id="pattern-library-textarea" name="pattern-library-textarea"></textarea>
             </div>
             <div class="form-field_wrap">
-                <label>Select</label>
-                <select name="">
+                <label for="pattern-library-select">Select</label>
+                <select id="pattern-library-select" name="pattern-library-select">
                     <option value="">Test 1</option>
                     <option value="">Test 2</option>
                 </select>
             </div>
-
-            <h4>Radio Buttons</h4>
-            <div class="form-field_wrap form-field_wrap-label_inline">
-                <label>Choose one:</label>
+            <div class="form-field_wrap form-field_wrap-checkbox">
+                <input type="checkbox" id="pattern-library-checkbox" name="pattern-library-checkbox"><label for="pattern-library-checkbox">Checkbox label</label>
+            </div>
+            <div class="form-field_wrap form-field_wrap-radio_row">
+                <label>Horizontal Radios</label>
                 <div>
-                    <input type="radio" id="pattern-library-01" name="pattern-library">
-                    <label for="pattern-library-01">Radio Button</label>
-                </div>
-                <div>
-                    <input type="radio" id="pattern-library-02" name="pattern-library">
-                    <label for="pattern-library-02">Radio Button</label>
-                </div>
-                <div>
-                    <input type="radio" name="pattern-library" id="pattern-library-03">
-                    <label for="pattern-library-03">Radio Button</label>
+                    <input type="radio" id="pattern-library-radio-01" name="pattern-library-radio-1"><label for="pattern-library-radio-01" class="required">Option 1</label>
+                    <input type="radio" id="pattern-library-radio-02" name="pattern-library-radio-1"><label for="pattern-library-radio-02" class="required">Option 2</label>
+                    <input type="radio" id="pattern-library-radio-03" name="pattern-library-radio-1"><label for="pattern-library-radio-03" class="required">Option 3</label>
                 </div>
             </div>
 
-            <h4>Checkboxes</h4>
-            <div class="form-field_wrap form-field_wrap-label_inline">
-                <label>Choose multiple:</label>
-                <div>
-                    <input type="checkbox">
-                    <label>Checkbox</label>
+            <div class="form-field_wrap">
+                <label>Vertical Radios</label>
+                <div id="field-id" class="form-vertical_list">
+                    <div>
+                        <input type="radio" id="pattern-library-radio-04" name="pattern-library-radio-2"><label for="pattern-library-radio-04">Radio Button</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="pattern-library-radio-05" name="pattern-library-radio-2"><label for="pattern-library-radio-05">Radio Button</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="pattern-library-radio-06" name="pattern-library-radio-2"><label for="pattern-library-radio-06">Radio Button</label>
+                    </div>
                 </div>
-                <div>
-                    <input type="checkbox">
-                    <label>Checkbox</label>
+                <div class="form-field_help">Some help...</div>
+            </div>
+
+            <div class="form-field_wrap">
+                <label>Multiple Checkboxes</label>
+                <div id="field-id" class="form-vertical_list">
+                    <div>
+                        <input type="checkbox" id="pattern-library-checkbox-01" name="pattern-library-checkbox[]"><label for="pattern-library-checkbox-01">Checkbox</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="pattern-library-checkbox-02" name="pattern-library-checkbox[]"><label for="pattern-library-checkbox-02">Checkbox</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="pattern-library-checkbox-03" name="pattern-library-checkbox[]"><label for="pattern-library-checkbox-03">Checkbox</label>
+                    </div>
                 </div>
-                <div>
-                    <input type="checkbox">
-                    <label>Checkbox</label>
+                <div class="form-field_help">Some help...</div>
+            </div>
+
+            <div class="form-field_wrap form-field_wrap-no_margin">
+                <label for="two_fields-1">2 Fields Beside Each Other</label>
+                <div class="form-field_wrap-flex_horz">
+                    <div class="form-field_wrap form-field-right_margin">
+                        <input type="text" id="two_fields-1" name="two_fields-1">
+                    </div>
+                    <div class="form-field_wrap">
+                        <select id="two_fields-2" name="two_fields-2">
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">....</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+
             <div class="form-button_wrap">
                 <button>Primary Button</button>
                 <a href="" class="form-action_link">Cancel Link</a>
@@ -134,22 +165,67 @@
     {% do pagination.setPageRange(10) %}
     {{ knp_pagination_render(pagination) }}
 
+    <h2>Navigation</h2>
+    <div class="content-wrap js-content-wrap">
+        <div class="header_admin-wrap">
+            <div class="header_admin-page_title">Nav Links Both Inactive</div>
+            <div class="header_admin-actions">
+                <div class="header_admin-action-nav-wrap">
+                    <div class="button-pair button_pair-left button_pair-left-inactive">&lt;</div>
+                    <div class="button-pair button_pair-right button_pair-right-inactive">&gt;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_admin-wrap">
+            <div class="header_admin-page_title">Nav Links Both Active</div>
+            <div class="header_admin-actions">
+                <div class="header_admin-action-nav-wrap">
+                    <a href="" class="header_admin-action header_admin-action-nav header_admin-action-nav-back">&lt;</a>
+                    <a href="" class="header_admin-action header_admin-action-nav header_admin-action-nav-forward">&gt;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_admin-wrap">
+            <div class="header_admin-page_title">Nav Links Right Active</div>
+            <div class="header_admin-actions">
+                <div class="header_admin-action-nav-wrap">
+                    <div class="button-pair button_pair-left button_pair-left-inactive">&lt;</div>
+                    <a href="" class="button-pair button_pair-right">&gt;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_admin-wrap">
+            <div class="header_admin-page_title">Nav Links Left Active</div>
+            <div class="header_admin-actions">
+                <div class="header_admin-action-nav-wrap">
+                    <a href="" class="button-pair button_pair-left">&lt;</a>
+                    <div class="button-pair button_pair-right button_pair-right-inactive">&gt;</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <h2>Warnings and Alerts</h2>
-    <div class="alert alert--success">
+    <div class="alert alert-type-success">
         <div>Success Message!</div>
         <a href="" class="alert-dismiss">Dismiss</a>
     </div>
 
-    <div class="alert alert--info">
+    <div class="alert alert-type-info">
         <div>Information Message<br>With two lines</div>
         <a href="" class="alert-dismiss">Dismiss</a>
     </div>
-    <div class="alert alert--warning">
+    <div class="alert alert-type-warning">
         <div>Warning Message<br>Don't do that</div>
         <a href="" class="alert-dismiss">Dismiss</a>
     </div>
-    <div class="alert alert--danger">
+    <div class="alert alert-type-danger">
         <div>Danger Warning – You are going to break something. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</div>
         <a href="" class="alert-dismiss">Dismiss</a>
     </div>
+
 {% endblock content %}
