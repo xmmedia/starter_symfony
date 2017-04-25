@@ -14,16 +14,16 @@
 }
 
 .alert-type-success {
-    border-left-color: $status--success;
+    border-left-color: $status-type-success;
 }
 .alert-type-info {
-    border-left-color: $status--info;
+    border-left-color: $status-type-info;
 }
 .alert-type-warning {
-    border-left-color: $status--warning;
+    border-left-color: $status-type-warning;
 }
 .alert-type-danger {
-    border-left-color: $status--danger;
+    border-left-color: $status-type-danger;
 }
 
 // @todo implement dismiss message (JS)

@@ -1,17 +1,13 @@
-$color-green: rgb(1, 142, 66);
-$color-red: rgb(196, 90, 75);
-$color-red-light: rgb(247, 81, 70);
-
 $button-text: $color-white;
-$button-background: $link-color;
-$button-delete-color: $color-red;
+$button-background: $color-red-light;
+$button-delete-color: $primary-color;
 $button-delete-color-hover: $color-white;
 $button-delete-background: rgba($color-white, 0.5);
 $button-delete-background-hover: $color-red;
 
-$admin-header-title: $color-red-light;
+$admin-header-title: $primary-color;
 $admin-header-border: lighten($color-grey-dark, 70%);
-$admin-header-action: $color-red-light;
+$admin-header-action: $primary-color;
 $admin-header-action-text: $color-white;
 $admin-header-action-hover: $color-white;
 $admin-header-inactive: rgba($color-grey-dark, 0.2);
@@ -24,5 +20,9 @@ $sidebar-background: lighten($color-grey-dark, 10%);
 $sidebar-header-border: lighten($color-grey-dark, 30%);
 
 $record-list-row-hover: rgb(234, 245, 252);
-$record-list-header-background: $color-grey-light;
+$record-list-header-background: rgb(216, 216, 217);
 $record-list-lines: rgb(191, 191, 191);
+$record-view-border: $record-list-header-background;
+
+$text-color: #444;
+$link-color: $primary-color;

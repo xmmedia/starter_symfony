@@ -30,9 +30,11 @@ a {
 
 // load common styles
 @import "common/forms",
+    "common/form_table",
     "common/pagination",
     "common/alerts",
     "common/modal",
+    "common/button_pair",
     "common/ie8_warning";
 
 // admin only styles
@@ -43,6 +45,8 @@ a {
     "admin/record_list",
     "admin/record_view",
     "admin/forms",
+    "admin/tooltip",
+    "admin/autocomplete",
     "admin/buttons",
     "admin/admin_dashboard",
     "admin/user_list";

@@ -8,6 +8,7 @@
     background: $color-grey-dark;
     overflow-x: hidden;
     overflow-y: auto;
+    z-index: 9;
     .sidebar_nav-submenu-open & {
         width: $sidebar-width + $sidebar-submenu-width;
     }

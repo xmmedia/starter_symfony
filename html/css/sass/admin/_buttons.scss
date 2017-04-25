@@ -9,6 +9,7 @@ button, .button {
     border-radius: 5px;
     transition: all 0.35s ease-in-out;
     &:hover {
+        color: rgba($button-text, 1);
         background: lighten($button-background, 5%);
         transition: all 0.25s ease;
     }

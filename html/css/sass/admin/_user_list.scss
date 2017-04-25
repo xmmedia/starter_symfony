@@ -1,11 +1,3 @@
-.header_admin-action-user {
-    margin-top: 1em;
-    margin-bottom: 0;
-    @include mq(tablets) {
-        margin: 1em 0 1em 1.25em;
-    }
-}
-
 .user_list-name {
     display: none;
     @include mq(wide_handhelds) { display: table-cell; }

@@ -21,6 +21,14 @@
     }
 }
 
+.record_list-wrap-light_borders {
+    li {
+        border-bottom: 1px solid rgba($record-list-lines, 0.5);
+
+        &:nth-of-type(2) { border-top: 1px solid rgba($record-list-lines, 0.5); }
+    }
+}
+
 .record_list-heading {
     margin-bottom: 0;
 }
@@ -32,30 +40,41 @@
 .record_list-item:hover {
     color: $text-color;
     background: $record-list-row-hover;
-    a { opacity: 1; }
 }
 
 .record_list-mobile_heading {
-    font-weight: 700;
+    margin-top: 0.25em;
+    color: rgba($color-grey-dark, 0.6);
     @include mq(tablets) { display: none; }
+    &-weight_inherit { font-weight: inherit; }
 }
 
 .record_list-item-inactive {
-    color: lighten($text-color, 30%);
-    a { opacity: 0.4; }
+    color: rgba($text-color, 0.3);
+    a { opacity: 0.5; }
+
+    &:hover {
+        color: rgba($text-color, 0.7);
+        a {
+            opacity: 0.65;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
 }
 // the following 3 are in descending importance
 .record_list-item-critical {
-    background-color: rgba($status--danger, 0.3);
-    &:hover { background-color: rgba($status--danger, 0.4); }
+    background-color: rgba($status-type-danger, 0.3);
+    &:hover { background-color: rgba($status-type-danger, 0.4); }
 }
 .record_list-item-urgent {
-    background-color: rgba($status--warning, 0.5);
-    &:hover { background-color: rgba($status--warning, 0.8); }
+    background-color: rgba($status-type-warning, 0.5);
+    &:hover { background-color: rgba($status-type-warning, 0.8); }
 }
 .record_list-item-important {
-    background-color: rgba($status--info, 0.4);
-    &:hover { background-color: rgba($status--info, 0.8); }
+    background-color: rgba($status-type-info, 0.4);
+    &:hover { background-color: rgba($status-type-info, 0.8); }
 }
 
 .record_list-col {
@@ -66,7 +85,17 @@
 }
 .record_list-col-no_wrap { white-space: nowrap; }
 .record_list-col-center { text-align: center; }
+.record_list-col-center-desktop_only {
+    @include mq(tablets) {
+        text-align: center;
+    }
+}
+
+.record_list-col-light {
+    color: rgba($color-grey-dark,0.6);
+}
 .record_list-col-right { text-align: right; }
+
 .record_list-col-actions {
     text-align: right;
     // 0.6 matches the form action links
@@ -88,13 +117,56 @@
     }
 }
 
+.record_list-col-view {
+    padding: 0 0.5em 0.3em 0;
+    @include mq(tablets) {
+        padding: 0.3em 0.5em;
+    }
+}
+
+.record_list-col-accreditation_type {
+    @include mq(tablets) {
+        width: 15%;
+    }
+    .record_view-item_label {
+         width: 100%;
+    }
+}
+
+.record_list-col-accreditation_code {
+    @include mq(tablets) {
+        width: 15%;
+    }
+    .record_view-item_label {
+         width: 100%;
+    }
+}
+
+.record_list-col-accreditation_name {
+    @include mq(tablets) {
+        width: 50%;
+    }
+    .record_view-item_label {
+         width: 100%;
+    }
+}
+
+.record_list-col-accreditation_date {
+    @include mq(tablets) {
+        width: 20%;
+    }
+    .record_view-item_label {
+         width: 100%;
+    }
+}
+
 .record_list-headers {
     display: none;
     @include mq(tablets) {
         display: table-header-group;
         font-weight: bold;
         border-bottom: none;
-        background: #d8d8d9;
+        background: $record-list-header-background;
     }
 }
 
@@ -125,4 +197,9 @@
 }
 .record_list-icon-grey {
     fill: lightgrey;
+}
+
+.record_list-legend {
+    font-size: 0.8em;
+    color: lighten($text-color, 20%);
 }

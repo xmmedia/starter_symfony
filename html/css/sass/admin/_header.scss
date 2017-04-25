@@ -2,19 +2,23 @@
     display: flex;
     flex: 1 0 auto;
     justify-content: space-between;
-    align-items: flex-start;
-    height: $admin-header-height;
+    align-items: center;
+    height: $admin-header-height + 3.5;
     background: rgba(0, 0, 0, 0.05);
     border-bottom: 1px solid $admin-header-border;
-    @include mq(wide_tablets) {
+    @include mq(24em) {
+        height: $admin-header-height + 1;
+    }
+    @include mq(49em) {
         align-items: center;
+        height: $admin-header-height;
     }
 }
 
 .header_admin-page_title {
-    font-size: 1.7em;
+    font-size: 1.3em;
     flex: 1 0 10em;
-    max-width: 60%;
+    max-width: 50%;
     padding: 0.7rem 1rem;
     color: $admin-header-title;
     overflow: hidden;
@@ -24,24 +28,39 @@
         flex: 1 0 auto;
         max-width: 18em;
     }
+    @include mq(49em) {
+        font-size: 1.7em;
+        max-width: 60%;
+    }
     @include mq(74em) {
         max-width: 27em;
     }
 }
 
 .header_admin-actions {
-    padding: 0 1.1rem 0 1.1rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    flex: 1 1 100%;
+    justify-content: flex-end;
+    padding: 0 1.1rem 0.5rem 1.1rem;
     text-align: right;
+
+    @include mq(49em) {
+        display: inline-block;
+        padding-bottom: 0;
+
+    }
 }
 
 .header_admin-action {
     display: inline-block;
     font-size: 0.8em;
     margin: 1.5em 0;
+    transition: background-color 0.15s ease-in-out;
     padding: 0.5em 1.2em;
     border-radius: 3px;
     border: 1px solid $admin-header-action;
-    transition: background-color 0.15s ease-in-out;
     &:hover {
         text-decoration: none;
         background-color: $admin-header-action-hover;
@@ -49,26 +68,43 @@
 }
 
 .header_admin-action-main {
-    margin: 0 0 1em 1.25em;
-    color: $admin-header-action-text;
-    background-color: $admin-header-action;
+    order: 1;
+    margin-bottom: 0.75em;
+    color: $admin-header-action;
     text-align: center;
-    &:hover {
-        background-color: darken($admin-header-action, 5%);
+    background-color: $admin-header-action;
+    color: $admin-header-action-text;
+     &:hover {
+         background-color: darken($admin-header-action, 5%);
+     }
+    @include mq(handhelds) {
+         margin: 1em 0 1em 1.25em;
     }
+
     @include mq(tablets) {
-        margin-top: 1em;
+       margin: 1.85em 0 1em 1.25em;
+    }
+
+    @include mq(49em) {
+         margin: 1em 0 1em 1.25em;
     }
 }
 
 .header_admin-action-secondary {
-    display: block;
+    order: 3;
+    flex-basis: 100%;
     padding: 0;
-    margin: 0.75em 0;
+    margin: 1em 0 0.25em;
     border: none;
-    @include mq(tablets) {
+
+    @include mq(24em) {
+        margin-top: 0;
+    }
+
+    @include mq(49em) {
         display: inline-block;
         padding: 0 0.8em;
+        margin-bottom: 0;
     }
     &:hover {
         background-color: initial;
@@ -77,52 +113,13 @@
 }
 
 .header_admin-action-nav-wrap {
-    width: 100%;
-    margin: 0 0 0.75em;
+    order: 2;
     white-space: nowrap;
-    @include mq(tablets) {
+    @include mq(49em) {
         display: inline;
+        width: 100%;
+        margin: 0 0 0.75em;
     }
-}
-
-.header_admin-action-nav {
-    display: inline-block;
-    // the top margin is so these links line up with main link
-    // the negative margin is to bring the boxes closer together, so they overlap
-    margin: 0 -0.22em;
-    color: $admin-header-action;
-    border-color: rgba($admin-header-action, 0.5);
-    @include mq(tablets) { margin-top: 1em; }
-}
-
-.header_admin-action-nav-back {
-    margin-left: 0.5em;
-    border-radius: 3px 0 0 3px;
-}
-
-.header_admin-action-nav-forward {
-    margin-right: 0;
-    border-left: none;
-    border-radius: 0 3px 3px 0;
-}
-
-// @todo change to BEM
-.header_admin-action-nav-forward-inactive,
-.header_admin-action-nav-back-inactive {
-    color: $admin-header-inactive;
-    border-color: $admin-header-inactive;
-    &:hover { background-color: initial; }
-}
-
-.header_admin-action-nav-back-inactive ~ .header_admin-action-nav-forward-inactive {
-    border-left: none;
-}
-
-.header_admin-action-nav-forward-inactive {
-    border-radius: 0 3px 3px 0;
-}
-.header_admin-action-nav-back-inactive {
-    border-radius: 3px 0 0 3px;
 }
 
 // @todo change to BEM
@@ -142,7 +139,7 @@
 }
 
 .header_admin_small-logo {
-    img, svg {
+    svg {
         width: 2.3em;
         height: 2.6em;
     }

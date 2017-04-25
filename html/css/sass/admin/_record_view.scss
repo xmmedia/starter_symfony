@@ -1,9 +1,21 @@
 .record_view-item_wrap {
     max-width: 45em;
-    margin: 0 auto;
+    margin: 1em auto 0;
     padding: 0.5em;
-    border: 4px solid rgba($color-grey-dark, 0.9);
+    border: 4px solid $record-view-border;
     border-radius: 5px;
+    &:first-child {
+        margin-top: 0;
+    }
+}
+.review_view-item_group_wrap {
+    margin-top: 0.7em;
+    padding-top: 0.7em;
+    border-top: 2px solid $record-view-border;
+    h4 {
+        margin-bottom: 0;
+        padding: 0 0.3em;
+    }
 }
 .record_view-item {
     @include flex-row_wrap();
@@ -12,17 +24,62 @@
         background: rgba($color-red-light, 0.2);
     }
 }
+
+.record_view-header_wrap {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 0 0.3em;
+
+    h3 {
+        margin-bottom: 0.5em;
+    }
+
+}
+
+.record_view-header_actions {
+    font-size: 0.9em;
+    margin-left: auto;
+    text-align: right;
+    color: rgba($primary-color, 0.65);
+    &:hover {
+        color: $primary-color;
+    }
+}
+
 .record_view-item-no_hover:hover {
     background: inherit;
 }
+
 .record_view-item_label {
-    width: 20%;
+    width: 100%;
     min-width: 5em;
     color: rgba($color-grey-dark, 0.6);
+    @include mq(tablets) {
+        width: 20%;
+    }
 }
 .record_view-item_value {
-    width: 80%;
+    width: 100%;
     word-wrap: break-word;
+    @include mq(tablets) {
+        width: 80%;
+        padding-left: 1em;
+    }
+
+    .record_view-list {
+        margin: 0;
+        padding-left: 1em;
+        li {
+            margin-bottom: 0.25em;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.record_view-item_value-inactive {
+    color: rgba($text-color, 0.6);
 }
 .record_view-actions_wrap {
     width: 100%;
@@ -39,4 +96,7 @@
 }
 .record_view-icon-red {
     fill: red;
+}
+.record_view-icon-grey {
+    fill: grey;
 }
