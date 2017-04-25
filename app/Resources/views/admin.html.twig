@@ -22,24 +22,6 @@
         <ul class="sidebar_nav-nav">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                 <li>
-                    <a href="{{ path('manage_contact_list') ~ '?' ~ contact_filter.query() }}" class="sidebar_nav-link sidebar_nav-nav_item">
-                        <svg><use xlink:href="#contacts"></use></svg>
-                        Contacts
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ path('manage_org_list') ~ '?' ~ org_filter.query() }}" class="sidebar_nav-link sidebar_nav-nav_item">
-                        <svg><use xlink:href="#org"></use></svg>
-                        Organizations
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ path('manage_pai_exam_list') }}" class="sidebar_nav-link sidebar_nav-nav_item">
-                        <svg><use xlink:href="#exam"></use></svg>
-                        PAI Exams
-                    </a>
-                </li>
-                <li>
                     <a href="{{ path('admin_dashboard') }}" class="sidebar_nav-link sidebar_nav-nav_item">
                         <svg><use xlink:href="#gear"></use></svg>
                         {{ 'app.admin.menu.admin'|trans }}
@@ -49,8 +31,6 @@
                         set items = {
                             'Users': path('xm_user_admin_user_list') ~ '?' ~ user_filter.query(),
                             'Login History': path('xm_user_admin_login_history'),
-                            'Accreditations': path('admin_accreditation_list'),
-                            'Projects': path('admin_project_list'),
                         }
                     %}
                     <menu-subnav name="{{ 'app.admin.menu.admin'|trans }}"
