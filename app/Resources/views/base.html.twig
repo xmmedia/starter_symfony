@@ -16,7 +16,7 @@
         {% include '::ie8_warning.html.twig' %}
 
         {# #app is what Vue.js mounts to #}
-        <div id="app" :server-data="setServerData({{ global_js_data.get()|json_encode }})">
+        <div id="app">
             {% block body %}
                 {% block header %}
                     <header class="header-wrap">
