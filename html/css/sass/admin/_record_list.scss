@@ -129,42 +129,6 @@
     }
 }
 
-.record_list-col-accreditation_type {
-    @include mq(tablets) {
-        width: 15%;
-    }
-    .record_view-item_label {
-         width: 100%;
-    }
-}
-
-.record_list-col-accreditation_code {
-    @include mq(tablets) {
-        width: 15%;
-    }
-    .record_view-item_label {
-         width: 100%;
-    }
-}
-
-.record_list-col-accreditation_name {
-    @include mq(tablets) {
-        width: 50%;
-    }
-    .record_view-item_label {
-         width: 100%;
-    }
-}
-
-.record_list-col-accreditation_date {
-    @include mq(tablets) {
-        width: 20%;
-    }
-    .record_view-item_label {
-         width: 100%;
-    }
-}
-
 .record_list-headers {
     display: none;
     @include mq(tablets) {
