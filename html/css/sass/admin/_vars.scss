@@ -22,6 +22,7 @@ $sidebar-header-border: lighten($color-grey-dark, 30%);
 $record-list-row-hover: rgb(234, 245, 252);
 $record-list-header-background: rgb(216, 216, 217);
 $record-list-lines: rgb(191, 191, 191);
+$record-list-lines-light: rgba($record-list-lines, 0.5);
 $record-view-border: $record-list-header-background;
 
 $text-color: #444;

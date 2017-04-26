@@ -11,10 +11,13 @@
         padding: 0.3em;
         border-bottom: 1px solid darken($record-list-lines, 15%);
         &:first-of-type { display: none; }
-        &:nth-of-type(2) { border-top: 1px solid darken($record-list-lines, 15%); }
+        &:nth-of-type(2) {
+            border-top: 1px solid darken($record-list-lines, 15%);
+        }
+
         @include mq(tablets) {
             display: table-row;
-            border-bottom: 1px solid rgba($record-list-lines, 0.5);
+            border-bottom: 1px solid $record-list-lines-light;
             transition: background 0.15s ease-in-out;
             &:first-of-type { display: table-row; }
         }
@@ -23,9 +26,11 @@
 
 .record_list-wrap-light_borders {
     li {
-        border-bottom: 1px solid rgba($record-list-lines, 0.5);
-
-        &:nth-of-type(2) { border-top: 1px solid rgba($record-list-lines, 0.5); }
+        border-bottom: 1px solid $record-list-lines-light;
+        &:nth-of-type(2) {
+            // to override the nth-of-type above
+            border-top: 1px solid $record-list-lines-light;
+        }
     }
 }
 
