@@ -1,18 +1,18 @@
 {% extends '::admin.html.twig' %}
 
 {% block page_title %}Pattern Library | {% endblock %}
+{% block header_page_title %}Pattern Library{% endblock %}
 
 {% block content %}
-    <h1>Pattern Library</h1>
-    <h2>Headings:</h2>
-    <h1>heading 1 – 2em/32px</h1>
-    <h2>heading 2 – 1.5em/28px</h2>
-    <h3>heading 3 – 1.17em/24px</h3>
-    <h4>heading 4 – 1em/20px</h4>
-    <h5>heading 5 – 0.83em/18px</h5>
-    <h6>heading 6 – 0.67em/10px</h6>
+    <h1>Headings:</h1>
+    <h1>heading 1</h1>
+    <h2>heading 2</h2>
+    <h3>heading 3</h3>
+    <h4>heading 4</h4>
+    <h5>heading 5</h5>
+    <h6>heading 6</h6>
 
-    <h2>Text:</h2>
+    <h1>Text:</h1>
     <p>Paragraph text – 16px – Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet tincidunt urna, ac molestie elit viverra sed. Maecenas rhoncus nisl purus, eget finibus mauris venenatis sit amet. Nunc tincidunt sed magna a tincidunt. Maecenas nunc ex, imperdiet in scelerisque in, sodales vel arcu. Pellentesque fringilla mattis est eget egestas. Mauris eu lorem quis nisl sagittis euismod. Sed ultricies, augue in condimentum venenatis, turpis lectus sagittis elit, vitae porttitor eros eros quis ipsum. Quisque sagittis enim quis nulla pretium, vel accumsan magna ullamcorper. Donec vitae sollicitudin libero.</p>
     <p>Donec facilisis egestas nulla vel condimentum. Praesent quis lectus nec velit rhoncus ultricies ac quis mi. Mauris mattis lacus magna, venenatis faucibus nisi rhoncus non. Aenean ut facilisis nisl. Nam ullamcorper nunc augue, at dignissim neque cursus nec. Nunc ut lorem at tortor malesuada tempus ac sed felis. Mauris egestas leo eget justo vehicula iaculis. Cras rutrum malesuada pulvinar. Fusce porta augue quis feugiat consectetur. Nam pharetra erat eu efficitur placerat. Phasellus non placerat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
 
@@ -22,7 +22,7 @@
     <a href="">Link</a><br>
     <a href=""><strong>Bold Link</strong></a><br>
 
-    <h2>Unordered List</h2>
+    <h1>Unordered List</h1>
     <ul>
         <li>List item 1</li>
         <li>List item 2</li>
@@ -30,7 +30,7 @@
         <li>List item 4</li>
     </ul>
 
-    <h2>Ordered List</h2>
+    <h1>Ordered List</h1>
     <ol>
         <li>List item 1</li>
         <li>List item 2</li>
@@ -38,10 +38,10 @@
         <li>List item 4</li>
     </ol>
 
-    <h2>Colors</h2>
+    <h1>Colors</h1>
     {# @todo #}
 
-    <h2>Buttons</h2>
+    <h1>Buttons</h1>
     <button>Button</button>
     <h3>Button Links</h3>
     <a href="" class="button">Button</a>
@@ -59,26 +59,21 @@
     Use the dashes in the Twig output tags, such as `{{- var -}}`
     #}
     <div class="form-form_wrap">
-        <h2>Forms</h2>
+        <h1>Forms</h1>
         <p>Some instructions...</p>
         <form>
 
             <div class="form-field_wrap">
-                <label for="text_field">Text Field</label>
+                <label for="pattern-library-text">Text Field</label>
                 <ul class="form-field_errors">
                     <li>Error</li>
                 </ul>
-                <input type="text" id="text_field">
+                <input type="text" id="pattern-library-text">
                 <div class="form-field_help">Use at least 8 characters.</div>
             </div>
             <div class="form-field_wrap form-field_wrap-no_width">
-                <label for="flex">Field with Prefix Beside</label>
-                <span class="form-field_prefix">Prefix Beside</span><input type="text" id="flex"><span class="form-field_suffix">Suffix</span>
-            </div>
-            <div class="form-field_wrap form-field_wrap-no_width">
-                <label for="flex" >Field with Prefix Above</label>
-                <div>Prefix Above</div>
-                <input type="text" id="flex"><span class="form-field_suffix">Suffix</span>
+                <label for="pattern-library-prefix-suffix">Field with Prefix Beside</label>
+                <span class="form-field_prefix">Prefix Beside</span><input type="text" id="pattern-library-prefix-suffix"><span class="form-field_suffix">Suffix</span>
             </div>
             <div class="form-field_wrap">
                 <label for="pattern-library-textarea">Text Area</label>
@@ -136,13 +131,13 @@
             </div>
 
             <div class="form-field_wrap form-field_wrap-no_margin">
-                <label for="two_fields-1">2 Fields Beside Each Other</label>
+                <label for="pattern-library-two-fields-1">2 Fields Beside Each Other</label>
                 <div class="form-field_wrap-flex_horz">
                     <div class="form-field_wrap form-field-right_margin">
-                        <input type="text" id="two_fields-1" name="two_fields-1">
+                        <input type="text" id="pattern-library-two-fields-1">
                     </div>
                     <div class="form-field_wrap">
-                        <select id="two_fields-2" name="two_fields-2">
+                        <select id="pattern-library-two-fields-2">
                             <option value="1">January</option>
                             <option value="2">February</option>
                             <option value="3">....</option>
@@ -178,11 +173,11 @@
         </form>
     </div>
 
-    <h2>Pagination</h2>
+    <h1>Pagination</h1>
     {% do pagination.setPageRange(10) %}
     {{ knp_pagination_render(pagination) }}
 
-    <h2>Navigation</h2>
+    <h1>Navigation</h1>
     <div class="content-wrap js-content-wrap">
         <div class="header_admin-wrap">
             <div class="header_admin-page_title">Nav Links Both Inactive</div>
@@ -223,10 +218,9 @@
                 </div>
             </div>
         </div>
-
     </div>
 
-    <h2>Warnings and Alerts</h2>
+    <h1>Warnings and Alerts</h1>
     <div class="alert alert-type-success">
         <div>Success Message!</div>
         <a href="" class="alert-dismiss">Dismiss</a>
@@ -244,5 +238,4 @@
         <div>Danger Warning – You are going to break something. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</div>
         <a href="" class="alert-dismiss">Dismiss</a>
     </div>
-
 {% endblock content %}
