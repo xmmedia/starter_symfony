@@ -11,7 +11,6 @@ $color-green: rgb(1, 142, 66);
 
 $primary-color: $color-red;
 
-
 $border-radius: 2px;
 
 //these are used in multiple situations - not just alerts
@@ -22,6 +21,9 @@ $status-type-danger: rgb(217, 82, 78);
 
 $pagination-link-hover: rgba(32, 36, 41, 0.1);
 $pagination-current-border: rgba(32, 36, 41, 0.15);
+
+$form-space-separator: 0.25em;
+$form-label-color-hover: lighten($text-color, 20%);
 
 $mqs: (
     handhelds: 20em,

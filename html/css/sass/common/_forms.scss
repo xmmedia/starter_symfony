@@ -1,6 +1,3 @@
-$label-color-hover: lighten($text-color, 20%);
-$form-space-separator: 0.25em;
-
 // fixes space below textareas, making it consistent across browsers
 textarea {
     vertical-align: top;
@@ -69,7 +66,7 @@ textarea {
         display: inline-block;
         margin-right: 1em;
         margin-bottom: 0;
-        &:hover { color: $label-color-hover; }
+        &:hover { color: $form-label-color-hover; }
     }
 }
 .form-field_wrap-radio_row {
@@ -114,7 +111,7 @@ textarea {
 .form-vertical_list > div {
     label {
         display: inline-block;
-        &:hover { color: $label-color-hover; }
+        &:hover { color: $form-label-color-hover; }
     }
 }
 
