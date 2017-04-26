@@ -1,9 +1,14 @@
+import 'babel-polyfill';
+
 import Vue from 'vue';
 
 import svg_icons from './common/svg_icons.vue';
 
 // SASS/CSS
-import '../../css/sass/admin.scss';
+import '../../css/sass/public.scss';
+
+// disable the warning about dev/prod
+Vue.config.productionTip = false;
 
 new Vue({
     el: '#app',
