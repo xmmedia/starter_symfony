@@ -34,9 +34,7 @@
     h3 {
         margin-bottom: 0.5em;
     }
-
 }
-
 .record_view-header_actions {
     font-size: 0.9em;
     margin-left: auto;
@@ -52,6 +50,7 @@
 }
 
 .record_view-item_label {
+    // @todo do we need to specific 100%? (x2)
     width: 100%;
     min-width: 5em;
     color: rgba($color-grey-dark, 0.6);
@@ -60,6 +59,7 @@
     }
 }
 .record_view-item_value {
+    // @todo do we need to specific 100%? (x2)
     width: 100%;
     word-wrap: break-word;
     @include mq(tablets) {
