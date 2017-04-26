@@ -1,3 +1,6 @@
+// this var is here because we need the text colour var first
+$form-label-color-hover: lighten($text-color, 20%);
+
 // fixes space below textareas, making it consistent across browsers
 textarea {
     vertical-align: top;
