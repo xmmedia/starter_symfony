@@ -1,3 +1,6 @@
+$text-color: #444;
+$link-color: $primary-color;
+
 $button-text: $color-white;
 $button-background: $color-red-light;
 $button-delete-color: $primary-color;
@@ -24,6 +27,3 @@ $record-list-header-background: rgb(216, 216, 217);
 $record-list-lines: rgb(191, 191, 191);
 $record-list-lines-light: rgba($record-list-lines, 0.5);
 $record-view-border: $record-list-header-background;
-
-$text-color: #444;
-$link-color: $primary-color;
