@@ -9,28 +9,27 @@
         display: flex;
         flex-flow: column wrap;
         padding: 0.3em;
-        border-bottom: 1px solid darken($record-list-lines, 15%);
-        &:first-of-type { display: none; }
-        &:nth-of-type(2) {
-            border-top: 1px solid darken($record-list-lines, 15%);
+        border-bottom: 1px solid $record-list-lines;
+        // hide the headers on mobile as list is stacked
+        &:first-of-type {
+            display: none;
         }
 
         @include mq(tablets) {
             display: table-row;
             border-bottom: 1px solid $record-list-lines-light;
             transition: background 0.15s ease-in-out;
-            &:first-of-type { display: table-row; }
+            &:first-of-type {
+                display: table-row;
+                border-bottom: none;
+            }
         }
     }
 }
-
-.record_list-wrap-light_borders {
-    li {
-        border-bottom: 1px solid $record-list-lines-light;
-        &:nth-of-type(2) {
-            // to override the nth-of-type above
-            border-top: 1px solid $record-list-lines-light;
-        }
+.record_list-wrap-record_view {
+    margin-top: 0;
+    li:first-of-type {
+        border-bottom: 1px solid $record-list-lines;
     }
 }
 
@@ -97,19 +96,16 @@
 }
 
 .record_list-col-light {
-    color: rgba($color-grey-dark,0.6);
+    color: rgba($color-grey-dark, 0.6);
 }
 .record_list-col-right { text-align: right; }
 
 .record_list-col-actions {
     text-align: right;
-    // 0.6 matches the form action links
-    opacity: 0.6;
     transition: opacity 0.25s ease;
 
     // on row hover, "reset" opacity
     .record_list-wrap li:hover & {
-        opacity: inherit;
         transition: opacity 0.25s ease;
     }
 

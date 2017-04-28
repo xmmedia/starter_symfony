@@ -20,6 +20,7 @@
 .record_view-item {
     @include flex-row_wrap();
     padding: 0.3em;
+    transition: background 0.15s ease-in-out;
     &:hover {
         background: rgba($color-red-light, 0.2);
     }
@@ -35,6 +36,7 @@
         margin-bottom: 0.5em;
     }
 }
+
 .record_view-header_actions {
     font-size: 0.9em;
     margin-left: auto;
