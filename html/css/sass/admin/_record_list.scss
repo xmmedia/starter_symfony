@@ -26,9 +26,9 @@
                 display: table-row;
                 border-bottom: none;
             }
-        }
-        &:nth-of-type(2) {
-            border-top: none;
+            &:nth-of-type(2) {
+                border-top: none;
+            }
         }
     }
 }
@@ -128,6 +128,13 @@
     padding: 0 0.5em 0.3em 0;
     @include mq(tablets) {
         padding: 0.3em 0.5em;
+        &:first-of-type {
+            // not sure why it's not 0.3, but this works
+            padding-left: 0.35em;
+        }
+        &:last-of-type {
+            padding-right: 0.3em;
+        }
     }
 }
 
