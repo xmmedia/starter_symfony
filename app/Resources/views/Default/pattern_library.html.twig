@@ -1,18 +1,24 @@
-{% extends '::public.html.twig' %}
+{% extends '::admin.html.twig' %}
 
 {% block page_title %}Pattern Library | {% endblock %}
+{% block header_page_title %}Pattern Library{% endblock %}
 
 {% block content %}
-    <h1>Pattern Library</h1>
-    <h2>Headings:</h2>
-    <h1>heading 1 – 2em/32px</h1>
-    <h2>heading 2 – 1.5em/28px</h2>
-    <h3>heading 3 – 1.17em/24px</h3>
-    <h4>heading 4 – 1em/20px</h4>
-    <h5>heading 5 – 0.83em/18px</h5>
-    <h6>heading 6 – 0.67em/10px</h6>
+    {# ############################# #}
+    {# ####### Headings ######### #}
+    {# ############################# #}
+    <h2>Headings</h2>
+    <h1>heading 1</h1>
+    <h2>heading 2</h2>
+    <h3>heading 3</h3>
+    <h4>heading 4</h4>
+    <h5>heading 5</h5>
+    <h6>heading 6</h6>
 
-    <h2>Text:</h2>
+    {# ############################# #}
+    {# ########## Text ############# #}
+    {# ############################# #}
+    <h2>Text</h2>
     <p>Paragraph text – 16px – Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet tincidunt urna, ac molestie elit viverra sed. Maecenas rhoncus nisl purus, eget finibus mauris venenatis sit amet. Nunc tincidunt sed magna a tincidunt. Maecenas nunc ex, imperdiet in scelerisque in, sodales vel arcu. Pellentesque fringilla mattis est eget egestas. Mauris eu lorem quis nisl sagittis euismod. Sed ultricies, augue in condimentum venenatis, turpis lectus sagittis elit, vitae porttitor eros eros quis ipsum. Quisque sagittis enim quis nulla pretium, vel accumsan magna ullamcorper. Donec vitae sollicitudin libero.</p>
     <p>Donec facilisis egestas nulla vel condimentum. Praesent quis lectus nec velit rhoncus ultricies ac quis mi. Mauris mattis lacus magna, venenatis faucibus nisi rhoncus non. Aenean ut facilisis nisl. Nam ullamcorper nunc augue, at dignissim neque cursus nec. Nunc ut lorem at tortor malesuada tempus ac sed felis. Mauris egestas leo eget justo vehicula iaculis. Cras rutrum malesuada pulvinar. Fusce porta augue quis feugiat consectetur. Nam pharetra erat eu efficitur placerat. Phasellus non placerat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
 
@@ -22,6 +28,9 @@
     <a href="">Link</a><br>
     <a href=""><strong>Bold Link</strong></a><br>
 
+    {# ############################# #}
+    {# ##### Unordered List ######## #}
+    {# ############################# #}
     <h2>Unordered List</h2>
     <ul>
         <li>List item 1</li>
@@ -30,6 +39,9 @@
         <li>List item 4</li>
     </ul>
 
+    {# ############################# #}
+    {# ###### Ordered List ######### #}
+    {# ############################# #}
     <h2>Ordered List</h2>
     <ol>
         <li>List item 1</li>
@@ -38,9 +50,9 @@
         <li>List item 4</li>
     </ol>
 
-    <h2>Colors</h2>
-    {# @todo #}
-
+    {# ############################# #}
+    {# ######### Buttons ########### #}
+    {# ############################# #}
     <h2>Buttons</h2>
     <button>Button</button>
     <h3>Button Links</h3>
@@ -52,74 +64,120 @@
         <a href="" class="button">Button</a>
     </div>
 
+    {# ############################# #}
+    {# ########## Forms ############ #}
+    {# ############################# #}
+    {#
+    IMPORTANT
+    Spaces between inputs and labels that are inline with each other (beside)
+    cause issues with formatting. Leave the HTML formatting as is!
+    Use the dashes in the Twig output tags, such as `{{- var -}}`
+    #}
     <div class="form-form_wrap">
         <h2>Forms</h2>
-        <p>Some information</p>
+        <p>Some instructions...</p>
         <form>
-            <h4>Text Inputs</h4>
+
             <div class="form-field_wrap">
-                <label for="text_field">Text Field</label>
+                <label for="pattern-library-text">Text Field</label>
                 <ul class="form-field_errors">
                     <li>Error</li>
                 </ul>
-                <input type="text" id="text_field">
+                <input type="text" id="pattern-library-text">
                 <div class="form-field_help">Use at least 8 characters.</div>
             </div>
             <div class="form-field_wrap form-field_wrap-no_width">
-                <label for="flex" class="form-field_prefix">Prefix Beside</label>
-                <input type="text" id="flex">
-                <span class="form-field-suffix">Suffix</span>
-            </div>
-            <div class="form-field_wrap form-field_wrap-no_width">
-                <label for="flex" class="form-field_prefix">Prefix Above</label>
-                <input type="text" id="flex">
-                <span class="form-field-suffix">Suffix</span>
+                <label for="pattern-library-prefix-suffix">Field with Prefix Beside</label>
+                <span class="form-field_prefix">Prefix Beside</span><input type="text" id="pattern-library-prefix-suffix"><span class="form-field_suffix">Suffix</span>
             </div>
             <div class="form-field_wrap">
-                <label>Text Area</label>
-                <textarea></textarea>
+                <label for="pattern-library-textarea">Text Area</label>
+                <textarea id="pattern-library-textarea" name="pattern-library-textarea"></textarea>
             </div>
             <div class="form-field_wrap">
-                <label>Select</label>
-                <select name="">
+                <label for="pattern-library-select">Select</label>
+                <select id="pattern-library-select" name="pattern-library-select">
                     <option value="">Test 1</option>
                     <option value="">Test 2</option>
                 </select>
             </div>
-
-            <h4>Radio Buttons</h4>
-            <div class="form-field_wrap form-field_wrap-label_inline">
-                <label>Choose one:</label>
+            <div class="form-field_wrap form-field_wrap-checkbox">
+                <input type="checkbox" id="pattern-library-checkbox" name="pattern-library-checkbox"><label for="pattern-library-checkbox">Checkbox label</label>
+            </div>
+            <div class="form-field_wrap form-field_wrap-radio_row">
+                <label>Horizontal Radios</label>
                 <div>
-                    <input type="radio" id="pattern-library-01" name="pattern-library">
-                    <label for="pattern-library-01">Radio Button</label>
-                </div>
-                <div>
-                    <input type="radio" id="pattern-library-02" name="pattern-library">
-                    <label for="pattern-library-02">Radio Button</label>
-                </div>
-                <div>
-                    <input type="radio" name="pattern-library" id="pattern-library-03">
-                    <label for="pattern-library-03">Radio Button</label>
+                    <input type="radio" id="pattern-library-radio-01" name="pattern-library-radio-1"><label for="pattern-library-radio-01" class="required">Option 1</label>
+                    <input type="radio" id="pattern-library-radio-02" name="pattern-library-radio-1"><label for="pattern-library-radio-02" class="required">Option 2</label>
+                    <input type="radio" id="pattern-library-radio-03" name="pattern-library-radio-1"><label for="pattern-library-radio-03" class="required">Option 3</label>
                 </div>
             </div>
 
-            <h4>Checkboxes</h4>
-            <div class="form-field_wrap form-field_wrap-label_inline">
-                <label>Choose multiple:</label>
-                <div>
-                    <input type="checkbox">
-                    <label>Checkbox</label>
+            <div class="form-field_wrap">
+                <label>Vertical Radios</label>
+                <div id="field-id" class="form-vertical_list">
+                    <div>
+                        <input type="radio" id="pattern-library-radio-04" name="pattern-library-radio-2"><label for="pattern-library-radio-04">Radio Button</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="pattern-library-radio-05" name="pattern-library-radio-2"><label for="pattern-library-radio-05">Radio Button</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="pattern-library-radio-06" name="pattern-library-radio-2"><label for="pattern-library-radio-06">Radio Button</label>
+                    </div>
                 </div>
-                <div>
-                    <input type="checkbox">
-                    <label>Checkbox</label>
+                <div class="form-field_help">Some help...</div>
+            </div>
+
+            <div class="form-field_wrap">
+                <label>Multiple Checkboxes</label>
+                <div id="field-id" class="form-vertical_list">
+                    <div>
+                        <input type="checkbox" id="pattern-library-checkbox-01" name="pattern-library-checkbox[]"><label for="pattern-library-checkbox-01">Checkbox</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="pattern-library-checkbox-02" name="pattern-library-checkbox[]"><label for="pattern-library-checkbox-02">Checkbox</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="pattern-library-checkbox-03" name="pattern-library-checkbox[]"><label for="pattern-library-checkbox-03">Checkbox</label>
+                    </div>
                 </div>
-                <div>
-                    <input type="checkbox">
-                    <label>Checkbox</label>
+                <div class="form-field_help">Some help...</div>
+            </div>
+
+            <div class="form-field_wrap form-field_wrap-no_margin">
+                <label for="pattern-library-two-fields-1">2 Fields Beside Each Other</label>
+                <div class="form-field_wrap-flex_horz">
+                    <div class="form-field_wrap form-field-right_margin">
+                        <input type="text" id="pattern-library-two-fields-1">
+                    </div>
+                    <div class="form-field_wrap">
+                        <select id="pattern-library-two-fields-2">
+                            <option value="1">January</option>
+                            <option value="2">February</option>
+                            <option value="3">....</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+
+            <div class="form-field_wrap form-field_wrap-no_width">
+                <label for="pattern-library-separator-1">Fields with Separator</label>
+                <div class="form-field_wrap-flex_horz">
+                    <select id="pattern-library-separator-1">
+                        <option>––</option>
+                    </select>
+                    <div class="form-field_horz_separator">–</div>
+                    <select id="pattern-library-separator-2">
+                        <option>––</option>
+                    </select>
+                    <div class="form-field_horz_separator">–</div>
+                    <select id="pattern-library-separator-3">
+                        <option>––</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="form-button_wrap">
                 <button>Primary Button</button>
                 <a href="" class="form-action_link">Cancel Link</a>
@@ -130,26 +188,230 @@
         </form>
     </div>
 
+    {# ############################# #}
+    {# ####### Pagination ########## #}
+    {# ############################# #}
     <h2>Pagination</h2>
     {% do pagination.setPageRange(10) %}
     {{ knp_pagination_render(pagination) }}
 
-    <h2>Warnings and Alerts</h2>
-    <div class="alert alert--success">
-        <div>Success Message!</div>
-        <a href="" class="alert-dismiss">Dismiss</a>
+    {# ############################# #}
+    {# ####### Button Pair ######### #}
+    {# ############################# #}
+    <h2>Button Pair</h2>
+    <div class="content-wrap js-content-wrap">
+        <div class="header_admin-wrap">
+            <div class="header_admin-page_title">Both Inactive</div>
+            <div class="header_admin-actions">
+                <div class="header_admin-action-nav-wrap">
+                    <div class="button-pair button_pair-left button_pair-left-inactive">&lt;</div>
+                    <div class="button-pair button_pair-right button_pair-right-inactive">&gt;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_admin-wrap">
+            <div class="header_admin-page_title">Both Active</div>
+            <div class="header_admin-actions">
+                <div class="header_admin-action-nav-wrap">
+                    <a href="" class="header_admin-action header_admin-action-nav header_admin-action-nav-back">&lt;</a>
+                    <a href="" class="header_admin-action header_admin-action-nav header_admin-action-nav-forward">&gt;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_admin-wrap">
+            <div class="header_admin-page_title">Right Active</div>
+            <div class="header_admin-actions">
+                <div class="header_admin-action-nav-wrap">
+                    <div class="button-pair button_pair-left button_pair-left-inactive">&lt;</div>
+                    <a href="" class="button-pair button_pair-right">&gt;</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header_admin-wrap">
+            <div class="header_admin-page_title">Left Active</div>
+            <div class="header_admin-actions">
+                <div class="header_admin-action-nav-wrap">
+                    <a href="" class="button-pair button_pair-left">&lt;</a>
+                    <div class="button-pair button_pair-right button_pair-right-inactive">&gt;</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="alert alert--info">
+    {# ############################# #}
+    {# ####### Record List ######### #}
+    {# ############################# #}
+    <h2>Record List</h2>
+    <ul class="record_list-wrap">
+        <li class="record_list-headers">
+            <div class="record_list-col">Col 1</div>
+            <div class="record_list-col">Col 2</div>
+            <div class="record_list-col record_list-col-center">Col 2</div>
+            <div class="record_list-col"></div>
+        </li>
+
+        {% for i in 1..3 %}
+            <li>
+                <div class="record_list-col">
+                    <a href="">Value 1-{{ i }}</a>
+                </div>
+                <div class="record_list-col">
+                    Value 2-{{ i }}
+                </div>
+                <div class="record_list-col record_list-col-center-desktop_only">
+                    <svg class="record_list-icon icon-green">
+                        <use xlink:href="#check"></use>
+                    </svg>
+                    <span class="record_list-mobile_heading record_list-mobile_heading-weight_inherit">[True]</span>
+                </div>
+                <div class="record_list-col record_list-col-actions">
+                    <a href="">Action 1</a>
+                    <a href="">Action 2</a>
+                </div>
+            </li>
+        {% endfor %}
+
+        <li class="record_list-item-inactive">
+            <div class="record_list-col">
+                <a href="">Inactive Value 1</a>
+            </div>
+            <div class="record_list-col">
+                Inactive Value 2
+            </div>
+            <div class="record_list-col record_list-col-center-desktop_only">
+                <svg class="record_list-icon icon-grey">
+                    <use xlink:href="#check"></use>
+                </svg>
+                <span class="record_list-mobile_heading record_list-mobile_heading-weight_inherit">[True]</span>
+            </div>
+            <div class="record_list-col record_list-col-actions">
+                <a href="">Action 1</a>
+                <a href="">Action 2</a>
+            </div>
+        </li>
+    </ul>
+
+    {# ############################# #}
+    {# ####### Record View ######### #}
+    {# ############################# #}
+    <h2>Record View</h2>
+    <div class="record_view-item_wrap">
+        <div class="record_view-item">
+            <div class="record_view-item_label">Name</div>
+            <div class="record_view-item_value">John Smith</div>
+        </div>
+
+        <div class="record_view-item">
+            <div class="record_view-item_label">Is True</div>
+            <div class="record_view-item_value">
+                <span title="A Checkmark">
+                    <svg class="record_view-icon icon-green">
+                        <use xlink:href="#check"></use>
+                    </svg>
+                </span>
+            </div>
+        </div>
+
+        <div class="record_view-item">
+            <div class="record_view-item_label">Is False</div>
+            <div class="record_view-item_value record_view-item_value-inactive">
+                <em>Not Active</em>
+            </div>
+        </div>
+
+        <div class="record_view-item">
+            <div class="record_view-item_label">List</div>
+            <div class="record_view-item_value">
+                <ul class="record_view-list">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="record_view-item">
+            <div class="record_view-item_label">Multiline</div>
+            <div class="record_view-item_value">
+                Nullam id dolor id nibh ultricies vehicula ut id elit.<br>
+                Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.<br>
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+            </div>
+        </div>
+
+        <div class="record_view-item_group_wrap">
+            <h4>Group of Items</h4>
+            <div class="record_view-item">
+                <div class="record_view-item_label">Item 1</div>
+                <div class="record_view-item_value">Value 1</div>
+            </div>
+            <div class="record_view-item">
+                <div class="record_view-item_label">Item 2</div>
+                <div class="record_view-item_value">Value 2</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="record_view-item_wrap">
+        <div class="record_view-header_wrap">
+            <h3>Section Heading</h3>
+            <div class="record_view-header_actions">
+                <a href="">Action Link</a>
+            </div>
+        </div>
+
+        <ul class="record_list-wrap record_list-wrap-record_view">
+            <li class="record_view-item record_view-item-no_hover">
+                <div class="record_list-col record_list-col-view record_list-col-light">Col 1</div>
+                <div class="record_list-col record_list-col-view record_list-col-light">Col 2</div>
+                <div class="record_list-col record_list-col-view record_list-col-light">Col 3</div>
+                <div class="record_list-col record_list-col-view record_list-col-light"></div>
+            </li>
+
+            {% for i in 1..5 %}
+                <li class="record_view-item">
+                    <div class="record_list-col record_list-col-view">
+                        <div class="record_list-mobile_heading">Col 1</div>
+                        Value 1-{{ i }}
+                    </div>
+                    <div class="record_list-col record_list-col-view">
+                        <div class="record_list-mobile_heading">Col 2</div>
+                        Value 2-{{ i }}
+                    </div>
+                    <div class="record_list-col record_list-col-view">
+                        <div class="record_list-mobile_heading">Col 3</div>
+                        Value 3-{{ i }}
+                    </div>
+                    <div class="record_list-col record_list-col-actions record_list-col-view">
+                        <a href="">Action</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {# ############################# #}
+    {# ######### Alerts ############ #}
+    {# ############################# #}
+    <h2>Alerts</h2>
+    <div class="alert alert-type-success">
+        <div>Success Message!</div>
+        <a href="" class="alert-dismiss">Action Link</a>
+    </div>
+
+    <div class="alert alert-type-info">
         <div>Information Message<br>With two lines</div>
-        <a href="" class="alert-dismiss">Dismiss</a>
+        <a href="" class="alert-dismiss">Action Link</a>
     </div>
-    <div class="alert alert--warning">
+    <div class="alert alert-type-warning">
         <div>Warning Message<br>Don't do that</div>
-        <a href="" class="alert-dismiss">Dismiss</a>
+        <a href="" class="alert-dismiss">Action Link</a>
     </div>
-    <div class="alert alert--danger">
+    <div class="alert alert-type-danger">
         <div>Danger Warning – You are going to break something. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</div>
-        <a href="" class="alert-dismiss">Dismiss</a>
+        <a href="" class="alert-dismiss">Action Link</a>
     </div>
 {% endblock content %}

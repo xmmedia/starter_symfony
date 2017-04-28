@@ -1,0 +1,14 @@
+{% block form_row %}
+    <div class="form-field_wrap">
+        {{- form_label(form) -}}
+        {{- form_errors(form) -}}
+        <div id="{{ form.vars.id }}" class="form-vertical_list">
+            {% for item in form.children %}
+                <div>
+                    {{- form_widget(item) -}}
+                    {{- form_label(item) -}}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

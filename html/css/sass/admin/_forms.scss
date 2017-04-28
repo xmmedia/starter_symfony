@@ -1,5 +1,12 @@
 .form-fieldset { padding: 0.7em 1em 0; }
 
+.form-field_wrap {
+    select {
+        height: 2.3em;
+        padding: 0.5em;
+    }
+}
+
 // these show up after the form buttons, outside the form tag
 // for extra actions, such as delete, that aren't part of the current form
 // but also would add clutter to add them as links on the record list

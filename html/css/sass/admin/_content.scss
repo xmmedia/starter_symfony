@@ -5,6 +5,7 @@
     z-index: 10;
     @include mq(tablets) {
         margin: 0 0 0 $sidebar-width;
+        z-index: auto;
     }
 
     // the following are for the admin menu when closed and then open

@@ -1,9 +1,9 @@
 .sidebar_nav-submenu_arrow {
     position: absolute;
-    // half the height minus half the height of the arrow element
-    top: calc(50% - 0.6em);
+    // half the height minus half the height of the arrow element, plus 0.2em for visual weight of element
+    top: calc(50% - 0.8em);
     right: 0;
-    padding: 0 0.1em 0.2em;
+    padding: 0 0.1em;
     background: transparent;
     border: none;
     border-left: 1px solid rgba($color-white, 0.3);
@@ -30,6 +30,7 @@
     transition: left 0.15s ease-out;
     z-index: -1;
     opacity: 0;
+    visibility: hidden;
 }
 .sidebar_nav-submenu_arrow-open {
     opacity: 1;
@@ -37,6 +38,7 @@
     + .sidebar_nav-submenu-wrap {
         z-index: 1;
         opacity: 1;
+        visibility: visible;
     }
 }
 .sidebar_nav-submenu_header {

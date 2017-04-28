@@ -9,6 +9,7 @@ button, .button {
     border-radius: 5px;
     transition: all 0.35s ease-in-out;
     &:hover {
+        color: rgba($button-text, 1);
         background: lighten($button-background, 5%);
         transition: all 0.25s ease;
     }
@@ -25,11 +26,6 @@ button, .button {
         border-color: $button-delete-background-hover;
         background: $button-delete-background-hover;
     }
-}
-
-// @todo doesn't seem like a good name; used in view for things like adding a sub record
-.button-action-view {
-    font-size: 0.8em;
 }
 
 .button-as_link {

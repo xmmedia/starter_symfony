@@ -1,6 +1,6 @@
 <template>
     <a :href="href" class="-link-no_underline" @click.prevent="change">
-        <svg class="record_list-icon_wrap" v-bind:class="[ isChecked ? 'record_list-icon-green' : 'record_list-icon-grey' ]">
+        <svg class="record_list-icon" v-bind:class="[ isChecked ? 'icon-green' : 'icon-grey' ]">
             <use xlink:href="#check"></use>
         </svg>
     </a>

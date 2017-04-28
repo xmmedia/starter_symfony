@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block javascripts %}
-    <script src="{{ asset('js/admin.js') }}" defer></script>
+    <script src="{{ asset('js/admin.min.js') }}" defer></script>
 {% endblock %}
 
 {% block body %}
@@ -16,8 +16,8 @@
 
 {% block header %}
     <nav class="sidebar_nav-wrap">
-        <a href="{{ path('index') }}" class="sidebar_nav-logo">
-            <img src="/images/logo.svg" alt="{{ 'app.parameter.name'|trans }}">
+        <a href="{{ path('admin_dashboard') }}" class="sidebar_nav-logo">
+            <img src="/images/logo.svg" width="80" height="22" alt="{{ 'app.parameter.name'|trans }}">
         </a>
         <ul class="sidebar_nav-nav">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
@@ -30,7 +30,7 @@
                     {%
                         set items = {
                             'Users': path('xm_user_admin_user_list') ~ '?' ~ user_filter.query(),
-                            'Login History': path('xm_user_admin_login_history')
+                            'Login History': path('xm_user_admin_login_history'),
                         }
                     %}
                     <menu-subnav name="{{ 'app.admin.menu.admin'|trans }}"
@@ -63,23 +63,23 @@
 {% endblock %}
 
 {% block content_wrap %}
-    <header class="header_admin_small-wrap">
+    <header class="header_admin-wrap-small">
         <menu-small></menu-small>
-        <div class="header_admin_small-logo">
-            <img src="/images/logo.svg" alt="{{ 'app.parameter.name'|trans }}">
-        </div>
+        <img src="/images/logo.svg" width="80" height="22" alt="{{ 'app.parameter.name'|trans }}">
     </header>
     <div class="content-wrap js-content-wrap">
         <header class="header_admin-wrap">
-            <div class="header_admin-page_title">{% block header_page_title %}Admin{% endblock header_page_title %}</div>
+            <div class="header_admin-page_title">{% block header_page_title %}{% endblock header_page_title %}</div>
             <div class="header_admin-actions">{% block header_actions %}{% endblock header_actions %}</div>
         </header>
 
-        <div class="content-wrap_inside">
-            {% block content %}
-                {% include 'flash_messages.html.twig' %}
-            {% endblock content %}
-        </div>
+        {% block content_wrap_inside %}
+            <div class="content-wrap_inside">
+                {% block content %}
+                    {% include 'flash_messages.html.twig' %}
+                {% endblock content %}
+            </div>
+        {% endblock content_wrap_inside %}
     </div>
 {% endblock content_wrap %}
 

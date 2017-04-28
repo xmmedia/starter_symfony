@@ -1,8 +1,6 @@
 {%- block form_row -%}
-    {# @todo this feels kinda hacky, but can't figure out any other way to determine if the field is a checkbox #}
-    {# @todo how do we do radios automatically #}
     {% if block_prefixes[1] == 'checkbox' %}
-        <div class="form-field_wrap form-field_wrap-label_inline">
+        <div class="form-field_wrap form-field_wrap-checkbox">
             {{- form_errors(form) -}}
             {{- form_widget(form) -}}
             {{- form_label(form) -}}
