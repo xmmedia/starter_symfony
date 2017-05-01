@@ -1,17 +1,10 @@
 /* global variables */
-$max-width: 71.25em;
-$max-width-narrow: $max-width - 20;
-
 $color-white: rgb(255, 255, 255);
 $color-grey-light: rgb(243, 243, 243);
 $color-grey-dark: rgb(32, 36, 41);
 $color-red: rgb(196, 90, 75);
 $color-red-light: rgb(183, 69, 60);
 $color-green: rgb(1, 142, 66);
-
-$primary-color: $color-red;
-
-$border-radius: 2px;
 
 //these are used in multiple situations - not just alerts
 $status-type-success: rgb(90, 182, 90);
@@ -29,8 +22,4 @@ $mqs: (
     wide_handhelds: 35em,
     tablets: 48em,
     wide_tablets: 64em,
-    // hero & image bars
-    hero_medium: 25em,
-    hero_large: 50em,
-    hero_extra_large: 68.75em
 );
