@@ -15,6 +15,12 @@
     .sidebar_nav-submenu-open & {
         transform: translateX($sidebar-submenu-width);
     }
+
+    &-narrow {
+        @include clearfix;
+        max-width: $max-content-width;
+        margin: 0 auto;
+    }
 }
 
 .content-wrap_inside { padding: 1em; }
