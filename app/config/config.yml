@@ -115,7 +115,7 @@ fos_user:
 #    resolvers:
 #        default:
 #            web_path:
-#                web_root: "%kernel.root_dir%/../html"
+#                web_root: '%web_root%'
 #                cache_prefix: "media/cache"
 #
 #    loaders:
