@@ -20,22 +20,13 @@ Used to create new projects using [Symfony](http://symfony.com/) at [XM Media](h
   4. Install NVM: https://github.com/creationix/nvm#install-script
   5. Run `. ./node_setup.sh` (this will setup node & gulp).
   6. Run `yarn` to install Node packages.
-  7. Run `gulp --dev` to compile JS & CSS files.
+  7. Run `webpack` to compile JS & CSS files.
   8. Create the database: `php bin/console doctrine:schema:create`
-  9. `mkdir var && chmod -R 0777 var`
-  10. Set FACLs as root (if needed, see below).
   11. Create a user `php bin/console fos:user:create` and then promote them (add the role `ROLE_SUPER_ADMIN`) `php bin/console fos:user:promote`
   12. Setup mail spool: add cron task similar to: `* * * * * cd <path> && php bin/console swiftmailer:spool:send --message-limit=10 --time-limit=45 >> var/logs/mailer.log 2>&1`
 9. Delete starter files: `README.md` (or update), `TEMPLATES.md`.
 
 **Dev site can be accessed at https://[domain]/app_dev.php/**
-
-**Set FACLs**
-```
-HTTPDUSER=`ps aux | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1`
-setfacl -R -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var
-setfacl -dR -m u:"$HTTPDUSER":rwX -m u:`whoami`:rwX var
-```
 
 ## System Requirements
 
