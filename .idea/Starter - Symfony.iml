@@ -74,6 +74,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/asset-version-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/xm/controller-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/filter-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/mail-manager-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/mailer-test-bundle" />
@@ -174,6 +175,7 @@
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
           <root url="file://$MODULE_DIR$/vendor/webmozart/assert" />
           <root url="file://$MODULE_DIR$/vendor/xm/asset-version-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/xm/controller-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/filter-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/mail-manager-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/mailer-test-bundle" />
@@ -254,6 +256,7 @@
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
           <root url="file://$MODULE_DIR$/vendor/webmozart/assert" />
           <root url="file://$MODULE_DIR$/vendor/xm/asset-version-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/xm/controller-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/filter-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/mail-manager-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/mailer-test-bundle" />
