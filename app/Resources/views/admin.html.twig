@@ -65,7 +65,9 @@
 {% block content_wrap %}
     <header class="header_admin-wrap-small">
         <menu-small></menu-small>
-        <img src="/images/logo.svg" width="80" height="22" alt="{{ 'app.parameter.name'|trans }}">
+        <a href="{{ path('admin_dashboard') }}"
+            <img src="/images/logo.svg" width="80" height="22" alt="{{ 'app.parameter.name'|trans }}">
+        </a>
     </header>
     <div class="content-wrap js-content-wrap">
         <header class="header_admin-wrap">
