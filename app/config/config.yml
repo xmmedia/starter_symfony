@@ -95,9 +95,14 @@ fos_user:
     firewall_name: main
     user_class: AppBundle\Entity\User
     # custom forms below come from http://stackoverflow.com/a/21064627/5441
+#    registration:
+#        form:
+#            type: AppBundle\Form\RegistrationType
+#            validation_groups: [ AcmeRegistration ]
 #    profile:
 #        form:
-#            type: AppBundle\Form\Type\ProfileFormType
+#            type: AppBundle\Form\ProfileType
+#            validation_groups: [ AcmeProfile ]
     from_email:
         address:        '%from_email%'
         sender_name:    '%from_name%'
