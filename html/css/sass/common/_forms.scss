@@ -1,5 +1,5 @@
-// this var is here because we need the text colour var first
 $form-label-color-hover: lighten($text-color, 20%);
+$form-border-color: rgba(0, 0, 0, 0.1);
 
 // fixes space below textareas, making it consistent across browsers
 textarea {
@@ -14,7 +14,7 @@ textarea {
     margin: 1em auto;
     padding: 1em;
     border-radius: $border-radius;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px $form-border-color;
     h2 { margin-top: 0; }
     h4 { margin-bottom: 0.5em; }
 }
@@ -22,7 +22,7 @@ textarea {
 .form-fieldset {
     margin: 1.5em 0 1em;
     padding: 0.5em 1em;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid $form-border-color;
     .form-field_wrap:last-of-type {
         margin-bottom: 0.5em;
     }
@@ -90,7 +90,6 @@ textarea {
 // for text elements
 .form-field_wrap-flex {
     display: flex;
-    flex-flow: row nowrap;
     align-items: center;
 }
 .form-field_wrap-readonly {
@@ -123,12 +122,12 @@ textarea {
     margin-right: 0.5em;
     label { margin-bottom: 0; }
 }
-.form-field_horz_separator {
-    padding: 0 0.25em;
-}
 .form-field_suffix {
     margin-left: $form-space-separator;
     flex: 0 0 auto;
+}
+.form-field_separator {
+    padding: 0 0.25em;
 }
 
 .form-field_help {
