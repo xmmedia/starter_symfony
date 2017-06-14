@@ -2,5 +2,6 @@
 @mixin default-html-style {
     font: 100%/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 200;
+    line-height: 1.3;
     color: $text-color;
 }
