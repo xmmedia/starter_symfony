@@ -74,19 +74,17 @@
     text-align: center;
     background-color: $admin-header-action;
     color: $admin-header-action-text;
-     &:hover {
-         background-color: darken($admin-header-action, 5%);
-     }
+    &:hover {
+        background-color: darken($admin-header-action, 5%);
+    }
     @include mq(handhelds) {
-         margin: 1em 0 1em 1.25em;
+        margin: 1em 0 1em 1.25em;
     }
-
     @include mq(tablets) {
-       margin: 1.85em 0 1em 1.25em;
+        margin: 1.85em 0 1em 1.25em;
     }
-
     @include mq(49em) {
-         margin: 1em 0 1em 1.25em;
+        margin: 1em 0 1em 1.25em;
     }
 }
 
