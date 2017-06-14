@@ -84,6 +84,15 @@
     color: rgba($text-color, 0.6);
 }
 
+.record_view-item-full_width {
+    .record_view-item_label, .record_view-item_value {
+        width: 100%;
+    }
+    .record_view-item_value {
+        padding: 1em 0;
+    }
+}
+
 .record_view-icon {
     width: 1.1em;
     height: 1.1em;
