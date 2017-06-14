@@ -53,6 +53,7 @@
 .record_view-item_label {
     // @todo do we need to specific 100%? (x2)
     width: 100%;
+    // @todo does this make sense?
     min-width: 5em;
     color: rgba($color-grey-dark, 0.6);
     @include mq(tablets) {
@@ -62,6 +63,7 @@
 .record_view-item_value {
     // @todo do we need to specific 100%? (x2)
     width: 100%;
+    // @todo what does this solve?
     word-wrap: break-word;
     @include mq(tablets) {
         width: 80%;
