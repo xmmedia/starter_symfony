@@ -47,6 +47,19 @@
     margin-top: 2.5em;
 }
 
+// on the ul
+.record_list-wrap-with_last_row_summary {
+    li {
+        &:nth-last-of-type(2) {
+            border-bottom: 1px solid $record-list-lines;
+        }
+        &:last-child {
+            border-bottom: none;
+            font-weight: bold;
+        }
+    }
+}
+
 .record_list-item:hover {
     color: $text-color;
     background: $record-list-row-hover;
@@ -100,7 +113,6 @@
         text-align: center;
     }
 }
-
 .record_list-col-light {
     color: rgba($color-grey-dark, 0.6);
 }
@@ -136,6 +148,12 @@
             padding-right: 0.3em;
         }
     }
+}
+
+.record_list-col-ellipsis {
+    @extend .record_list-col-no_wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .record_list-headers {
