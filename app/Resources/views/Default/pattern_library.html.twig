@@ -200,10 +200,27 @@
     {{ knp_pagination_render(pagination) }}
 
     {# ############################# #}
+    {# ########## Header ########### #}
+    {# ############################# #}
+    <h2>Header</h2>
+    <div class="header_admin-wrap">
+        <div class="header_admin-page_title">Page Name</div>
+        <div class="header_admin-actions">
+            <div class="header_admin-action header_admin-action-secondary">
+                <a href="">Less Important</a>
+            </div>
+            <a href="" class="header_admin-action header_admin-action-main">Action</a>
+            <div class="header_admin-action-nav-wrap">
+                <div class="button-pair button_pair-left button_pair-left-inactive">&lt;</div>
+                <div class="button-pair button_pair-right button_pair-right-inactive">&gt;</div>
+            </div>
+        </div>
+    </div>
+
+    {# ############################# #}
     {# ####### Button Pair ######### #}
     {# ############################# #}
     <h2>Button Pair</h2>
-    <div class="content-wrap js-content-wrap">
         <div class="header_admin-wrap">
             <div class="header_admin-page_title">Both Inactive</div>
             <div class="header_admin-actions">
@@ -243,7 +260,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
     {# ############################# #}
     {# ####### Record List ######### #}
