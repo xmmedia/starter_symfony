@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "736a39a14e8f108a778557b5c99f62ec",
+    "content-hash": "78957f389fae0e0862c990ecb4145e8a",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1282,16 +1282,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.22.1",
+            "version": "1.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0"
+                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1e044bc4b34e91743943479f1be7a1d5eb93add0",
-                "reference": "1e044bc4b34e91743943479f1be7a1d5eb93add0",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
+                "reference": "fd8c787753b3a2ad11bc60c063cff1358a32a3b4",
                 "shasum": ""
             },
             "require": {
@@ -1312,7 +1312,7 @@
                 "phpunit/phpunit-mock-objects": "2.3.0",
                 "ruflin/elastica": ">=0.90 <3.0",
                 "sentry/sentry": "^0.13",
-                "swiftmailer/swiftmailer": "~5.3"
+                "swiftmailer/swiftmailer": "^5.3|^6.0"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -1356,7 +1356,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-03-13T07:08:03+00:00"
+            "time": "2017-06-19T01:22:40+00:00"
         },
         {
             "name": "ocramius/proxy-manager",
@@ -1568,12 +1568,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "7cd88c8d4e4e6b483633bb13c35bcec95fd6cd4c"
+                "reference": "0b18b6bbeed070fb900ad78e81ffa1182a57a752"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/7cd88c8d4e4e6b483633bb13c35bcec95fd6cd4c",
-                "reference": "7cd88c8d4e4e6b483633bb13c35bcec95fd6cd4c",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0b18b6bbeed070fb900ad78e81ffa1182a57a752",
+                "reference": "0b18b6bbeed070fb900ad78e81ffa1182a57a752",
                 "shasum": ""
             },
             "conflict": {
@@ -1598,8 +1598,8 @@
                 "doctrine/mongodb-odm-bundle": ">=2,<3.0.1",
                 "doctrine/orm": ">=2,<2.4.8|>=2.5,<2.5.1",
                 "dompdf/dompdf": ">=0.6,<0.6.2",
-                "drupal/core": ">=8,<8.2.8|>=8.3,<8.3.1",
-                "drupal/drupal": ">=8,<8.2.8|>=8.3,<8.3.1",
+                "drupal/core": ">=8,<8.3.4",
+                "drupal/drupal": ">=8,<8.3.4",
                 "firebase/php-jwt": "<2",
                 "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
                 "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
@@ -1696,7 +1696,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2017-06-07T12:12:03+00:00"
+            "time": "2017-06-22T16:43:17+00:00"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2382,16 +2382,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.2.9",
+            "version": "v3.2.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "78c08f2faa42210db4fe6f4ece73891ca546a9a0"
+                "reference": "697ece8d9a4e07349bf5d222204fc878b3199f03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/78c08f2faa42210db4fe6f4ece73891ca546a9a0",
-                "reference": "78c08f2faa42210db4fe6f4ece73891ca546a9a0",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/697ece8d9a4e07349bf5d222204fc878b3199f03",
+                "reference": "697ece8d9a4e07349bf5d222204fc878b3199f03",
                 "shasum": ""
             },
             "require": {
@@ -2404,7 +2404,7 @@
                 "symfony/polyfill-php56": "~1.0",
                 "symfony/polyfill-php70": "~1.0",
                 "symfony/polyfill-util": "~1.0",
-                "twig/twig": "~1.28|~2.0"
+                "twig/twig": "~1.34|~2.4"
             },
             "conflict": {
                 "phpdocumentor/reflection-docblock": "<3.0",
@@ -2491,7 +2491,6 @@
                     "Symfony\\Bridge\\Doctrine\\": "src/Symfony/Bridge/Doctrine/",
                     "Symfony\\Bridge\\Monolog\\": "src/Symfony/Bridge/Monolog/",
                     "Symfony\\Bridge\\ProxyManager\\": "src/Symfony/Bridge/ProxyManager/",
-                    "Symfony\\Bridge\\Swiftmailer\\": "src/Symfony/Bridge/Swiftmailer/",
                     "Symfony\\Bridge\\Twig\\": "src/Symfony/Bridge/Twig/",
                     "Symfony\\Bundle\\": "src/Symfony/Bundle/",
                     "Symfony\\Component\\": "src/Symfony/Component/"
@@ -2522,7 +2521,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-05-29T19:32:17+00:00"
+            "time": "2017-07-05T10:25:23+00:00"
         },
         {
             "name": "twig/extensions",
@@ -2582,16 +2581,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.34.3",
+            "version": "v1.34.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "451c6f4197e113e24c1c85bc3fc8c2d77adeff2e"
+                "reference": "f878bab48edb66ad9c6ed626bf817f60c6c096ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/451c6f4197e113e24c1c85bc3fc8c2d77adeff2e",
-                "reference": "451c6f4197e113e24c1c85bc3fc8c2d77adeff2e",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/f878bab48edb66ad9c6ed626bf817f60c6c096ee",
+                "reference": "f878bab48edb66ad9c6ed626bf817f60c6c096ee",
                 "shasum": ""
             },
             "require": {
@@ -2643,7 +2642,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-06-07T18:45:17+00:00"
+            "time": "2017-07-04T13:19:31+00:00"
         },
         {
             "name": "xm/asset-version-bundle",
@@ -2691,52 +2690,6 @@
             "time": "2016-11-23 01:03:11"
         },
         {
-            "name": "xm/controller-bundle",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/xmmedia/XMControllerBundle.git",
-                "reference": "0287a302604392b7b837e8cce57542f5fb63e265"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMControllerBundle/zipball/0287a302604392b7b837e8cce57542f5fb63e265",
-                "reference": "0287a302604392b7b837e8cce57542f5fb63e265",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/orm": "~2.5",
-                "php": "^5.6 || ^7.0",
-                "symfony/form": "~3.0",
-                "symfony/framework-bundle": "~3.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "XM\\ControllerBundle\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Darryl Hein",
-                    "email": "dhein@xmmedia.com"
-                }
-            ],
-            "description": "Provides a base controller class that's helpful for quickly creating CRUD & similar controllers.",
-            "homepage": "https://github.com/xmmedia/XMControllerBundle",
-            "support": {
-                "source": "https://github.com/xmmedia/XMControllerBundle/tree/master",
-                "issues": "https://github.com/xmmedia/XMControllerBundle/issues"
-            },
-            "time": "2017-05-29 21:37:05"
-        },
-        {
             "name": "xm/filter-bundle",
             "version": "dev-master",
             "source": {
@@ -2782,6 +2735,104 @@
                 "issues": "https://github.com/xmmedia/XMFilterBundle/issues"
             },
             "time": "2017-05-19 22:31:30"
+        },
+        {
+            "name": "xm/flash-bundle",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xmmedia/XMFlashBundle.git",
+                "reference": "4b04ae33ce83ff21f68fa60086b42f18f3a73020"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xmmedia/XMFlashBundle/zipball/4b04ae33ce83ff21f68fa60086b42f18f3a73020",
+                "reference": "4b04ae33ce83ff21f68fa60086b42f18f3a73020",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6 || ^7.0",
+                "symfony/framework-bundle": "~3.0",
+                "symfony/translation": "~3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9",
+                "phpunit/phpunit": "5.7.*",
+                "symfony/phpunit-bridge": "^3.0",
+                "symfony/var-dumper": "^3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "XM\\FlashBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Darryl Hein",
+                    "email": "dhein@xmmedia.com"
+                }
+            ],
+            "description": "Makes adding & translating flash messages in Symfony simple.",
+            "homepage": "https://github.com/xmmedia/XMFlashBundle",
+            "time": "2017-07-05T22:11:16+00:00"
+        },
+        {
+            "name": "xm/form-bundle",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xmmedia/XMFormBundle.git",
+                "reference": "725fac148beb57e9e03ec85c4ce2a644126e1e7d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xmmedia/XMFormBundle/zipball/725fac148beb57e9e03ec85c4ce2a644126e1e7d",
+                "reference": "725fac148beb57e9e03ec85c4ce2a644126e1e7d",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "^2.5",
+                "php": "^5.6 || ^7.0",
+                "symfony/form": "~3.0",
+                "symfony/framework-bundle": "~3.0",
+                "xm/flash-bundle": "~1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9",
+                "phpunit/phpunit": "5.7.*",
+                "symfony/phpunit-bridge": "^3.0",
+                "symfony/var-dumper": "^3.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "XM\\FormBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Darryl Hein",
+                    "email": "dhein@xmmedia.com"
+                }
+            ],
+            "description": "A few helpers to make processing (creating, saving, errors, etc) forms simpler.",
+            "homepage": "https://github.com/xmmedia/XMFormBundle",
+            "time": "2017-07-05T21:53:19+00:00"
         },
         {
             "name": "xm/mail-manager-bundle",
@@ -2882,12 +2933,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMUserAdminBundle.git",
-                "reference": "0f1a6666073899995218822c486d0e3457265dda"
+                "reference": "4a4328d30abe8a851f37bf1fb9022b40a6c52f36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMUserAdminBundle/zipball/0f1a6666073899995218822c486d0e3457265dda",
-                "reference": "0f1a6666073899995218822c486d0e3457265dda",
+                "url": "https://api.github.com/repos/xmmedia/XMUserAdminBundle/zipball/4a4328d30abe8a851f37bf1fb9022b40a6c52f36",
+                "reference": "4a4328d30abe8a851f37bf1fb9022b40a6c52f36",
                 "shasum": ""
             },
             "require": {
@@ -2923,7 +2974,7 @@
                 "source": "https://github.com/xmmedia/XMUserAdminBundle/tree/master",
                 "issues": "https://github.com/xmmedia/XMUserAdminBundle/issues"
             },
-            "time": "2017-05-19 22:37:53"
+            "time": "2017-06-30 21:43:54"
         },
         {
             "name": "zendframework/zend-code",
@@ -3196,16 +3247,16 @@
         },
         {
             "name": "liip/functional-test-bundle",
-            "version": "1.7.3",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/liip/LiipFunctionalTestBundle.git",
-                "reference": "fac05bc216c88e8cc855e0cd5fb3e2e81e54593a"
+                "reference": "e18866bc434fccdf0d04a4e776289ed999862b66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liip/LiipFunctionalTestBundle/zipball/fac05bc216c88e8cc855e0cd5fb3e2e81e54593a",
-                "reference": "fac05bc216c88e8cc855e0cd5fb3e2e81e54593a",
+                "url": "https://api.github.com/repos/liip/LiipFunctionalTestBundle/zipball/e18866bc434fccdf0d04a4e776289ed999862b66",
+                "reference": "e18866bc434fccdf0d04a4e776289ed999862b66",
                 "shasum": ""
             },
             "require": {
@@ -3224,13 +3275,13 @@
                 "hautelook/alice-bundle": "~0.2|~1.2",
                 "jackalope/jackalope-doctrine-dbal": "1.1.*|1.2.*",
                 "nelmio/alice": "~1.7|~2.0",
-                "phpunit/phpunit": "4.8.*|~5.2",
+                "phpunit/phpunit": "^4.8.35|^5.7|^6.1",
                 "symfony/assetic-bundle": "~2.3",
                 "symfony/console": "~2.5|~3.0",
                 "symfony/monolog-bundle": "~2.4",
                 "symfony/phpunit-bridge": "^2.7|~3.0",
                 "symfony/symfony": "~2.3.27|~2.7|~3.0",
-                "twig/twig": "~1.12"
+                "twig/twig": "~1.12|~2.0"
             },
             "suggest": {
                 "brianium/paratest": "Required when using paratest to parallelize tests",
@@ -3270,7 +3321,7 @@
             "keywords": [
                 "Symfony2"
             ],
-            "time": "2017-04-21T17:22:21+00:00"
+            "time": "2017-06-19T09:12:22+00:00"
         },
         {
             "name": "matthimatiker/opcache-bundle",
@@ -3881,16 +3932,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.20",
+            "version": "5.7.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3cb94a5f8c07a03c8b7527ed7468a2926203f58b"
+                "reference": "3b91adfb64264ddec5a2dee9851f354aa66327db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3cb94a5f8c07a03c8b7527ed7468a2926203f58b",
-                "reference": "3cb94a5f8c07a03c8b7527ed7468a2926203f58b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3b91adfb64264ddec5a2dee9851f354aa66327db",
+                "reference": "3b91adfb64264ddec5a2dee9851f354aa66327db",
                 "shasum": ""
             },
             "require": {
@@ -3959,20 +4010,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-05-22T07:42:55+00:00"
+            "time": "2017-06-21T08:11:54+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.4.3",
+            "version": "3.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "3ab72b65b39b491e0c011e2e09bb2206c2aa8e24"
+                "reference": "a23b761686d50a560cc56233b9ecf49597cc9118"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/3ab72b65b39b491e0c011e2e09bb2206c2aa8e24",
-                "reference": "3ab72b65b39b491e0c011e2e09bb2206c2aa8e24",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/a23b761686d50a560cc56233b9ecf49597cc9118",
+                "reference": "a23b761686d50a560cc56233b9ecf49597cc9118",
                 "shasum": ""
             },
             "require": {
@@ -4018,7 +4069,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-12-08T20:27:08+00:00"
+            "time": "2017-06-30T09:13:00+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -4589,16 +4640,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.3.2",
+            "version": "v3.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "acae7416018ebe5a7a2d79b4221203b2b8aca5d3"
+                "reference": "c2c124b7f9de79f4a64dc011f041a3a2c768b913"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/acae7416018ebe5a7a2d79b4221203b2b8aca5d3",
-                "reference": "acae7416018ebe5a7a2d79b4221203b2b8aca5d3",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/c2c124b7f9de79f4a64dc011f041a3a2c768b913",
+                "reference": "c2c124b7f9de79f4a64dc011f041a3a2c768b913",
                 "shasum": ""
             },
             "require": {
@@ -4647,7 +4698,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01T14:45:22+00:00"
+            "time": "2017-06-12T13:35:45+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -4755,7 +4806,6 @@
         "xm/security-bundle": 20,
         "xm/user-admin-bundle": 20,
         "xm/mail-manager-bundle": 20,
-        "xm/controller-bundle": 20,
         "xm/mailer-test-bundle": 20
     },
     "prefer-stable": false,

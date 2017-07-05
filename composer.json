@@ -30,7 +30,8 @@
         "xm/security-bundle": "dev-master",
         "xm/user-admin-bundle": "dev-master",
         "xm/mail-manager-bundle": "dev-master",
-        "xm/controller-bundle": "dev-master"
+        "xm/form-bundle": "^1.0",
+        "xm/flash-bundle": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "5.7.*",
@@ -100,10 +101,6 @@
         {
             "type": "vcs",
             "url":  "git@github.com:xmmedia/XMMailerTestBundle.git"
-        },
-        {
-            "type": "vcs",
-            "url":  "git@github.com:xmmedia/XMControllerBundle.git"
         }
     ]
 }

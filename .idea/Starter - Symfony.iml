@@ -2,7 +2,8 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/cache" />
@@ -74,8 +75,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/asset-version-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/xm/controller-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/filter-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/xm/flash-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/xm/form-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/mail-manager-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/mailer-test-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/xm/security-bundle" />
@@ -177,8 +179,9 @@
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
           <root url="file://$MODULE_DIR$/vendor/webmozart/assert" />
           <root url="file://$MODULE_DIR$/vendor/xm/asset-version-bundle" />
-          <root url="file://$MODULE_DIR$/vendor/xm/controller-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/filter-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/xm/flash-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/xm/form-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/mail-manager-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/mailer-test-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/security-bundle" />
@@ -258,8 +261,9 @@
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
           <root url="file://$MODULE_DIR$/vendor/webmozart/assert" />
           <root url="file://$MODULE_DIR$/vendor/xm/asset-version-bundle" />
-          <root url="file://$MODULE_DIR$/vendor/xm/controller-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/filter-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/xm/flash-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/xm/form-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/mail-manager-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/mailer-test-bundle" />
           <root url="file://$MODULE_DIR$/vendor/xm/security-bundle" />
