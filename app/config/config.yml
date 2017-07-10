@@ -7,9 +7,9 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en_CA
-    web_root: '%kernel.root_dir%/../html'
+    web_root: '%kernel.project_dir%/html'
     # upload paths
-    upload.private.root_dir: '%kernel.root_dir%/../var/uploads'
+    upload.private.root_dir: '%kernel.project_dir%/var/uploads'
     upload.public.root_dir: '%web_root%/uploads'
 
 framework:
@@ -30,7 +30,7 @@ framework:
     session:
         # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
         handler_id:  session.handler.native_file
-        save_path:   '%kernel.root_dir%/../var/sessions/%kernel.environment%'
+        save_path:   '%kernel.project_dir%/var/sessions/%kernel.environment%'
     fragments:       ~
     http_method_override: true
     assets:
@@ -87,7 +87,7 @@ swiftmailer:
     password:   '%mailer_password%'
     spool:
         type: file
-        path: '%kernel.root_dir%/../var/mail_spool'
+        path: '%kernel.project_dir%/var/mail_spool'
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
