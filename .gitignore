@@ -14,7 +14,7 @@ node_modules
 
 # Symfony
 /app/config/parameters.yml
-/build/
+/html/build/
 /phpunit.xml
 /var/*
 !/var/cache

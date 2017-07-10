@@ -41,8 +41,3 @@ services:
 #        public: false
 #        tags:
 #            - { name: twig.extension }
-
-    # assets
-    assets.version_strategy:
-        class: XM\AssetVersionBundle\Asset\VersionStrategy\FileModifiedTimestampVersionStrategy
-        arguments: ['%web_root%']

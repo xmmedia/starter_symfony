@@ -75,11 +75,6 @@ DirectoryIndex app.php
     RewriteCond %{REQUEST_FILENAME} -f
     RewriteRule ^ - [L]
 
-    # Filename-based cache busting
-    # Apply to CSS, JS, image and PDF files
-    # Uses the format /version-4.3/css/public.css (version can be 4.3, 4, or a timestamp)
-    RewriteRule ^version-([\d\.]+)/(.+)\.(css|cur|gif|ico|jpe?g|js|png|svgz?|webp|webmanifest|pdf|map)$ $2.$3 [L]
-
     # Rewrite all other queries to the front controller.
     RewriteRule ^ %{ENV:BASE}/app.php [L]
 </IfModule>
