@@ -31,7 +31,6 @@ DirectoryIndex app.php
 
     # Rewrite example.com → www.example.com
     # And redirect to https at the same time
-    RewriteCond %{HTTPS} !=on
     RewriteCond %{HTTP_HOST} !^www\. [NC]
     RewriteCond %{HTTP_HOST} !^dev\. [NC]
     RewriteCond %{SERVER_ADDR} !=127.0.0.1
