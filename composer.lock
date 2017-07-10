@@ -1199,7 +1199,7 @@
             ],
             "authors": [
                 {
-                    "name": "KnpLabs Team",
+                    "name": "KNPLabs Team",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -2786,16 +2786,16 @@
         },
         {
             "name": "xm/form-bundle",
-            "version": "1.0",
+            "version": "1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMFormBundle.git",
-                "reference": "725fac148beb57e9e03ec85c4ce2a644126e1e7d"
+                "reference": "85014ffd62174ab766cd24f3a0dc30f961914aea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMFormBundle/zipball/725fac148beb57e9e03ec85c4ce2a644126e1e7d",
-                "reference": "725fac148beb57e9e03ec85c4ce2a644126e1e7d",
+                "url": "https://api.github.com/repos/xmmedia/XMFormBundle/zipball/85014ffd62174ab766cd24f3a0dc30f961914aea",
+                "reference": "85014ffd62174ab766cd24f3a0dc30f961914aea",
                 "shasum": ""
             },
             "require": {
@@ -2832,7 +2832,7 @@
             ],
             "description": "A few helpers to make processing (creating, saving, errors, etc) forms simpler.",
             "homepage": "https://github.com/xmmedia/XMFormBundle",
-            "time": "2017-07-05T21:53:19+00:00"
+            "time": "2017-07-06T05:40:53+00:00"
         },
         {
             "name": "xm/mail-manager-bundle",
@@ -2885,12 +2885,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xmmedia/XMSecurityBundle.git",
-                "reference": "d288676b97e1803f59c5115b7f571bc274bdae30"
+                "reference": "9c03cdf6c1156ab33a924ac1aee3566278640ca2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xmmedia/XMSecurityBundle/zipball/d288676b97e1803f59c5115b7f571bc274bdae30",
-                "reference": "d288676b97e1803f59c5115b7f571bc274bdae30",
+                "url": "https://api.github.com/repos/xmmedia/XMSecurityBundle/zipball/9c03cdf6c1156ab33a924ac1aee3566278640ca2",
+                "reference": "9c03cdf6c1156ab33a924ac1aee3566278640ca2",
                 "shasum": ""
             },
             "require": {
@@ -2925,7 +2925,7 @@
                 "source": "https://github.com/xmmedia/XMSecurityBundle/tree/master",
                 "issues": "https://github.com/xmmedia/XMSecurityBundle/issues"
             },
-            "time": "2017-05-25 15:42:07"
+            "time": "2017-07-10 18:59:42"
         },
         {
             "name": "xm/user-admin-bundle",
