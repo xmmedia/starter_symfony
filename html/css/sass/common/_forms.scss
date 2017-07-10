@@ -21,11 +21,14 @@ textarea {
 
 .form-fieldset {
     margin: 1.5em 0 1em;
-    padding: 0.5em 1em;
+    padding: 1em 1em;
     border: 1px solid $form-border-color;
-    .form-field_wrap:last-of-type {
+    > .form-field_wrap:last-of-type {
         margin-bottom: 0.5em;
     }
+}
+.form-fieldset-first {
+    margin-top: 0.5em;
 }
 
 @mixin text-input() {
@@ -36,6 +39,13 @@ textarea {
 
 .form-field-flex {
     @include flex-row_wrap;
+}
+
+.form-field_wrap {
+    select {
+        height: 2.3em;
+        padding: 0.5em;
+    }
 }
 
 .form-field_wrap, .form_table-col {
@@ -86,11 +96,30 @@ textarea {
 .form-field_wrap-flex_horz {
     display: flex;
     align-items: center;
+    margin-bottom: 1em;
+    > .form-field_wrap {
+        margin-bottom: 0;
+    }
 }
-// for text elements
-.form-field_wrap-flex {
-    display: flex;
-    align-items: center;
+
+.form-field_wrap-flex_full_width {
+    display: block;
+    @include mq(wide_handhelds) {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+    }
+
+    > .form-field_wrap {
+        @include mq(wide_handhelds) {
+            flex-basis: 50%;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.form-field_wrap-right_margin {
+    margin-right: 0.25em;
 }
 .form-field_wrap-readonly {
     position: relative;
@@ -107,6 +136,12 @@ textarea {
         opacity: 0.5;
         content: "read-only";
     }
+}
+
+// shows a "sub" of previous field
+.form-field_wrap-inset {
+    padding-left: 2em;
+    border-left: 3px solid darken($color-grey-light, 30%);
 }
 
 // for use inside of a field_wrap for multiple fields shown vertically
@@ -143,6 +178,19 @@ textarea {
     margin-top: $form-space-separator;
 }
 
+// for lists of checkboxes or radios (shows as up to 3 columns)
+.form-row_item_wrap {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 100%;
+}
+.form-row_item {
+    flex: 0 0 50%;
+    @include mq(wide_handhelds) {
+        flex: 1 1 33%;
+    }
+}
+
 .form-button_wrap {
     button, .button { margin-right: 0.5em; }
 }
@@ -170,4 +218,14 @@ textarea {
 // for the labels within the vich file uploader widget
 .vich-file label {
     margin-top: $form-space-separator;
+}
+
+// form headings with links
+.form-heading_with_link_wrap {
+    display: flex;
+    align-items: flex-start;
+}
+.form-heading_links {
+    margin-left: auto;
+    a:last-child { margin-right: 0; }
 }

@@ -88,6 +88,18 @@
                 <input type="text" id="pattern-library-text">
                 <div class="form-field_help">Use at least 8 characters.</div>
             </div>
+
+            <div class="form-field_wrap-flex_full_width">
+                <div class="form-field_wrap form-field_wrap-right_margin">
+                    <label for="pattern-library-full_width-1">First Field</label>
+                    <input type="text" id="pattern-library-full_width-1">
+                </div>
+                <div class="form-field_wrap">
+                    <label for="pattern-library-full_width-2">Second Field</label>
+                    <input type="text" id="pattern-library-full_width-2">
+                </div>
+            </div>
+
             <div class="form-field_wrap form-field_wrap-no_width">
                 <label for="pattern-library-prefix-suffix">Field with Prefix Beside</label>
                 <span class="form-field_prefix">Prefix Beside</span><input type="text" id="pattern-library-prefix-suffix"><span class="form-field_suffix">Suffix</span>
@@ -150,7 +162,7 @@
             <div class="form-field_wrap form-field_wrap-no_margin">
                 <label for="pattern-library-two-fields-1">2 Fields Beside Each Other</label>
                 <div class="form-field_wrap-flex_horz">
-                    <div class="form-field_wrap form-field-right_margin">
+                    <div class="form-field_wrap form-field_wrap-right_margin">
                         <input type="text" id="pattern-library-two-fields-1">
                     </div>
                     <div class="form-field_wrap">
@@ -178,6 +190,17 @@
                         <option>––</option>
                     </select>
                 </div>
+            </div>
+
+            <div class="form-fieldset" :class="{ 'form-fieldset-first' : (index === 0) }">
+                <div class="form-field_wrap">
+                    <label for="pattern-library-fieldset-1">Fieldset Field 1</label>
+                    <select id="pattern-library-fieldset-1">
+                        <option>––</option>
+                    </select>
+                </div>
+
+                <a href="" class="form-action_link">× Remove</a>
             </div>
 
             <div class="form-button_wrap">
