@@ -27,11 +27,6 @@ parameters:
 
     ga_tracking_id:    ~
 
-    # change this to true to enable maintenance
-    maintenance: false
-    # this is just a string that's displayed in the message
-    in_maintenance_until: tommorow 8 AM
-
     from_email:        info@example.com
     from_name:         Symfony Starter
     admin_email:       info@example.com

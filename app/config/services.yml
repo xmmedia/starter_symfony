@@ -19,11 +19,6 @@ services:
 
 # app services
     # general listeners
-    app.maintenance:
-        class: AppBundle\Listener\MaintenanceListener
-        arguments: ["@service_container"]
-        tags:
-            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
 
 # assets
     assets.version_strategy:
