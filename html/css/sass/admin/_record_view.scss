@@ -69,17 +69,6 @@
         width: 80%;
         padding-left: 1em;
     }
-
-    .record_view-list {
-        margin: 0;
-        padding-left: 1em;
-        li {
-            margin-bottom: 0.25em;
-            &:last-of-type {
-                margin-bottom: 0;
-            }
-        }
-    }
 }
 .record_view-item_value-inactive {
     color: rgba($text-color, 0.6);
@@ -91,6 +80,17 @@
     }
     .record_view-item_value {
         padding: 1em 0;
+    }
+}
+
+.record_view-list {
+    margin: 0;
+    padding-left: 1em;
+    li {
+        margin-bottom: 0.25em;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 }
 
