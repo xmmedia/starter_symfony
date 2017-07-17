@@ -32,7 +32,7 @@ textarea {
 }
 
 @mixin text-input() {
-    input:not([type=submit]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), textarea, select {
+    input:not([type=submit]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]):not([type=color]), textarea, select {
         @content;
     }
 }
