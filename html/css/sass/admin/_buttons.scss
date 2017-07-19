@@ -13,6 +13,9 @@ button, .button {
         background: lighten($button-background, 5%);
         transition: all 0.25s ease;
     }
+    &:disabled {
+        background: lighten($button-background, 15%);
+    }
 }
 
 // a button for deletion specifically, turns red when hovered
