@@ -19,7 +19,6 @@ Used to create new projects using [Symfony](http://symfony.com/) at [XM Media](h
   3. Install PHP packages/vendors: `php composer.phar install` It will ask for the parameter values including database & SMTP. A secret can be retrieved from http://nux.net/secret
   4. Install NVM: https://github.com/creationix/nvm#install-script
   5. Run `. ./node_setup.sh` (this will setup node & gulp).
-  6. Run `yarn` to install Node packages.
   7. Run `npm run dev` or `npm run build` to compile JS & CSS files. (When going live, run `npm run build` instead.)
   8. Create the database: `php bin/console doctrine:schema:create`
   11. Create a user `php bin/console fos:user:create` and then promote them (add the role `ROLE_SUPER_ADMIN`) `php bin/console fos:user:promote`
