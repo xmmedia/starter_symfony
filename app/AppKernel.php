@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
-            new XM\AssetVersionBundle\XMAssetVersionBundle(),
             new XM\FilterBundle\XMFilterBundle(),
             new XM\SecurityBundle\XMSecurityBundle(),
             new XM\UserAdminBundle\XMUserAdminBundle(),
