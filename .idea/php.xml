@@ -88,7 +88,6 @@
       <path value="$PROJECT_DIR$/vendor/xm/security-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
-      <path value="$PROJECT_DIR$/vendor/xm/asset-version-bundle" />
       <path value="$PROJECT_DIR$/vendor/xm/mail-manager-bundle" />
       <path value="$PROJECT_DIR$/vendor/xm/filter-bundle" />
       <path value="$PROJECT_DIR$/vendor/xm/mailer-test-bundle" />
@@ -96,8 +95,19 @@
       <path value="$PROJECT_DIR$/vendor/matthimatiker/opcache-bundle" />
       <path value="$PROJECT_DIR$/vendor/xm/flash-bundle" />
       <path value="$PROJECT_DIR$/vendor/xm/form-bundle" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/ocramius/package-versions" />
     </include_path>
   </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
   <component name="PhpUnit">
     <phpunit_settings>
       <PhpUnitSettings custom_loader_path="/Volumes/Documents/projects/starters/symfony/vendor/autoload.php" />
