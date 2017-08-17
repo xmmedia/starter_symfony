@@ -33,7 +33,8 @@
         "xm/user-admin-bundle": "^0.2",
         "xm/mail-manager-bundle": "^0.3",
         "xm/form-bundle": "^1.0",
-        "xm/flash-bundle": "^1.0"
+        "xm/flash-bundle": "^1.0",
+        "xm/doctrine-entity-repository": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "6.3.*",

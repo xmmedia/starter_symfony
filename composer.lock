@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b0c1977d778aff4bd0c8efa95659ac91",
+    "content-hash": "6ee37995fff40cc66c891f61dbdab600",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -2973,6 +2973,47 @@
                 "templating"
             ],
             "time": "2017-06-07T18:47:58+00:00"
+        },
+        {
+            "name": "xm/doctrine-entity-repository",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xmmedia/doctrine-entity-repository.git",
+                "reference": "5f93fcaaeb6c30270afe0071698ced354bfce13a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xmmedia/doctrine-entity-repository/zipball/5f93fcaaeb6c30270afe0071698ced354bfce13a",
+                "reference": "5f93fcaaeb6c30270afe0071698ced354bfce13a",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "~2.5",
+                "php": "^7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "XM\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Darryl Hein",
+                    "email": "dhein@xmmedia.com"
+                }
+            ],
+            "description": "A different method of creating entity repositories for use with Doctrine.",
+            "homepage": "https://github.com/xmmedia/doctrine-entity-repository",
+            "time": "2017-08-17T05:11:03+00:00"
         },
         {
             "name": "xm/filter-bundle",
