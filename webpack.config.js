@@ -1,7 +1,7 @@
 var Encore = require('@symfony/webpack-encore');
 
 Encore
-// directory where all compiled assets will be stored
+    // directory where all compiled assets will be stored
     .setOutputPath('html/build/')
 
     // what's the public path to this directory (relative to your project's document root dir)
