@@ -23,6 +23,8 @@ Encore
     // allow .vue files to be processed
     .enableVueLoader()
 
+    // always generate source maps
+    // the devtool is changed below depending on environment
     .enableSourceMaps(true)
 
     // create hashed filenames (e.g. public.abc123.css)
