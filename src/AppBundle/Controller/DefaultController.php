@@ -2,11 +2,12 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
+use Knp\Component\Pager\Paginator;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+class DefaultController extends AbstractController
 {
     /**
      * @Route("/", name="index")
@@ -19,9 +20,8 @@ class DefaultController extends Controller
     /**
      * @Route("/pattern-library", name="pattern_library")
      */
-    public function patternLibraryAction()
+    public function patternLibraryAction(Paginator $paginator)
     {
-        $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             range(1, 10), /* some random data */
             1, /* current page */
