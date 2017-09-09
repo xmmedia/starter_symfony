@@ -45,7 +45,9 @@
         "liip/functional-test-bundle": "^1.6",
         "doctrine/doctrine-fixtures-bundle": "2.3.*",
         "xm/mailer-test-bundle": "^0.1",
-        "matthimatiker/opcache-bundle": "^0.5"
+        "matthimatiker/opcache-bundle": "^0.5",
+        "nelmio/alice": "^3.0@RC",
+        "fzaninotto/faker": "^1.7"
     },
     "scripts": {
         "symfony-scripts": [

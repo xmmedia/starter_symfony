@@ -5,6 +5,7 @@ framework:
     test: ~
     session:
         storage_id: session.storage.mock_file
+        name: MOCKSESSID
     profiler:
         collect: false
 
@@ -14,10 +15,15 @@ web_profiler:
 
 doctrine:
     dbal:
-        # add "_test" behind db name
-        dbname: '%database_name%_test'
+        driver: pdo_sqlite
+        path:   '%kernel.cache_dir%/test.db'
+        charset: UTF8
+        default_table_options:
+            charset: UTF8
+            collation: UTF8
 
-liip_functional_test: ~
+liip_functional_test:
+    cache_sqlite_db: true
 
 swiftmailer:
     # change the spool as disabling delivery doesn't stop spooling to a file

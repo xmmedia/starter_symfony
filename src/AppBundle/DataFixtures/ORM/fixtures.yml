@@ -1,0 +1,11 @@
+AppBundle\Entity\User:
+    user (template):
+        email (unique): '<email()>'
+        firstName: '<firstName()>'
+        lastName: '<lastName()>'
+        enabled: true
+        password: '1234567890'
+    user-admin (extends user):
+        roles: ['ROLE_SUPER_ADMIN']
+    user-regular (extends user):
+        roles: []
