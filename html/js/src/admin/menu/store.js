@@ -1,25 +1,53 @@
-import * as types from '../store/mutation_types';
-
 const state = {
-    mobileMenuOpen: false,
+    mobileMenuIsOpen: false,
+    // the unique ID of the subnav that's open
+    subNavOpen: null,
+    classes: {
+        mobileOpen: 'sidebar_nav-visible',
+        sideBarOpen: 'sidebar_nav-submenu-open',
+    }
 };
 
 const getters = {
 };
 
 const actions = {
-    mobileMenuOpen ({ commit, state }, open) {
-        commit(types.ADMIN_MOBILE_MENU_OPEN, open);
+    openMobileMenu ({ commit, state }) {
+        commit('setAdminMobileMenuStatus', true);
+        document.body.classList.add(state.classes.mobileOpen);
     },
+    closeMobileMenu ({ dispatch }) {
+        dispatch('closeAllMenus');
+    },
+    subNavOpened ({ commit, state }, id) {
+        commit('setAdminSubMenuOpen', id);
+        document.body.classList.add(state.classes.sideBarOpen);
+    },
+    subNavClosed ({ commit, state }) {
+        commit('setAdminSubMenuOpen', null);
+        document.body.classList.remove(state.classes.sideBarOpen);
+    },
+    closeAllMenus ({ commit }) {
+        commit('setAdminMobileMenuStatus', false);
+        commit('setAdminSubMenuOpen', null);
+        document.body.classList.remove(
+            state.classes.mobileOpen,
+            state.classes.sideBarOpen
+        );
+    }
 };
 
 const mutations = {
-    [types.ADMIN_MOBILE_MENU_OPEN] (state, open) {
-        state.mobileMenuOpen = open;
+    setAdminMobileMenuStatus (state, status) {
+        state.mobileMenuIsOpen = status;
+    },
+    setAdminSubMenuOpen (state, id) {
+        state.subNavOpen = id;
     },
 };
 
 export default {
+    namespaced: true,
     state,
     getters,
     actions,

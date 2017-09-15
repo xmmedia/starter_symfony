@@ -1,24 +1,23 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-import * as types from './store/mutation_types';
 import adminMenu from './menu/store';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+    namespaced: true,
     state: {
         serverData: {},
     },
-    getters: {
-    },
+    getters: {},
     actions: {
-        updateServerData ({ commit, state }, serverData) {
-            commit(types.UPDATE_SERVER_DATA, serverData);
+        updateServerData ({ commit }, serverData) {
+            commit('setServerData', serverData);
         },
     },
     mutations: {
-        [types.UPDATE_SERVER_DATA] (state, serverData) {
+        setServerData (state, serverData) {
             state.serverData = serverData;
         },
     },

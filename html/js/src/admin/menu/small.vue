@@ -1,34 +1,15 @@
 <template>
-    <a href="" @click.stop.prevent="open = !open">Menu</a>
+    <a href="" @click.stop.prevent="toggleMenu">Menu</a>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
-    data() {
-        return {
-            bodyClass: 'sidebar_nav-visible',
-        };
-    },
-
     computed: {
-        open: {
-            get () {
-                return this.$store.state.adminMenu.mobileMenuOpen;
-            },
-            set (open) {
-                this.$store.dispatch('mobileMenuOpen', open);
-            }
-        }
-    },
-
-    watch: {
-        open() {
-            if (this.open) {
-                document.body.classList.add(this.bodyClass);
-            } else {
-                document.body.classList.remove(this.bodyClass);
-            }
-        }
+        ...mapState('adminMenu', {
+            open: 'mobileMenuIsOpen',
+        }),
     },
 
     mounted() {
@@ -37,9 +18,17 @@ export default {
             window.addEventListener('resize', this.windowResize);
         });
     },
+
     methods: {
+        toggleMenu () {
+            if (this.open) {
+                this.$store.dispatch('adminMenu/closeMobileMenu');
+            } else {
+                this.$store.dispatch('adminMenu/openMobileMenu');
+            }
+        },
         windowResize() {
-            this.open = false;
+            this.$store.dispatch('adminMenu/closeMobileMenu');
 
             this.setContentHeight();
         },
@@ -53,7 +42,7 @@ export default {
                 e = d.documentElement,
                 g = d.body;
 
-            return w.innerHeight|| e.clientHeight|| g.clientHeight;
+            return w.innerHeight || e.clientHeight || g.clientHeight;
         }
     }
 }

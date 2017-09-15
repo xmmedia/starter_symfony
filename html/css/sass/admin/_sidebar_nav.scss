@@ -6,8 +6,6 @@
     text-align: center;
     color: $sidebar-link;
     background: $color-grey-dark;
-    overflow-x: hidden;
-    overflow-y: auto;
     z-index: 9;
     .sidebar_nav-submenu-open & {
         width: $sidebar-width + $sidebar-submenu-width;
@@ -45,11 +43,28 @@
 
 .sidebar_nav-nav {
     width: $sidebar-width;
+    height: 100%;
     margin: 1.2rem 0;
-    padding: 0;
+    // so it's possible to scroll the last item into view
+    padding: 0 0 11rem;
     list-style: none;
-    // so we can control the positioning of the submenu arrow
-    li { position: relative; }
+    overflow-y: scroll;
+
+    li {
+        // so we can control the positioning of the submenu arrow
+        position: relative;
+    }
+
+    &:after {
+        position: absolute;
+        // header + margin on ul/parent
+        top: $admin-header-height + 1.2rem;
+        left: 0;
+        width: $sidebar-width;
+        height: 1.5rem;
+        background: linear-gradient(to bottom, $color-grey-dark, transparent);
+        content: "";
+    }
 }
 
 .sidebar_nav-nav_item {
@@ -69,8 +84,30 @@
     position: absolute;
     bottom: 0;
     width: $sidebar-width;
+    padding-top: 0.5em;
+    background: $color-grey-dark;
     text-align: center;
-    a { color: rgba($sidebar-link, 0.8); }
+    // the gradient above the profile
+    &:before {
+        position: absolute;
+        top: -2.5rem;
+        left: 0;
+        width: $sidebar-width;
+        height: 2.5rem;
+        background: linear-gradient(to bottom, transparent, $color-grey-dark);
+        content: "";
+    }
+
+    a {
+        color: rgba($sidebar-link, 0.8);
+    }
+}
+.sidebar_nav-profile {
+    font-size: 0.9em;
+}
+.sidebar_nav-logout {
+    padding: 0.5em;
+    font-size: 0.8em;
 }
 .sidebar_nav-copyright {
     font-size: 0.7em;
@@ -78,12 +115,4 @@
     border-top: 1px solid darken($sidebar-link, 50%);;
     color: darken($sidebar-link, 50%);
     a { color: inherit; }
-}
-.sidebar_nav-logout {
-    padding: 0.5em;
-    font-size: 0.8em;
-}
-
-.sidebar_nav-profile {
-    font-size: 0.9em;
 }
