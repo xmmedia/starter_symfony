@@ -14,7 +14,7 @@ admin_dashboard:
 
 xm_security:
     prefix: /activate
-    resource: '@XMSecurityBundle/Resources/config/routing.yml'
+    resource: '@XMSecurityBundle/Resources/config/routing/activate.xml'
 
 xm_user_admin:
     resource: '@XMUserAdminBundle/Resources/config/routing.yml'
