@@ -43,10 +43,10 @@
         "symfony/phpunit-bridge": "^3.0",
         "mockery/mockery": "^0.9",
         "liip/functional-test-bundle": "^1.6",
-        "doctrine/doctrine-fixtures-bundle": "2.3.*",
+        "doctrine/doctrine-fixtures-bundle": "^2.4",
         "xm/mailer-test-bundle": "^0.1",
         "matthimatiker/opcache-bundle": "^0.5",
-        "nelmio/alice": "^3.0@RC",
+        "nelmio/alice": "^3.0",
         "fzaninotto/faker": "^1.7"
     },
     "scripts": {
