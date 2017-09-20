@@ -44,9 +44,8 @@
 .sidebar_nav-nav {
     width: $sidebar-width;
     height: 100%;
-    margin: 1.2rem 0;
-    // so it's possible to scroll the last item into view
-    padding: 0 0 11rem;
+    margin: 0;
+    padding: 0 0 10rem;
     list-style: none;
     overflow-y: scroll;
 
@@ -55,10 +54,10 @@
         position: relative;
     }
 
+    // the gradient at the top of the menu when scrolling
     &:after {
         position: absolute;
-        // header + margin on ul/parent
-        top: $admin-header-height + 1.2rem;
+        top: $admin-header-height;
         left: 0;
         width: $sidebar-width;
         height: 1.5rem;
@@ -87,6 +86,7 @@
     padding-top: 0.5em;
     background: $color-grey-dark;
     text-align: center;
+
     // the gradient above the profile
     &:before {
         position: absolute;
