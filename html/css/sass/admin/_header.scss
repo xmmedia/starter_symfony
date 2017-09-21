@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     min-height: $admin-header-height + 3.5;
-    background: rgba(0, 0, 0, 0.05);
+    background: $admin-header-background;
     border-bottom: 1px solid $admin-header-border;
     @include mq(24em) {
         min-height: $admin-header-height + 1;
