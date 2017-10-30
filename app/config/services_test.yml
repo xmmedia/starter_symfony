@@ -1,0 +1,16 @@
+parameters:
+#    parameter_name: value
+
+services:
+    # Fake providers & processors
+    AppBundle\DataFixtures\Faker\Provider\PhoneNumberFakerProvider:
+        arguments:
+            $generator: '@nelmio_alice.faker.generator'
+        tags:
+            - { name: nelmio_alice.faker.provider }
+
+    AppBundle\DataFixtures\Processor\UserProcessor:
+        arguments:
+            $passwordEncoder: '@security.user_password_encoder.generic'
+        tags:
+            - { name: fidry_alice_data_fixtures.processor }

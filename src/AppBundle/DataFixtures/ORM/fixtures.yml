@@ -4,8 +4,10 @@ AppBundle\Entity\User:
         firstName: '<firstName()>'
         lastName: '<lastName()>'
         enabled: true
-        password: '1234567890'
-    user-admin (extends user):
+        plainPassword: '<password()>'
+    user-super_admin (extends user):
         roles: ['ROLE_SUPER_ADMIN']
+    user-admin (extends user):
+        roles: ['ROLE_ADMIN']
     user-regular (extends user):
         roles: []

@@ -1,5 +1,6 @@
 imports:
     - { resource: config_dev.yml }
+    - { resource: services_test.yml }
 
 framework:
     test: ~
@@ -32,3 +33,10 @@ swiftmailer:
 #    delivery_address: admin@xmmedia.com
 #    delivery_whitelist:
 #        - '/@xmmedia\.com$/'
+
+nelmio_alice:
+    locale: 'en_CA'
+
+fidry_alice_data_fixtures:
+    db_drivers:
+        doctrine_orm: true

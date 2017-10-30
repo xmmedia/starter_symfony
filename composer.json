@@ -47,7 +47,15 @@
         "xm/mailer-test-bundle": "^0.1",
         "matthimatiker/opcache-bundle": "^0.5",
         "nelmio/alice": "^3.0",
-        "fzaninotto/faker": "^1.7"
+        "fzaninotto/faker": "^1.7",
+        "theofidry/alice-data-fixtures": "^1.0@beta",
+        "behat/behat": "^3.4",
+        "behat/symfony2-extension": "^2.1",
+        "behat/mink": "^1.7",
+        "behat/mink-extension": "^2.2",
+        "behat/mink-selenium2-driver": "^1.3",
+        "behat/mink-browserkit-driver": "^1.3",
+        "dmore/behat-chrome-extension": "^1.0"
     },
     "scripts": {
         "symfony-scripts": [

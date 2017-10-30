@@ -1,0 +1,23 @@
+default:
+    suites:
+        default:
+            contexts:
+                - FeatureContext:
+            filters: { tags: '@public_static' }
+
+        user_auth:
+            contexts:
+                - UserAuthenticationContext
+            filters: { tags: '@user_auth' }
+
+    extensions:
+        Behat\Symfony2Extension: ~
+        DMore\ChromeExtension\Behat\ServiceContainer\ChromeExtension: ~
+        Behat\MinkExtension:
+            # @todo-symfony
+            base_url: https://user:pass@dev.example.com/app_dev.php
+            browser_name: chrome
+            sessions:
+                default:
+                    chrome:
+                        api_url: http://localhost:9222

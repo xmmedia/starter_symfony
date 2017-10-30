@@ -5,12 +5,12 @@ namespace Tests;
 use AppBundle\DataFixtures\ORM\LoadDefaultFixtures;
 use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
 use Symfony\Bundle\FrameworkBundle\Client;
+use Symfony\Component\DomCrawler\Crawler;
 
 class WebTestCase extends BaseWebTestCase
 {
     /**
      * List of fixtures to load.
-     *
      * @var array
      */
     protected $fixtureList = [
@@ -30,27 +30,22 @@ class WebTestCase extends BaseWebTestCase
             ->getReferenceRepository();
     }
 
-    /**
-     * Login the user based on the fixture reference.
-     *
-     * @param string $userRef
-     */
-    protected function logIn($userRef)
+    protected function logIn($userRef = 'user-regular')
     {
         $user = $this->fixtures->getReference($userRef);
 
         $this->loginAs($user, 'main');
     }
 
-    /**
-     * Escapes a string for use within the DomCrawler selector strings.
-     *
-     * @param string $str
-     *
-     * @return string
-     */
-    protected function e($str)
+    protected function assertPathInfoMatches(Client $client, $regExp)
     {
-        return htmlspecialchars($str, ENT_QUOTES | ENT_SUBSTITUTE, 'utf-8');
+        $this->assertRegExp($regExp, $client->getRequest()->getPathInfo());
+    }
+
+    protected function findAdminPageTitle(Crawler $crawler, $title)
+    {
+        return $crawler->filter(
+            '.header_admin-page_title:contains("'.$title.'")'
+        );
     }
 }
