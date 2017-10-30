@@ -98,10 +98,10 @@ fos_user:
 #        form:
 #            type: AppBundle\Form\RegistrationType
 #            validation_groups: [ Registration ]
-    profile:
-        form:
+#    profile:
+#        form:
 #            type: AppBundle\Form\ProfileType
-            validation_groups: [ Profile ]
+#            validation_groups: [ Profile ]
     from_email:
         address:        '%from_email%'
         sender_name:    '%from_name%'
