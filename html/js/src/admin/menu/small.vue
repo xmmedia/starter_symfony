@@ -34,15 +34,7 @@ export default {
         },
         setContentHeight() {
             document.querySelectorAll('.js-content-wrap')[0]
-                .style.minHeight = this.getWindowHeight() + 'px';
-        },
-        getWindowHeight() {
-            let w = window,
-                d = document,
-                e = d.documentElement,
-                g = d.body;
-
-            return w.innerHeight || e.clientHeight || g.clientHeight;
+                .style.minHeight = this.$root.getWindowHeight()+'px';
         }
     }
 }

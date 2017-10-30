@@ -33,9 +33,30 @@ new Vue({
         'menu-small': adminMenuSmall,
         'admin-user': adminUserForm,
     },
+    mounted () {
+        this.$nextTick(() => {
+            this.setMenuHeight();
+            window.addEventListener('resize', this.setMenuHeight);
+        });
+    },
     methods: {
         setServerData (data) {
             this.$store.dispatch('updateServerData', data);
+        },
+        setMenuHeight () {
+            let windowHeight = this.getWindowHeight();
+            // 60 = height of header, 90 = height of bottom wrap, 20 = a little extra
+            let percentage = (windowHeight - 60 - 90 - 20) / windowHeight * 100;
+
+            document.querySelectorAll('.js-sidebar_nav-nav')[0].style.maxHeight = percentage+'%';
+        },
+        getWindowHeight() {
+            let w = window,
+                d = document,
+                e = d.documentElement,
+                g = d.body;
+
+            return w.innerHeight || e.clientHeight || g.clientHeight;
         }
     }
 });

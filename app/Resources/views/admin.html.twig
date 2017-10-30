@@ -19,7 +19,7 @@
         <a href="{{ path('admin_dashboard') }}" class="sidebar_nav-logo">
             <img src="/images/logo.svg" width="80" height="22" alt="{{ 'app.parameter.name'|trans }}">
         </a>
-        <ul class="sidebar_nav-nav">
+        <ul class="sidebar_nav-nav js-sidebar_nav-nav">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                 <li>
                     <a href="{{ path('admin_dashboard') }}" class="sidebar_nav-link sidebar_nav-nav_item">
