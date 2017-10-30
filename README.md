@@ -43,3 +43,12 @@ Used to create new projects using [Symfony](http://symfony.com/) at [XM Media](h
   - Run PHP unit tests: `php bin/phpunit` or no memory limit `php -d memory_limit=-1 bin/phpunit`
   - Run browser tests (Behat): `php bin/behat`
     - Start Chrome headless first: `/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --disable-gpu --headless --remote-debugging-address=0.0.0.0 --remote-debugging-port=9222 --window-size-1200,1500`
+    
+### Apache Config
+
+The following is needed in the Apache VirtualHost for the Webpack Dev Server/HMR to work:
+
+```
+  ProxyPassMatch ^(\/build\/.+\.(css|js|json)$)|(sockjs-node) http://localhost:9001
+  ProxyPassReverse / http://localhost:9001
+```
