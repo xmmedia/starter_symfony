@@ -1,4 +1,5 @@
-var Encore = require('@symfony/webpack-encore');
+'use strict';
+const Encore = require('@symfony/webpack-encore');
 
 Encore
     // directory where all compiled assets will be stored
@@ -17,19 +18,24 @@ Encore
     // allow sass/scss files to be processed
     .enableSassLoader(function(sassOptions) {}, {
         // see: http://symfony.com/doc/current/frontend/encore/bootstrap.html#importing-bootstrap-sass
-        resolve_url_loader: false
+        resolveUrlLoader: false
     })
     .enablePostCssLoader()
     // allow .vue files to be processed
     .enableVueLoader()
 
-    // always generate source maps
-    // the devtool is changed below depending on environment
     .enableSourceMaps(true)
 
     // create hashed filenames (e.g. public.abc123.css)
-    .enableVersioning()
+    .enableVersioning(Encore.isProduction())
 ;
+
+// for the dev server, so requests are sent to Apache and proxied to webpack
+if (!Encore.isProduction()) {
+    // @todo-symfony
+    Encore.setPublicPath('https://dev.example.com/build');
+    Encore.setManifestKeyPrefix('build/');
+}
 
 // export the final configuration
 let config = Encore.getWebpackConfig();
