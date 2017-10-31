@@ -10,7 +10,7 @@
   "//private": true,
   "scripts": {
     "dev": "./node_modules/.bin/encore dev",
-    "dev-server": "./node_modules/.bin/encore dev-server --hot --port 9001 --public dev.paccana.com:443",
+    "dev-server": "./node_modules/.bin/encore dev-server --hot --port 9001 --public dev.example.com:443",
     "test": "karma start --single-run --browsers ChromeHeadless karma.config.js",
     "watch": "./node_modules/.bin/encore dev --watch",
     "build": "./node_modules/.bin/encore production"
