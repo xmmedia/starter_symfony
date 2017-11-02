@@ -1,15 +1,17 @@
 'use strict';
-// This is the webpack config used for unit tests
+// This is the webpack config used for JS unit tests
 
 const Encore = require('@symfony/webpack-encore');
 
 // Initialize Encore before requiring the .config file
 Encore.configureRuntimeEnvironment('dev-server');
 
+require('./webpack.base.config')(Encore);
+
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ManifestPlugin = require('@symfony/webpack-encore/lib/webpack/webpack-manifest-plugin');
-const baseWebpackConfig = require('./webpack.config');
+const baseWebpackConfig = Encore.getWebpackConfig();
 
 const webpackConfig = merge(baseWebpackConfig, {
     // use inline sourcemap for karma-sourcemap-loader
