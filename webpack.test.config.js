@@ -2,11 +2,12 @@
 // This is the webpack config used for JS unit tests
 
 const Encore = require('@symfony/webpack-encore');
+const encoreConfigure = require('./webpack.base.config');
 
 // Initialize Encore before requiring the .config file
 Encore.configureRuntimeEnvironment('dev-server');
 
-require('./webpack.base.config')(Encore);
+encoreConfigure(Encore);
 
 const webpack = require('webpack');
 const merge = require('webpack-merge');
