@@ -66,6 +66,12 @@
         // must be greater than the sub nav icon/button
         z-index: 1000;
     }
+
+    // hide the scroll bar (in webkit based browsers)
+    &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
 }
 
 .sidebar_nav-nav_item {
