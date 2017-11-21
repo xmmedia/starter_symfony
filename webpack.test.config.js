@@ -3,6 +3,7 @@
 
 const Encore = require('@symfony/webpack-encore');
 const encoreConfigure = require('./webpack.base.config');
+const webpackCustomize = require('./webpack.customize');
 
 // Initialize Encore before requiring the .config file
 Encore.configureRuntimeEnvironment('dev-server');
@@ -13,6 +14,8 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ManifestPlugin = require('@symfony/webpack-encore/lib/webpack/webpack-manifest-plugin');
 const baseWebpackConfig = Encore.getWebpackConfig();
+
+webpackCustomize(baseWebpackConfig);
 
 const webpackConfig = merge(baseWebpackConfig, {
     // use inline sourcemap for karma-sourcemap-loader
