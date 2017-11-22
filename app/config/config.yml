@@ -120,7 +120,7 @@ fos_user:
 #        default:
 #            web_path:
 #                web_root: '%web_root%'
-#                cache_prefix: "media/cache"
+#                cache_prefix: "media"
 #
 #    loaders:
 #        default:
