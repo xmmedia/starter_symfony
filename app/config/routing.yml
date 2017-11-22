@@ -42,6 +42,10 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
+ 
+# Liip Imagine bundle routes
+#_liip_imagine:
+#    resource: "@LiipImagineBundle/Resources/config/routing.xml"
 
 # redirect for routes with a trailing slash
 # MUST BE THE LAST as to not affect routes from bundles or ones that need to have a trailing slash
