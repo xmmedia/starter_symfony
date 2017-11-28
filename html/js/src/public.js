@@ -2,7 +2,7 @@ import 'babel-polyfill';
 
 import Vue from 'vue';
 
-import svg_icons from './common/svg_icons.vue';
+import svgIcons from './common/svg_icons.vue';
 
 // SASS/CSS
 import '../../css/sass/public.scss';
@@ -13,6 +13,6 @@ Vue.config.productionTip = false;
 new Vue({
     el: '#app',
     components: {
-        'svg-icons': svg_icons,
+        'svg-icons': svgIcons,
     }
 });
