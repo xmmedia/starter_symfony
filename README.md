@@ -37,8 +37,8 @@ Used to create new projects using [Symfony](http://symfony.com/) at [XM Media](h
 
   - Production JS/CSS build: `yarn run build`
   - Dev JS/CSS build: `yarn run dev`
-  - Dev JS/CSS watch: `yarn run watch`
-  - Start Dev JS/CSS HMR server: `yarn run dev-server`
+  - Dev JS/CSS watch: `yarn run watch` (files will not be versioned)
+  - Dev JS/CSS HMR server: `yarn run dev-server`
   - Run JS unit tests: `yarn run test`
   - Run PHP unit tests: `php bin/phpunit` or no memory limit `php -d memory_limit=-1 bin/phpunit`
   - Run browser tests (Behat): `php bin/behat`
