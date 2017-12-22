@@ -24,7 +24,7 @@ Vue.component('admin-delete', adminDelete);
 Vue.component('list-check', listCheck);
 Vue.component('local-time', localTime);
 
-new Vue({
+window.App = new Vue({
     el: '#app',
     store,
     components: {

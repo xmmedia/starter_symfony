@@ -10,7 +10,7 @@ import '../../css/sass/public.scss';
 // disable the warning about dev/prod
 Vue.config.productionTip = false;
 
-new Vue({
+window.App = new Vue({
     el: '#app',
     components: {
         'svg-icons': svgIcons,
