@@ -3,14 +3,14 @@ import 'babel-polyfill';
 import Vue from 'vue';
 import store from './admin/store';
 
-import svgIcons from './common/svg_icons.vue';
-import modal from './common/modal.vue';
-import localTime from './common/local_time.vue';
-import adminMenuSubnav from './admin/menu/subnav.vue';
-import adminMenuSmall from './admin/menu/small.vue';
-import adminDelete from './admin/admin_delete.vue';
+import svgIcons from './common/svg_icons';
+import modal from './common/modal';
+import localTime from './common/local_time';
+import adminMenuSubnav from './admin/menu/subnav';
+import adminMenuSmall from './admin/menu/small';
+import adminDelete from './admin/admin_delete';
 import adminUserForm from './admin/user/form';
-import listCheck from './admin/list_check.vue';
+import listCheck from './admin/list_check';
 
 // SASS/CSS
 import '../../css/sass/admin.scss';

@@ -2,7 +2,7 @@ import 'babel-polyfill';
 
 import Vue from 'vue';
 
-import svgIcons from './common/svg_icons.vue';
+import svgIcons from './common/svg_icons';
 
 // SASS/CSS
 import '../../css/sass/public.scss';
