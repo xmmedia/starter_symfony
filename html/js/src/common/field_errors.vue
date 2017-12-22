@@ -1,5 +1,5 @@
 <template>
-    <ul class="form-field_errors" v-if="hasErrors">
+    <ul v-if="hasErrors" class="form-field_errors">
         <li v-for="error in flatErrors">{{ error }}</li>
     </ul>
 </template>
