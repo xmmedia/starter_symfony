@@ -64,6 +64,26 @@
     color: $text-color;
     background: $record-list-row-hover;
 }
+li.record_list-item-has_subs {
+    border-bottom-color: lighten($record-list-lines-light, 13%);
+}
+li.record_list-item-sub {
+    border-bottom-color: lighten($record-list-lines-light, 13%);
+    .record_list-col {
+        padding-left: 1.5em;
+    }
+    @include mq(tablets) {
+        .record_list-col {
+            padding-left: $record-list-col-left-right-padding;
+            &:first-child {
+                padding-left: 1.5em;
+            }
+        }
+    }
+}
+li.record_list-item-sub_last {
+    border-bottom-color: $record-list-lines-light;
+}
 
 .record_list-mobile_heading {
     margin-top: 0.25em;
@@ -104,7 +124,7 @@
     display: table-cell;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding: 0.3em 0.5em;
+    padding: 0.3em $record-list-col-left-right-padding;
 }
 .record_list-col-no_wrap { white-space: nowrap; }
 .record_list-col-center { text-align: center; }
