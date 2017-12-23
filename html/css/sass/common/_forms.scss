@@ -216,8 +216,10 @@ textarea {
 }
 
 // for the labels within the vich file uploader widget
-.vich-file label {
-    margin-top: $form-space-separator;
+.vich-file, .vich-image {
+    label {
+        margin-top: $form-space-separator;
+    }
 }
 
 // form headings with links
