@@ -29,7 +29,7 @@ security:
             logout:
                 path:   fos_user_security_logout
                 # @todo-symfony change to correct path
-                target: /login
+                target: fos_user_security_login
 #                delete_cookies:
 #                    cart: { path: null, domain: null }
             anonymous: true
