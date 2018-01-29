@@ -41,6 +41,7 @@ twig:
     debug:            '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     globals:
+        global_js_data: '@AppBundle\DataProvider\GlobalJsData'
         ga_tracking_id: '%ga_tracking_id%'
         # needed because it's used in the menu to generate the link to the previous user filters
         user_filter:    '@xm_user_admin.filter.user'
