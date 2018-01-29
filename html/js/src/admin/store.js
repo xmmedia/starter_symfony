@@ -11,13 +11,9 @@ export default new Vuex.Store({
         serverData: {},
     },
     getters: {},
-    actions: {
-        updateServerData ({ commit }, serverData) {
-            commit('setServerData', serverData);
-        },
-    },
+    actions: {},
     mutations: {
-        setServerData (state, serverData) {
+        updateServerData (state, serverData) {
             state.serverData = serverData;
         },
     },

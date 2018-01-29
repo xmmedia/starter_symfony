@@ -27,15 +27,17 @@ Vue.component('local-time', localTime);
 window.App = new Vue({
     el: '#app',
     store,
+
     components: {
         'svg-icons': svgIcons,
         'menu-subnav': adminMenuSubnav,
         'menu-small': adminMenuSmall,
         'admin-user': adminUserForm,
     },
-    methods: {
-        setServerData (data) {
-            this.$store.dispatch('updateServerData', data);
+
+    mounted () {
+        if (this.$el.dataset && this.$el.dataset.serverData) {
+            this.$store.commit('updateServerData', JSON.parse(this.$el.dataset.serverData));
         }
-    }
+    },
 });
