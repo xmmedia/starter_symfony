@@ -6,20 +6,20 @@
 import axios from '@/common/axios';
 
 export default {
-    props : {
+    props: {
         src: {
             type: String,
             required: true,
         },
     },
 
-    data() {
+    data () {
         return {
-            svg : '',
+            svg: '',
         };
     },
 
-    mounted() {
+    mounted () {
         axios.get(this.src)
             .then((response) => {
                 this.svg = response.data;
