@@ -12,7 +12,7 @@ admin_dashboard:
         # 1 hour
         sharedAge:   3600
 
-xm_security:
+xm_security_activate:
     prefix: /activate
     resource: '@XMSecurityBundle/Resources/config/routing/activate.xml'
 
