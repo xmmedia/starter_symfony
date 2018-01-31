@@ -3,23 +3,27 @@
 </template>
 
 <script>
-import axios from '../common/axios';
+import axios from '@/common/axios';
 
 export default {
-    props : ['src'],
+    props : {
+        src: {
+            type: String,
+            required: true,
+        },
+    },
+
     data() {
         return {
-            svg : ''
+            svg : '',
         };
     },
 
     mounted() {
-        let self = this;
-
         axios.get(this.src)
             .then((response) => {
-                self.svg = response.data;
+                this.svg = response.data;
             });
-    }
+    },
 }
 </script>
