@@ -19,9 +19,6 @@ export default {
         axios.get(this.src)
             .then((response) => {
                 self.svg = response.data;
-            })
-            .catch((error) => {
-                console.log(error);
             });
     }
 }
