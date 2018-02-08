@@ -24,6 +24,7 @@ monolog:
             type:         fingers_crossed
             action_level: critical
             handler:      deduplicated
+        # remove duplicates that occur within 60s
         deduplicated:
             type:    deduplication
             handler: buffered
