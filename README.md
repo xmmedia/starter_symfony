@@ -49,8 +49,8 @@ Used to create new projects using [Symfony](http://symfony.com/) at [XM Media](h
 The following is needed in the Apache VirtualHost for the Webpack Dev Server/HMR to work:
 
 ```
-  ProxyPassMatch ^(\/dev-server\/.+\.(css|js|json)$)|(sockjs-node) http://localhost:9001
-  ProxyPassReverse / http://localhost:9001
+  ProxyPassMatch ^(\/dev-server\/.+$)|(sockjs-node) http://localhost:<port>
+  ProxyPassReverse / http://localhost:<port>
 ```
 
 You'll probably want to customize the port number in the Apache ProxyPass config 
