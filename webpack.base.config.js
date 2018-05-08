@@ -1,4 +1,8 @@
 'use strict';
+const path = require('path');
+const glob = require('glob-all');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+
 // Base configuration of Encore/Webpack
 module.exports = function (Encore) {
     Encore
@@ -7,6 +11,9 @@ module.exports = function (Encore) {
 
         // what's the public path to this directory (relative to your project's document root dir)
         .setPublicPath('/build')
+
+        // always create hashed filenames (e.g. public.a1b2c3.css)
+        .enableVersioning(true)
 
         // empty the outputPath dir before each build
         .cleanupOutputBeforeBuild()
@@ -25,4 +32,47 @@ module.exports = function (Encore) {
         .enableVueLoader()
 
         .enableSourceMaps(true)
+
+        .addLoader({
+            test: /\.svg$/,
+            use: [
+                {
+                    loader: 'svgo-loader',
+                    options: {
+                        plugins: [
+                            // config targeted at icon files, but should work for others
+                            { removeUselessDefs: false },
+                            { cleanupIDs: false },
+                        ],
+                    },
+                },
+            ],
+        });
+
+    if (Encore.isProduction()) {
+        // Custom PurgeCSS extractor for Tailwind that allows special characters in class names
+        class TailwindExtractor {
+            static extract(content) {
+                return content.match(/[A-z0-9-:\/]+/g) || [];
+            }
+        }
+
+        Encore
+            .addPlugin(new PurgecssPlugin({
+                // Specify the locations of any files you want to scan for class names.
+                paths: glob.sync([
+                    path.join(__dirname, 'app/Resources/**/*.html.twig'),
+                    path.join(__dirname, 'vendor/xm/user-admin-bundle/Resources/views/**/*.html.twig'),
+                    path.join(__dirname, 'html/js/src/**/*.vue'),
+                    path.join(__dirname, 'html/js/src/**/*.js'),
+                ]),
+                extractors: [
+                    {
+                        extractor: TailwindExtractor,
+                        // Specify the file extensions to include when scanning for class names
+                        extensions: ['html', 'js', 'php', 'vue', 'twig'],
+                    }
+                ]
+            }));
+    }
 };

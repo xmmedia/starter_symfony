@@ -6,9 +6,6 @@ const webpackCustomize = require('./webpack.customize');
 
 encoreConfigure(Encore);
 
-// always create hashed filenames (e.g. public.a1b2c3.css)
-Encore.enableVersioning(true);
-
 // export the final configuration
 let config = Encore.getWebpackConfig();
 
