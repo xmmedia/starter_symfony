@@ -45,6 +45,7 @@ View the full documentation at https://tailwindcss.com.
 
 let colors = {
   'transparent': 'transparent',
+  'inherit': 'inherit',
 
   'black': '#22292f',
   'grey-darkest': '#3d4852',
@@ -167,10 +168,12 @@ module.exports = {
   */
 
   screens: {
+    'xs': '400px',
     'sm': '576px',
     'md': '768px',
     'lg': '992px',
     'xl': '1200px',
+    'max': '1245px',
   },
 
 
@@ -399,6 +402,7 @@ module.exports = {
     '2': '2px',
     '4': '4px',
     '8': '8px',
+    '10': '10px',
   },
 
 
@@ -492,6 +496,7 @@ module.exports = {
     '2/5': '40%',
     '3/5': '60%',
     '4/5': '80%',
+    '9/10': '90%',
     '1/6': '16.66667%',
     '5/6': '83.33333%',
     'full': '100%',
