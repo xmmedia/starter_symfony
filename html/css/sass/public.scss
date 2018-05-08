@@ -1,36 +1,30 @@
-// mixins + normalize + common
-@import "common/vars",
-    "public/vars",
-    "common/mixins",
-    "public/mixins",
-    "common/media",
-    "common/common";
+@tailwind preflight;
+
+@tailwind components;
+
+@import "common/common";
 
 // global styles on the most common elements
 html {
-    @include default-html-style;
+    @apply font-sans leading-normal text-black;
 }
 
-a {
-    transition: color 0.25s ease;
-    &:hover { }
+h1, h2, h3, h4, h5, h6 {
+    @apply leading-tight;
 }
-address { font-style: normal; }
 
-// load common styles
-@import "common/forms",
-    "common/pagination",
-    "common/alerts",
-    //"common/icons",
-    //"common/modal",
-    "common/ie9_warning";
+// common styles
+@import "common/alerts",
+    "common/content_alignment",
+    "common/forms",
+    "common/modal",
+    "common/pagination";
 
 // public only styles
-@import "public/content",
-    "public/buttons",
-    "public/headings",
-    "public/header",
-    "public/footer";
+@import "public/buttons",
+    "public/header";
 
 // page specific
 //@import ;
+
+@tailwind utilities;
