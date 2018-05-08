@@ -17,7 +17,7 @@
     }
 
     &-narrow {
-        @include clearfix;
+        @apply clearfix;
         max-width: $max-content-width;
         margin: 0 auto;
     }

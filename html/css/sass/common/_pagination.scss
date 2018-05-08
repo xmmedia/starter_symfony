@@ -1,6 +1,5 @@
 .pagination-wrap {
-    // clearfix fixes Safari bug that causes pagination to show up beside other element
-    @include clearfix;
+    @apply clearfix;
     margin: 1em auto;
     text-align: center;
     a { text-decoration: none; }

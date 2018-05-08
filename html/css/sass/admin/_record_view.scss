@@ -18,7 +18,7 @@
     }
 }
 .record_view-item {
-    @include flex-row_wrap();
+    @apply flex flex-row flex-wrap;
     padding: 0.3em;
     transition: background 0.15s ease-in-out;
     &:hover {

@@ -38,7 +38,7 @@ textarea {
 }
 
 .form-field-flex {
-    @include flex-row_wrap;
+    @apply flex flex-row flex-wrap;
 }
 
 .form-field_wrap {

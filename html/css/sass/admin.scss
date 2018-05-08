@@ -1,14 +1,17 @@
+@tailwind preflight;
+
+@tailwind components;
+
+@import "common/common";
+
 // mixins + normalize + common
-@import "common/vars",
-    "admin/vars",
-    "common/mixins",
-    "admin/mixins",
+@import "admin/vars",
     "common/media",
     "common/common";
 
 // global styles on the most common elements
 html {
-    @include default-html-style;
+    @apply font-sans leading-normal text-black;
 }
 
 // needed to ensure positioning works
@@ -32,8 +35,7 @@ a {
     "common/pagination",
     "common/alerts",
     "common/modal",
-    "common/button_pair",
-    "common/icons";
+    "common/button_pair";
 
 // admin only styles
 @import "admin/sidebar_nav",
@@ -46,3 +48,5 @@ a {
     "admin/buttons",
     "admin/admin_dashboard",
     "admin/user_list";
+
+@tailwind utilities;
