@@ -61,8 +61,7 @@
 }
 
 .record_list-col {
-    @apply table-cell py-1 px-2 overflow-hidden;
-    text-overflow: ellipsis;
+    @apply table-cell py-1 px-2;
     transition: opacity 0.25s ease-in-out;
 }
 .record_list-item-inactive > .record_list-col {
