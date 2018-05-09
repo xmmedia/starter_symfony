@@ -21,9 +21,9 @@ button,
 }
 
 .button-as_link {
-    @apply p-0 bg-transparent tracking-normal;
+    @apply p-0 text-blue-dark bg-transparent border-0 tracking-normal;
     transition: none;
     &:hover {
-        @apply no-underline bg-transparent;
+        @apply underline bg-transparent;
     }
 }

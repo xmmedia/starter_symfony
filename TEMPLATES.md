@@ -38,7 +38,7 @@ The edit view:
                             }
                         })
                     }}
-                        <button class="button-as_link form-action_link">Delete</button>
+                        <button class="form-action button-as_link">Delete</button>
                     {{ form_end(delete_form) }}
                 </li>
             </ul>
@@ -49,7 +49,7 @@ The edit view:
 
 The form view:
 ```
-<div class="form-form_wrap">
+<div class="form-wrap">
     {{ form_start(form) }}
         {{ form_errors(form) }}
 
@@ -57,7 +57,7 @@ The form view:
 
         <div class="form-button_wrap">
             <button>Save</button>
-            <a href="{{ path('admin_category_list') }}" class="form-action_link">Back to list</a>
+            <a href="{{ path('admin_category_list') }}" class="form-action">Back to list</a>
         </div>
     {{ form_end(form) }}
 

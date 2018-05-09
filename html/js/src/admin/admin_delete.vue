@@ -1,7 +1,7 @@
 <template>
     <span>
         <div>
-            <a href="" @click.prevent="showModal = true" class="form-action_link">Delete</a>
+            <a href="" @click.prevent="showModal = true" class="form-action">Delete</a>
         </div>
 
         <modal v-if="showModal" @close="showModal = false">

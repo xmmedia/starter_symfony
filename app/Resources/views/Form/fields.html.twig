@@ -1,12 +1,12 @@
 {%- block form_row -%}
     {% if block_prefixes[1] == 'checkbox' %}
-        <div class="form-field_wrap form-field_wrap-checkbox">
+        <div class="field-wrap field-wrap-checkbox">
             {{- form_errors(form) -}}
             {{- form_widget(form) -}}
             {{- form_label(form) -}}
         </div>
     {% else %}
-        <div class="form-field_wrap">
+        <div class="field-wrap">
             {{- form_label(form) -}}
             {{- form_errors(form) -}}
             {{- form_widget(form) -}}
@@ -15,7 +15,7 @@
 {%- endblock form_row -%}
 
 {%- block button_row -%}
-    <div class="form-button_wrap">
+    <div>
         {{- form_widget(form) -}}
     </div>
 {%- endblock button_row -%}
