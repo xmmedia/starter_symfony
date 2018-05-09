@@ -18,9 +18,9 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/pattern-library", name="pattern_library")
+     * @Route("/pattern-library-public", name="pattern_library_public")
      */
-    public function patternLibraryAction(Paginator $paginator)
+    public function patternLibraryPublicAction(Paginator $paginator)
     {
         $pagination = $paginator->paginate(
             range(1, 10), /* some random data */
@@ -28,7 +28,23 @@ class DefaultController extends AbstractController
             1 /* limit per page */
         );
 
-        return $this->render('Default/pattern_library.html.twig', [
+        return $this->render('Default/pattern_library_public.html.twig', [
+            'pagination' => $pagination,
+        ]);
+    }
+
+    /**
+     * @Route("/pattern-library-admin", name="pattern_library_admin")
+     */
+    public function patternLibraryAdminAction(Paginator $paginator)
+    {
+        $pagination = $paginator->paginate(
+            range(1, 10), /* some random data */
+            3, /* current page */
+            1 /* limit per page */
+        );
+
+        return $this->render('Default/pattern_library_admin.html.twig', [
             'pagination' => $pagination,
         ]);
     }
