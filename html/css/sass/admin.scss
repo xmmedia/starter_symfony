@@ -23,6 +23,10 @@ a {
     }
 }
 
+b, strong {
+    @apply font-bold;
+}
+
 // load common styles
 @import "common/forms",
     "common/alerts",
