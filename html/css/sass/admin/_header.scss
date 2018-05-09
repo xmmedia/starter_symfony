@@ -92,6 +92,7 @@
 }
 
 .header-button_pair {
+    @apply mb-3 ml-4;
     @media (min-width: 880px) {
         order: 4;
     }
