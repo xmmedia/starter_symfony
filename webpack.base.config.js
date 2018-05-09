@@ -65,6 +65,7 @@ module.exports = function (Encore) {
                     path.join(__dirname, 'vendor/xm/user-admin-bundle/Resources/views/**/*.html.twig'),
                     path.join(__dirname, 'html/js/src/**/*.vue'),
                     path.join(__dirname, 'html/js/src/**/*.js'),
+                    path.join(__dirname, 'node_modules/vue-js-modal/dist/index.js'),
                 ]),
                 extractors: [
                     {

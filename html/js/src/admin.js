@@ -1,15 +1,15 @@
 import 'babel-polyfill';
 
 import Vue from 'vue';
+import VueModal from 'vue-js-modal';
+
 import store from './admin/store';
 
 import svgIcons from './common/svg_icons';
-import modal from './common/modal';
 import localTime from './common/local_time';
 import adminMenuSubnav from './admin/menu/subnav';
 import adminMenuSmall from './admin/menu/small';
 import adminDelete from './admin/admin_delete';
-import adminUserForm from './admin/user/form';
 import listCheck from './admin/list_check';
 
 // SASS/CSS
@@ -21,8 +21,9 @@ import '../../images/icons-admin.svg';
 // disable the warning about dev/prod
 Vue.config.productionTip = false;
 
+Vue.use(VueModal);
+
 // global components
-Vue.component('modal', modal);
 Vue.component('admin-delete', adminDelete);
 Vue.component('list-check', listCheck);
 Vue.component('local-time', localTime);
@@ -35,7 +36,7 @@ window.App = new Vue({
         'svg-icons': svgIcons,
         'menu-subnav': adminMenuSubnav,
         'menu-small': adminMenuSmall,
-        'admin-user': adminUserForm,
+        'admin-user': () => import('./admin/user/form'),
     },
 
     mounted () {
