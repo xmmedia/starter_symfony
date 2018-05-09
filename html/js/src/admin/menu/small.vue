@@ -37,12 +37,11 @@ export default {
                 .style.minHeight = this.getWindowHeight() + 'px';
         },
         getWindowHeight() {
-            let w = window,
-                d = document,
+            let d = document,
                 e = d.documentElement,
                 g = d.body;
 
-            return w.innerHeight || e.clientHeight || g.clientHeight;
+            return window.innerHeight || e.clientHeight || g.clientHeight;
         }
     }
 }
