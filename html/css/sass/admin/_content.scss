@@ -1,10 +1,6 @@
 .content-wrap {
     @apply relative bg-white z-10;
     transition: all 0.15s ease;
-    @include mq(tablets) {
-        @apply z-auto;
-        margin-left: 6rem;
-    }
 
     // the following are for the admin menu when closed and then open
     .sidebar_nav-visible & {
@@ -14,5 +10,9 @@
         transform: translateX(16rem);
     }
 }
-
-@import '../common/content_alignment';
+@screen md {
+    .content-wrap {
+        @apply z-auto;
+        margin-left: 6rem;
+    }
+}
