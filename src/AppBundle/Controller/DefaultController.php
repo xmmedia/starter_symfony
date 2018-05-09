@@ -24,7 +24,7 @@ class DefaultController extends AbstractController
     {
         $pagination = $paginator->paginate(
             range(1, 10), /* some random data */
-            1, /* current page */
+            3, /* current page */
             1 /* limit per page */
         );
 
