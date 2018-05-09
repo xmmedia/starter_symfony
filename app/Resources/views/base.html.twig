@@ -20,7 +20,7 @@
         <div id="app" data-server-data="{{ global_js_data.get(js_base)|json_encode(constant('JSON_FORCE_OBJECT')) }}">
             {% block body %}
                 {% block header %}
-                    <header class="header-wrap">
+                    <header>
                         <div><a href="{{ path('index') }}"><img src="/images/logo.svg" alt="{{ 'app.parameter.name'|trans }}"></a></div>
                     </header>
                 {% endblock header %}
@@ -32,8 +32,8 @@
                     </main>
                 {% endblock content_wrap %}
                 {% block footer %}
-                    <footer class="footer-wrap">
-                        <div class="footer-copyright">
+                    <footer>
+                        <div class="text-sm">
                             ©{{ 'now'|date('Y') }} {{ 'app.parameter.name'|trans }} {{ "app.string.all_rights_reserved"|trans }}
                         </div>
                     </footer>
