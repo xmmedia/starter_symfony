@@ -1,57 +1,15 @@
-.button-pair_wrap {
-    display: flex;
-    flex-flow: row nowrap;
-}
+.button_pair-wrap {
+    @apply flex;
 
-.button-pair {
-    display: block;
-    font-size: 0.8rem;
-    // the top margin is so these links line up with main link
-    // the negative margin is to bring the boxes closer together, so they overlap
-    margin: 0 -0.5px;
-    padding: 0.5rem 1.2rem;
-    color: $admin-header-action;
-    border: 1px solid rgba($admin-header-action, 0.5);
-    transition: background-color 0.15s ease-in-out;
+    > * {
+        transition: background-color 0.25s ease-in-out, border 0.25s ease-in-out;
 
-    &:hover {
-        background-color: $admin-header-action-hover;
-        border-color: rgba($admin-header-action, 0.9);
-        text-decoration: none;
+        &:nth-child(1) {
+            border-radius: 3px 0 0 3px;
+            border-right-color: transparent;
+        }
+        &:nth-child(2) {
+            border-radius: 0 3px 3px 0;
+        }
     }
-}
-
-.button_pair-left {
-    border-radius: 3px 0 0 3px;
-}
-
-.button_pair-right {
-    margin-right: 0;
-    border-left-color: rgba($admin-header-action, 0.4);
-    border-radius: 0 3px 3px 0;
-    &:hover {
-        border-left-color: rgba($admin-header-action, 0.9);
-    }
-}
-
-.button_pair-right-inactive,
-.button_pair-left-inactive {
-    color: $admin-header-inactive;
-    border-color: $admin-header-inactive;
-    &:hover {
-        background-color: transparent;
-        color: $admin-header-inactive;
-        border-color: $admin-header-inactive;
-    }
-}
-
-.button_pair-left-inactive ~ .button_pair-right-inactive {
-    border-left: none;
-}
-
-.button_pair-right-inactive {
-    border-radius: 0 3px 3px 0;
-}
-.button_pair-left-inactive {
-    border-radius: 3px 0 0 3px;
 }
