@@ -3,13 +3,13 @@
     top: calc(50% - 0.8em);
     padding: 0 0.1em;
     border: none;
-    border-left: 1px solid rgba($color-white, 0.3);
+    border-left: 1px solid config('colors.grey-darker');
 }
 
 .sidebar_nav-submenu-wrap {
     @apply fixed pin-t z-0 w-64 h-full opacity-0 invisible text-left bg-grey-darkest;
     left: 6rem;
-    margin-top: $admin-header-height;
+    margin-top: $header-height;
     transition: left 0.15s ease-out;
 }
 @screen md {
@@ -23,6 +23,6 @@
     }
 }
 .sidebar_nav-submenu_header {
-    min-height: $admin-header-height;
+    min-height: $header-height;
     padding: 0.7rem 0 0.7rem 1rem;
 }

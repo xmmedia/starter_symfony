@@ -3,12 +3,12 @@
     transition: all 0.15s ease;
     @include mq(tablets) {
         @apply z-auto;
-        margin-left: $sidebar-width;
+        margin-left: 6rem;
     }
 
     // the following are for the admin menu when closed and then open
     .sidebar_nav-visible & {
-        transform: translateX($sidebar-width);
+        transform: translateX(6rem);
     }
     .sidebar_nav-submenu-open & {
         transform: translateX(16rem);

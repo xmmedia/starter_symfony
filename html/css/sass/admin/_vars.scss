@@ -1,50 +1,10 @@
-// for the maximum width of the entire content (images + text + etc)
-// not really used in the admin in most cases
-$max-width: 71.25em;
-// max width for content (text)
-$max-content-width: 33em;
-
-$color-white: rgb(255, 255, 255);
 $color-grey-light: rgb(243, 243, 243);
 $color-grey-dark: rgb(32, 36, 41);
-$color-red: rgb(196, 90, 75);
-$color-red-light: rgb(183, 69, 60);
-$color-green: rgb(1, 142, 66);
 
 $text-color: #444;
 $link-color: #2779bd;
 
-$border-radius: 2px;
-
-$button-text: #fff;
-$button-delete-color: #cc1f1a;
-$button-delete-color-hover: #fff;
-$button-delete-background: rgba(#fff, 0.5);
-$button-delete-background-hover: #cc1f1a;
-
-$admin-header-border: #8795a1;
-$admin-header-action: #3490dc;
-$admin-header-action-text: #fff;
-$admin-header-action-hover: #fff;
-$admin-header-inactive: #8795a1;
 // keep
-$admin-header-height: 3.72rem;
-$admin-header-background: rgba(0, 0, 0, 0.05);
-
-// keep
-$sidebar-width: 6rem;
-$sidebar-submenu-width: 15rem;
-$sidebar-link: #fff;
-$sidebar-background: #22292f;
-$sidebar-header-border: #3d4852;
-
-$record-list-row-hover: rgb(234, 245, 252);
-$record-list-header-background: rgb(216, 216, 217);
-$record-list-lines: rgb(153, 153, 153);
-$record-list-lines-light: rgb(200, 200, 200);
-$record-view-border: $record-list-header-background;
-$record-list-col-left-right-padding: 0.5em;
+$header-height: 3.72rem;
 
 $form-space-separator: 0.25em;
-
-$pagination-link-hover: rgba(32, 36, 41, 0.1);

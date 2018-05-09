@@ -1,6 +1,7 @@
 // .sidebar_nav-submenu-open added to body
 .sidebar_nav-submenu-open .sidebar_nav-wrap {
-    width: $sidebar-width + 16rem;
+    // side bar width (6rem) + sub menu width (16rem)
+    width: 22rem;
 }
 
 .sidebar_nav-link {
@@ -19,8 +20,8 @@
     // the gradient at the top of the menu when scrolling
     &:after {
         @apply absolute pin-l w-24 h-6;
-        top: $admin-header-height;
-        background: linear-gradient(to bottom, $color-grey-dark, transparent);
+        top: $header-height;
+        background: linear-gradient(to bottom, config('colors.black'), transparent);
         content: "";
     }
 
@@ -44,7 +45,7 @@
     &:before {
         @apply absolute pin-l w-24 h-10;
         top: -2.5rem;
-        background: linear-gradient(to bottom, transparent, $color-grey-dark);
+        background: linear-gradient(to bottom, transparent, config('colors.black'));
         content: "";
     }
 }

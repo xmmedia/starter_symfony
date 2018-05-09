@@ -1,16 +1,16 @@
 .header-wrap {
     @apply flex justify-between items-center bg-grey-lighter border-b border-grey;
-    min-height: $admin-header-height + 3.5;
+    min-height: $header-height + 3.5;
 }
 @screen xs {
     .header-wrap {
-        min-height: $admin-header-height + 1;
+        min-height: $header-height + 1;
     }
 }
 @screen lg {
     .header-wrap {
         @apply min-h-0;
-        height: $admin-header-height;
+        height: $header-height;
     }
 }
 
@@ -55,8 +55,7 @@
     }
 
     &:hover {
-        @apply no-underline;
-        background-color: $admin-header-action-hover;
+        @apply no-underline bg-white;
     }
 }
 
@@ -100,7 +99,7 @@
 
 .header-wrap-small {
     @apply flex justify-between items-center relative z-10 pt-4 text-white bg-black border-b border-grey;
-    height: $admin-header-height;
+    height: $header-height;
 
     a {
         @apply text-white;

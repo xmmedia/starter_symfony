@@ -1,6 +1,5 @@
 .user_list-instructions {
-    font-size: 0.8em;
-    color: lighten($text-color, 20%);
+    @apply text-xs text-grey;
 }
 
 .header_admin-actions {
