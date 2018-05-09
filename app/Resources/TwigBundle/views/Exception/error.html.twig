@@ -5,7 +5,7 @@
 {% block page_title %}{{ 'app.error.error_page_title'|trans({ '%status_code_text%' : status_code_text }) }} | {% endblock %}
 
 {% block content_wrap %}
-    <main class="max-w-90 max:max-w-2xl mx-auto clearfix">
+    <main class="max-w-90 max:max-w-sm mx-auto clearfix">
         <h1>{{ 'app.error.error_occurred'|trans }}</h1>
         <h2>{{ 'app.error.server_returned'|trans({ '%status_code_text%' : status_code_text }) }}</h2>
 
