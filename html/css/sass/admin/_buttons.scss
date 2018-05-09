@@ -3,7 +3,7 @@ button,
 [type="button"],
 [type="reset"],
 .button {
-    @apply py-2 px-4 text-white bg-blue-dark shadow-none border-2 border-blue-dark rounded tracking-wide;
+    @apply py-2 px-4 text-white font-thin bg-blue-dark shadow-none border-2 border-blue-dark rounded tracking-wide;
     transition: all 0.35s ease-in-out;
     &:hover {
         @apply bg-blue-darker border-blue-darker;
