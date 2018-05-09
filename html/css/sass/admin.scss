@@ -2,11 +2,7 @@
 
 @tailwind components;
 
-@import "common/common";
-
-// mixins + normalize + common
 @import "admin/vars",
-    "common/media",
     "common/common";
 
 // global styles on the most common elements
@@ -29,20 +25,19 @@ a {
 
 // load common styles
 @import "common/forms",
-    "common/form_table",
     "common/alerts",
     "common/modal",
     "common/button_pair";
 
 // admin only styles
-@import "admin/sidebar_nav",
-    "admin/sidebar_nav_submenu",
-    "admin/content",
+@import "admin/content",
+    "admin/forms",
+    "admin/buttons",
     "admin/header",
     "admin/record_list",
     "admin/record_view",
-    "admin/forms",
-    "admin/buttons",
+    "admin/sidebar_nav",
+    "admin/sidebar_nav_submenu",
     "admin/dashboard",
     "admin/user_list";
 
