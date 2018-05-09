@@ -1,148 +1,113 @@
-.header_admin-wrap {
-    display: flex;
-    flex: 1 0 auto;
-    justify-content: space-between;
-    align-items: center;
+.header-wrap {
+    @apply flex justify-between items-center bg-grey-lighter border-b border-grey;
     min-height: $admin-header-height + 3.5;
-    background: $admin-header-background;
-    border-bottom: 1px solid $admin-header-border;
-    @include mq(24em) {
+}
+@screen xs {
+    .header-wrap {
         min-height: $admin-header-height + 1;
     }
-    @include mq(59em) {
+}
+@screen lg {
+    .header-wrap {
+        @apply min-h-0;
         height: $admin-header-height;
-        min-height: 0;
     }
 }
 
-.header_admin-page_title {
-    font-size: 1.3rem;
-    flex: 1 0 10rem;
-    max-width: 50%;
-    padding: 0.7rem 1rem;
-    color: $admin-header-title;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    @include mq(wide_handhelds) {
-        flex: 1 0 auto;
-        max-width: 18rem;
+.header-page_title {
+    @apply flex-grow flex-no-shrink w-40 max-w-1/2 px-4 text-xl text-blue-dark truncate;
+}
+@screen sm {
+    .header-page_title {
+        @apply w-auto max-w-xs;
     }
-    @include mq(49rem) {
-        max-width: 60%;
-        font-size: 1.7em;
+}
+@screen md {
+    .header-page_title {
+        @apply text-3xl max-w-3/5;
     }
-    @include mq(74em) {
-        max-width: 27rem;
+}
+@screen xl {
+    .header-page_title {
+        @apply max-w-sm;
     }
 }
 
 // the order of the HTML elements should match how the elements
 // appear on mobile (mobile first)
-.header_admin-actions {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    flex: 1 1 100%;
-    justify-content: flex-end;
-    padding: 0.75rem 1.1rem 0.5rem;
-    text-align: right;
-    @include mq(49em) {
-        padding-bottom: 0;
+.header-actions {
+    @apply flex flex-wrap justify-end items-start pt-3 px-4 pb-2 text-right;
+}
+@screen md {
+    .header-actions {
+        @apply pb-0;
     }
 }
 
 // for actions that should show as buttons
 // this styling is similar to buttons
-.header_admin-action {
-    display: block;
-    font-size: 0.8rem;
-    margin: 0 0 0.75rem 1rem;
+.header-action {
+    @apply block mb-3 ml-4 py-2 px-5 text-xs border border-blue-dark border-solid rounded;
     transition: background-color 0.15s ease-in-out;
-    padding: 0.5rem 1.2rem;
-    border-radius: 3px;
-    border: 1px solid $admin-header-action;
-    @include mq(55rem) {
+
+    @media (min-width: 880px) {
         order: 2;
     }
 
     &:hover {
-        text-decoration: none;
+        @apply no-underline;
         background-color: $admin-header-action-hover;
     }
 }
 
 // for the main action(s)
-.header_admin-action-main {
-    text-align: center;
-    background-color: $admin-header-action;
-    color: $admin-header-action-text;
-    @include mq(55rem) {
+.header-action-main {
+    @apply text-center text-white bg-blue border-blue;
+
+    @media (min-width: 880px) {
         order: 3;
     }
 
     &:hover {
-        background-color: darken($admin-header-action, 5%);
+        @apply bg-blue-dark border-blue-dark;
     }
 }
 
-.header_admin-secondary_actions {
-    // margin is less than other actions because of the line height
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-    line-height: 2;
-    @include mq(35rem) {
-        margin-top: 0;
-        line-height: inherit;
+.header-secondary_actions {
+    @apply text-xs leading-loose;
+
+    @media (min-width: 560px) {
+        @apply mt-0 leading-none;
     }
-    @include mq(49rem) {
-        margin-bottom: 0.5rem;
+    @media (min-width: 784px) {
+        @apply mb-2;
     }
-    @include mq(55rem) {
+    @media (min-width: 880px) {
+        @apply mt-3;
         order: 1;
-        margin-top: 0.6rem;
     }
 
     a {
-        display: inline-block;
-        margin-left: 1em;
+        @apply inline-block ml-4;
     }
 }
 
-.header_admin-action-button_pair_wrap {
-    margin: 0 0 0.75rem 1rem;
-    @include mq(55rem) {
+.header-button_pair {
+    @media (min-width: 880px) {
         order: 4;
     }
 }
 
-.header_admin-wrap-small {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+.header-wrap-small {
+    @apply flex justify-between items-center relative z-10 pt-4 text-white bg-black border-b border-grey;
     height: $admin-header-height;
-    padding: 0 1em 0;
-    color: $admin-header-action-text;
-    background: $color-grey-dark;
-    border-bottom: 1px solid lighten($color-grey-dark, 35%);
-    z-index: 10;
-    @include mq(tablets) {
-        display: none;
-    }
 
     a {
-        color: $admin-header-action-text;
+        @apply text-white;
     }
 }
-
-.header_admin_small-logo {
-    // float is fall back for <IE9
-    float: right;
-    fill: $color-white;
-
-    svg {
-        width: 2.3em;
-        height: 2.6em;
+@screen md {
+    .header-wrap-small {
+        @apply hidden;
     }
 }

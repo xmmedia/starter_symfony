@@ -2,3 +2,13 @@
     font-size: 0.8em;
     color: lighten($text-color, 20%);
 }
+
+.header_admin-actions {
+    @extend .header-actions;
+}
+.header_admin-action {
+    @extend .header-action;
+}
+.header_admin-action-main {
+    @extend .header-action-main;
+}

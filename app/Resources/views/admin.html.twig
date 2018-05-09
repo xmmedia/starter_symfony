@@ -15,11 +15,11 @@
 {% endblock body %}
 
 {% block header %}
-    <nav class="sidebar_nav-wrap">
-        <a href="{{ path('admin_dashboard') }}" class="sidebar_nav-logo">
-            <img src="/images/logo.svg" width="80" height="22" alt="{{ 'app.parameter.name'|trans }}">
+    <nav class="fixed pin-l z-10 w-24 h-full text-center text-white bg-black fill-current sidebar_nav-wrap">
+        <a href="{{ path('admin_dashboard') }}" class="flex items-center justify-center w-24 border-b border-grey-darker" style="height: 3.75rem; padding: 0.65rem 0;">
+            <img src="/images/logo.svg" width="80" height="22" class="block my-0 mx-auto" style="max-width: 5rem; max-height: 2.3rem;" alt="{{ 'app.parameter.name'|trans }}">
         </a>
-        <ul class="sidebar_nav-nav">
+        <ul class="w-24 h-full overflow-y-scroll list-reset sidebar_nav-nav">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                 <li>
                     <a href="{{ path('admin_dashboard') }}" class="sidebar_nav-link sidebar_nav-nav_item">
@@ -40,10 +40,10 @@
             {% endif %}
         </ul>
 
-        <div class="sidebar_nav-bottom_wrap">
+        <div class="absolute pin-b w-24 pt-2 bg-black text-grey text-center font-thin sidebar_nav-bottom_wrap">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                <div class="sidebar_nav-profile">
-                    <a href="{{ path('fos_user_profile_edit') }}">
+                <div class="text-sm">
+                    <a href="{{ path('fos_user_profile_edit') }}" class="text-inherit">
                         {% if app.user.name %}
                             <div>{{ app.user.name }}</div>
                         {% else %}
@@ -51,36 +51,36 @@
                         {% endif %}
                     </a>
                 </div>
-                <div class="sidebar_nav-logout">
-                    <a href="{{ path('fos_user_security_logout') }}">Logout</a>
+                <div class="p-1 text-xs">
+                    <a href="{{ path('fos_user_security_logout') }}" class="text-inherit">Logout</a>
                 </div>
             {% endif %}
-            <div class="sidebar_nav-copyright">
-                <a href="{{ path('index') }}" target="_blank">©{{ 'now'|date('Y') }} {{ 'app.parameter.name'|trans }}</a>
+            <div class="py-2 text-xs text-grey-darker border-t border-grey-darker">
+                <a href="{{ path('index') }}" class="text-inherit">©{{ 'now'|date('Y') }} {{ 'app.parameter.name'|trans }}</a>
             </div>
         </div>
     </nav>
 {% endblock %}
 
 {% block content_wrap %}
-    <header class="header_admin-wrap-small">
+    <header class="header-wrap-small">
         <menu-small></menu-small>
         <a href="{{ path('admin_dashboard') }}">
             <img src="/images/logo.svg" width="80" height="22" alt="{{ 'app.parameter.name'|trans }}">
         </a>
     </header>
     <div class="content-wrap js-content-wrap">
-        <header class="header_admin-wrap">
-            <div class="header_admin-page_title">{% block header_page_title %}{% endblock header_page_title %}</div>
-            <div class="header_admin-actions">{% block header_actions %}{% endblock header_actions %}</div>
+        <header class="header-wrap">
+            <div class="header-page_title">{% block header_page_title %}{% endblock header_page_title %}</div>
+            <div class="header-actions">{% block header_actions %}{% endblock header_actions %}</div>
         </header>
 
         {% block content_wrap_inside %}
-            <div class="content-wrap_inside">
+            <main class="p-4">
                 {% block content %}
                     {% include 'flash_messages.html.twig' %}
                 {% endblock content %}
-            </div>
+            </main>
         {% endblock content_wrap_inside %}
     </div>
 {% endblock content_wrap %}

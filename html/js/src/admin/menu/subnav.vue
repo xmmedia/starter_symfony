@@ -1,17 +1,17 @@
 <template>
     <span>
-        <button class="sidebar_nav-link sidebar_nav-submenu_arrow"
+        <button class="absolute pin-r z-100 rounded-none bg-transparent hover:bg-blue-dark sidebar_nav-link sidebar_nav-submenu_arrow"
                 @click.stop="toggleMenu"
-                :class="{ 'sidebar_nav-submenu_arrow-open' : open }">
-            <svg><use xlink:href="#gt"></use></svg>
+                :class="{ 'sidebar_nav-submenu_arrow-open opacity-100 bg-grey-darkest' : open }">
+            <svg class="w-3 h-3"><use xlink:href="#gt"></use></svg>
         </button>
         <div class="sidebar_nav-submenu-wrap"
              :class="{ 'sidebar_nav-submenu-wrap-open' : open }">
-            <div class="sidebar_nav-submenu_header">{{ name }}</div>
-            <ul class="sidebar_nav-submenu">
+            <div class="text-2xl font-thin border-b border-grey-darker sidebar_nav-submenu_header">{{ name }}</div>
+            <ul class="h-full list-reset overflow-y-scroll">
                 <li v-for="(href, anchor) in items">
                     <a :href="href"
-                       class="sidebar_nav-link sidebar_nav-submenu_link">{{ anchor }}</a>
+                       class="sidebar_nav-link block py-3 px-4 opacity-100 hover:bg-blue-darker">{{ anchor }}</a>
                 </li>
             </ul>
         </div>

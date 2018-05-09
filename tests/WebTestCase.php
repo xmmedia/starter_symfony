@@ -45,7 +45,7 @@ class WebTestCase extends BaseWebTestCase
     protected function findAdminPageTitle(Crawler $crawler, $title)
     {
         return $crawler->filter(
-            '.header_admin-page_title:contains("'.$title.'")'
+            '.header-page_title:contains("'.$title.'")'
         );
     }
 }

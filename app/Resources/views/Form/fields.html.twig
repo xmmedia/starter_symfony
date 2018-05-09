@@ -22,7 +22,7 @@
 
 {%- block form_errors -%}
     {%- if errors|length > 0 -%}
-    <ul class="form-field_errors">
+    <ul class="field-errors">
         {%- for error in errors -%}
             <li>{{ error.message }}</li>
         {%- endfor -%}

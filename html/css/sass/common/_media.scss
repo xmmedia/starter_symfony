@@ -1,4 +1,11 @@
 // from http://www.sitepoint.com/using-sass-maps/
+$mqs: (
+        handhelds: 20em,
+        wide_handhelds: 35em,
+        tablets: 48em,
+        wide_tablets: 64em,
+);
+
 @mixin mq($breakpoint) {
     @if map-has-key($mqs, $breakpoint) {
         @media (min-width: #{map-get($mqs, $breakpoint)}) { @content; }

@@ -25,11 +25,11 @@
                     </header>
                 {% endblock header %}
                 {% block content_wrap %}
-                    <div class="content-wrap">
+                    <main class="max-w-90 max:max-w-2xl mx-auto clearfix">
                         {% block content %}
                             {% include 'flash_messages.html.twig' %}
                         {% endblock content %}
-                    </div>
+                    </main>
                 {% endblock content_wrap %}
                 {% block footer %}
                     <footer class="footer-wrap">

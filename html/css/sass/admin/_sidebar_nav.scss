@@ -1,124 +1,50 @@
-.sidebar_nav-wrap {
-    position: fixed;
-    left: 0;
-    width: $sidebar-width;
-    height: 100%;
-    text-align: center;
-    color: $sidebar-link;
-    background: $color-grey-dark;
-    z-index: 9;
-    .sidebar_nav-submenu-open & {
-        width: $sidebar-width + $sidebar-submenu-width;
-    }
+// .sidebar_nav-submenu-open added to body
+.sidebar_nav-submenu-open .sidebar_nav-wrap {
+    width: $sidebar-width + 16rem;
 }
 
 .sidebar_nav-link {
-    color: inherit;
-    fill: $sidebar-link;
-    opacity: 0.8;
-    &:hover { opacity: 1; }
-}
-
-// this is the logo and is a link
-.sidebar_nav-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: $sidebar-width;
-    height: 3.75rem;
-    padding: 0.65em 0;
-    color: rgba($sidebar-link, 0.8);
-    fill: $color-white;
-    opacity: 0.8;
-    border-bottom: 1px solid lighten($color-grey-dark, 35%);
-    &:hover { color: $sidebar-link; }
-
-    img, svg {
-        display: block;
-        max-width: 5em;
-        max-height: 2.3em;
-        margin: 0 auto;
+    @apply text-inherit opacity-75 fill-current;
+    &:hover {
+        @apply opacity-100;
     }
 }
 
 .sidebar_nav-nav {
-    width: $sidebar-width;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    overflow-y: scroll;
-
     li {
         // so we can control the positioning of the submenu arrow
-        position: relative;
+        @apply relative;
     }
 
     // the gradient at the top of the menu when scrolling
     &:after {
-        position: absolute;
+        @apply absolute pin-l w-24 h-6;
         top: $admin-header-height;
-        left: 0;
-        width: $sidebar-width;
-        height: 1.5rem;
         background: linear-gradient(to bottom, $color-grey-dark, transparent);
         content: "";
     }
 
     // hide the scroll bar (in webkit based browsers)
     &::-webkit-scrollbar {
+        @apply bg-transparent;
         width: 0;
-        background: transparent;
     }
 }
 
 .sidebar_nav-nav_item {
-    display: block;
-    font-size: 0.8em;
-    margin: 2em 0;
-    text-align: center;
+    @apply block text-xs my-6 text-center;
+
     svg {
-        display: block;
-        width: 2.3em;
-        height: 2.3em;
-        margin: 0 auto 0.3em;
+        @apply block w-8 h-8 mt-0 mx-auto mb-1;
     }
 }
 
 .sidebar_nav-bottom_wrap {
-    position: absolute;
-    bottom: 0;
-    width: $sidebar-width;
-    padding-top: 0.5em;
-    background: $color-grey-dark;
-    text-align: center;
-
     // the gradient above the profile
     &:before {
-        position: absolute;
+        @apply absolute pin-l w-24 h-10;
         top: -2.5rem;
-        left: 0;
-        width: $sidebar-width;
-        height: 2.5rem;
         background: linear-gradient(to bottom, transparent, $color-grey-dark);
         content: "";
     }
-
-    a {
-        color: rgba($sidebar-link, 0.8);
-    }
-}
-.sidebar_nav-profile {
-    font-size: 0.9em;
-}
-.sidebar_nav-logout {
-    padding: 0.5em;
-    font-size: 0.8em;
-}
-.sidebar_nav-copyright {
-    font-size: 0.7em;
-    padding: 0.5em 0;
-    border-top: 1px solid darken($sidebar-link, 50%);;
-    color: darken($sidebar-link, 50%);
-    a { color: inherit; }
 }

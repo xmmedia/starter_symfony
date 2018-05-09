@@ -22,7 +22,7 @@
     <p>Paragraph text – 16px – Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet tincidunt urna, ac molestie elit viverra sed. Maecenas rhoncus nisl purus, eget finibus mauris venenatis sit amet. Nunc tincidunt sed magna a tincidunt. Maecenas nunc ex, imperdiet in scelerisque in, sodales vel arcu. Pellentesque fringilla mattis est eget egestas. Mauris eu lorem quis nisl sagittis euismod. Sed ultricies, augue in condimentum venenatis, turpis lectus sagittis elit, vitae porttitor eros eros quis ipsum. Quisque sagittis enim quis nulla pretium, vel accumsan magna ullamcorper. Donec vitae sollicitudin libero.</p>
     <p>Donec facilisis egestas nulla vel condimentum. Praesent quis lectus nec velit rhoncus ultricies ac quis mi. Mauris mattis lacus magna, venenatis faucibus nisi rhoncus non. Aenean ut facilisis nisl. Nam ullamcorper nunc augue, at dignissim neque cursus nec. Nunc ut lorem at tortor malesuada tempus ac sed felis. Mauris egestas leo eget justo vehicula iaculis. Cras rutrum malesuada pulvinar. Fusce porta augue quis feugiat consectetur. Nam pharetra erat eu efficitur placerat. Phasellus non placerat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
 
-    <div class="content-wrap-narrow">
+    <div class="max-w-132">
         <p>Donec facilisis egestas nulla vel condimentum. Praesent quis lectus nec velit rhoncus ultricies ac quis mi. Mauris mattis lacus magna, venenatis faucibus nisi rhoncus non. Aenean ut facilisis nisl. Nam ullamcorper nunc augue, at dignissim neque cursus nec. Nunc ut lorem at tortor malesuada tempus ac sed felis. Mauris egestas leo eget justo vehicula iaculis. Cras rutrum malesuada pulvinar. Fusce porta augue quis feugiat consectetur. Nam pharetra erat eu efficitur placerat. Phasellus non placerat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
     </div>
 
@@ -60,10 +60,12 @@
     <h2>Buttons</h2>
     <button>Button Button</button>
     <a href="" class="button">Link Button</a>
+    <a href="" class="button text-red-dark hover:text-white border-2 border-solid border-red-dark hover:border-red-dark bg-white hover:bg-red-dark">Delete Button</a>
     <div style="background: grey; margin-top: 1em; padding: 1em;">
         <h2>Buttons on Dark Background</h2>
         <button>Button Button</button>
         <a href="" class="button">Link Button</a>
+        <a href="" class="button text-red-dark hover:text-white border-2 border-solid border-red-dark hover:border-red-dark bg-white hover:bg-red-dark">Delete Button</a>
     </div>
 
     {# ############################# #}
@@ -82,7 +84,7 @@
 
             <div class="form-field_wrap">
                 <label for="pattern-library-text">Text Field</label>
-                <ul class="form-field_errors">
+                <ul class="field-errors">
                     <li>Error</li>
                 </ul>
                 <input type="text" id="pattern-library-text">
@@ -224,16 +226,17 @@
     {# ########## Header ########### #}
     {# ############################# #}
     <h2>Header</h2>
-    <div class="header_admin-wrap">
-        <div class="header_admin-page_title">Page Name</div>
-        <div class="header_admin-actions">
-            <a href="" class="header_admin-action header_admin-action-main">Action Main</a>
-            <a href="" class="header_admin-action">Secondary Action</a>
-            <div class="button-pair_wrap header_admin-action-button_pair_wrap">
+    <div class="header-wrap">
+        <div class="header-page_title">Page Name</div>
+        <div class="header-actions">
+            <a href="" class="header-action header-action-main">Action Main</a>
+            <a href="" class="header-action">Secondary Action</a>
+            {# @todo can these pairs just use the button class? #}
+            <div class="button-pair_wrap header-button_pair mb-3 ml-4">
                 <a href="" class="button-pair button_pair-left">&lt;</a>
                 <a href="" class="button-pair button_pair-right">&gt;</a>
             </div>
-            <div class="header_admin-secondary_actions">
+            <div class="header-secondary_actions">
                 <a href="">Less Important</a>
                 <a href="">Less Important</a>
             </div>
@@ -245,41 +248,41 @@
     {# ####### Button Pair ######### #}
     {# ############################# #}
     <h2>Button Pair</h2>
-    <div class="header_admin-wrap">
-        <div class="header_admin-page_title">Both Inactive</div>
-        <div class="header_admin-actions">
-            <a href="" class="header_admin-action header_admin-action-main">Action Main</a>
-            <div class="button-pair_wrap header_admin-action-button_pair_wrap">
+    <div class="header-wrap">
+        <div class="header-page_title">Both Inactive</div>
+        <div class="header-actions">
+            <a href="" class="header-action header-action-main">Action Main</a>
+            <div class="button-pair_wrap header-button_pair mb-3 ml-4">
                 <div class="button-pair button_pair-left button_pair-left-inactive">&lt;</div>
                 <div class="button-pair button_pair-right button_pair-right-inactive">&gt;</div>
             </div>
         </div>
     </div>
 
-    <div class="header_admin-wrap">
-        <div class="header_admin-page_title">Both Active</div>
-        <div class="header_admin-actions">
-            <div class="button-pair_wrap header_admin-action-button_pair_wrap">
+    <div class="header-wrap">
+        <div class="header-page_title">Both Active</div>
+        <div class="header-actions">
+            <div class="button-pair_wrap header-button_pair mb-3 ml-4">
                 <a href="" class="button-pair button_pair-left">&lt;</a>
                 <a href="" class="button-pair button_pair-right">&gt;</a>
             </div>
         </div>
     </div>
 
-    <div class="header_admin-wrap">
-        <div class="header_admin-page_title">Right Active</div>
-        <div class="header_admin-actions">
-            <div class="button-pair_wrap header_admin-action-button_pair_wrap">
+    <div class="header-wrap">
+        <div class="header-page_title">Right Active</div>
+        <div class="header-actions">
+            <div class="button-pair_wrap header-button_pair mb-3 ml-4">
                 <div class="button-pair button_pair-left button_pair-left-inactive">&lt;</div>
                 <a href="" class="button-pair button_pair-right">&gt;</a>
             </div>
         </div>
     </div>
 
-    <div class="header_admin-wrap">
-        <div class="header_admin-page_title">Left Active</div>
-        <div class="header_admin-actions">
-            <div class="button-pair_wrap header_admin-action-button_pair_wrap">
+    <div class="header-wrap">
+        <div class="header-page_title">Left Active</div>
+        <div class="header-actions">
+            <div class="button-pair_wrap header-button_pair mb-3 ml-4">
                 <a href="" class="button-pair button_pair-left">&lt;</a>
                 <div class="button-pair button_pair-right button_pair-right-inactive">&gt;</div>
             </div>
@@ -290,27 +293,28 @@
     {# ####### Record List ######### #}
     {# ############################# #}
     <h2>Record List</h2>
+    <div class="record_list-record_count">Showing X of X</div>
     <ul class="record_list-wrap">
         <li class="record_list-headers">
             <div class="record_list-col">Col 1</div>
             <div class="record_list-col">Col 2</div>
-            <div class="record_list-col record_list-col-center">Col 2</div>
+            <div class="record_list-col text-center">Col 2</div>
             <div class="record_list-col"></div>
         </li>
 
         {% for i in 1..3 %}
-            <li>
+            <li class="record_list-item">
                 <div class="record_list-col">
                     <a href="">Value 1-{{ i }}</a>
                 </div>
                 <div class="record_list-col">
                     Value 2-{{ i }}
                 </div>
-                <div class="record_list-col record_list-col-center-desktop_only">
-                    <svg class="record_list-icon fill-current text-green-dark">
+                <div class="record_list-col lg:text-center">
+                    <svg class="record_list-icon align-text-top fill-current text-green-dark">
                         <use xlink:href="#check"></use>
                     </svg>
-                    <span class="record_list-mobile_heading record_list-mobile_heading-weight_inherit">[True]</span>
+                    <span class="record_list-mobile_heading">[True]</span>
                 </div>
                 <div class="record_list-col record_list-col-actions">
                     <a href="">Action 1</a>
@@ -319,18 +323,37 @@
             </li>
         {% endfor %}
 
-        <li class="record_list-item-inactive">
+        <li class="record_list-item">
+            <div class="record_list-col">
+                <a href="">Long Value</a>
+            </div>
+            <div class="record_list-col">
+                Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo.
+            </div>
+            <div class="record_list-col lg:text-center">
+                <svg class="record_list-icon fill-current text-green-dark">
+                    <use xlink:href="#check"></use>
+                </svg>
+                <span class="record_list-mobile_heading">[True]</span>
+            </div>
+            <div class="record_list-col record_list-col-actions">
+                <a href="">Action 1</a>
+                <a href="">Action 2</a>
+            </div>
+        </li>
+
+        <li class="record_list-item record_list-item-inactive">
             <div class="record_list-col">
                 <a href="">Inactive Value 1</a>
             </div>
             <div class="record_list-col">
                 Inactive Value 2
             </div>
-            <div class="record_list-col record_list-col-center-desktop_only">
+            <div class="record_list-col lg:text-center">
                 <svg class="record_list-icon fill-current text-grey-darker">
                     <use xlink:href="#check"></use>
                 </svg>
-                <span class="record_list-mobile_heading record_list-mobile_heading-weight_inherit">[True]</span>
+                <span class="record_list-mobile_heading">[True]</span>
             </div>
             <div class="record_list-col record_list-col-actions">
                 <a href="">Action 1</a>
@@ -353,7 +376,7 @@
             <div class="record_view-item_label">Is True</div>
             <div class="record_view-item_value">
                 <span title="A Checkmark">
-                    <svg class="record_view-icon fill-current text-green-dark">
+                    <svg class="record_view-icon text-green-dark">
                         <use xlink:href="#check"></use>
                     </svg>
                 </span>
@@ -370,7 +393,7 @@
         <div class="record_view-item">
             <div class="record_view-item_label">List</div>
             <div class="record_view-item_value">
-                <ul class="record_view-list">
+                <ul class="pl-4">
                     <li>Item 1</li>
                     <li>Item 2</li>
                     <li>Item 3</li>
@@ -388,7 +411,7 @@
         </div>
 
         <div class="record_view-item_group_wrap">
-            <h4>Group of Items</h4>
+            <h4 class="mt-2 mb-0 px-2">Group of Items</h4>
             <div class="record_view-item">
                 <div class="record_view-item_label">Item 1</div>
                 <div class="record_view-item_value">Value 1</div>
@@ -402,22 +425,22 @@
 
     <div class="record_view-item_wrap">
         <div class="record_view-header_wrap">
-            <h3>Section Heading</h3>
+            <h3 class="m-0">Section Heading</h3>
             <div class="record_view-header_actions">
                 <a href="">Action Link</a>
             </div>
         </div>
 
-        <ul class="record_list-wrap record_list-wrap-record_view">
-            <li class="record_view-item record_view-item-no_hover">
-                <div class="record_list-col record_list-col-view record_list-col-light">Col 1</div>
-                <div class="record_list-col record_list-col-view record_list-col-light">Col 2</div>
-                <div class="record_list-col record_list-col-view record_list-col-light">Col 3</div>
-                <div class="record_list-col record_list-col-view record_list-col-light"></div>
+        <ul class="record_list-wrap">
+            <li class="record_list-headers">
+                <div class="record_list-col record_list-col-view">Col 1</div>
+                <div class="record_list-col record_list-col-view">Col 2</div>
+                <div class="record_list-col record_list-col-view">Col 3</div>
+                <div class="record_list-col record_list-col-view"></div>
             </li>
 
             {% for i in 1..5 %}
-                <li class="record_view-item">
+                <li class="record_list-item">
                     <div class="record_list-col record_list-col-view">
                         <div class="record_list-mobile_heading">Col 1</div>
                         Value 1-{{ i }}

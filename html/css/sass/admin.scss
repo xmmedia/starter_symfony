@@ -11,7 +11,7 @@
 
 // global styles on the most common elements
 html {
-    @apply font-sans leading-normal text-black;
+    @apply font-sans font-light leading-normal text-black;
 }
 
 // needed to ensure positioning works
@@ -46,7 +46,7 @@ a {
     "admin/record_view",
     "admin/forms",
     "admin/buttons",
-    "admin/admin_dashboard",
+    "admin/dashboard",
     "admin/user_list";
 
 @tailwind utilities;

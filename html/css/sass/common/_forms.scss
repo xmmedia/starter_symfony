@@ -38,7 +38,7 @@ textarea {
 }
 
 .form-field-flex {
-    @apply flex flex-row flex-wrap;
+    @apply flex flex-wrap;
 }
 
 .form-field_wrap {
@@ -202,16 +202,10 @@ textarea {
     &:hover { color: rgba($link-color, 1); }
 }
 
-.form-field_errors {
-    list-style: none;
-    margin: 0 0 $form-space-separator;
-    padding-left: 0;
+.field-errors {
+    @apply list-reset mb-1 pl-0;
     li {
-        margin-bottom: $form-space-separator;
-        padding: 0.5em;
-        background: $color-grey-light;
-        border-left: 10px solid $status-type-danger;
-        border-width: 0 0 0 10px;
+        @apply mb-1 p-2 bg-grey-lighter border-l-10 border-red;
     }
 }
 

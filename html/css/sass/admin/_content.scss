@@ -1,11 +1,9 @@
 .content-wrap {
-    position: relative;
+    @apply relative bg-white z-10;
     transition: all 0.15s ease;
-    background: #fff;
-    z-index: 10;
     @include mq(tablets) {
-        margin: 0 0 0 $sidebar-width;
-        z-index: auto;
+        @apply z-auto;
+        margin-left: $sidebar-width;
     }
 
     // the following are for the admin menu when closed and then open
@@ -13,16 +11,8 @@
         transform: translateX($sidebar-width);
     }
     .sidebar_nav-submenu-open & {
-        transform: translateX($sidebar-submenu-width);
-    }
-
-    &-narrow {
-        @apply clearfix;
-        max-width: $max-content-width;
-        margin: 0 auto;
+        transform: translateX(16rem);
     }
 }
-
-.content-wrap_inside { padding: 1em; }
 
 @import '../common/content_alignment';

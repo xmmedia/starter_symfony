@@ -14,7 +14,7 @@ describe('common/fieldErrors', () => {
 
         Vue.nextTick()
             .then(() => {
-                assert.equal(vm.$el.querySelectorAll('.form-field_errors').length, 0);
+                assert.equal(vm.$el.querySelectorAll('.field-errors').length, 0);
                 done();
             })
             .catch(done);
@@ -32,8 +32,8 @@ describe('common/fieldErrors', () => {
 
         Vue.nextTick()
             .then(() => {
-                assert.equal(vm.$el.querySelectorAll('.form-field_errors').length, 1);
-                assert.equal(vm.$el.querySelectorAll('.form-field_errors li').length, 2);
+                assert.equal(vm.$el.querySelectorAll('.field-errors').length, 1);
+                assert.equal(vm.$el.querySelectorAll('.field-errors li').length, 2);
                 done();
             })
             .catch(done);
@@ -51,8 +51,8 @@ describe('common/fieldErrors', () => {
 
         Vue.nextTick()
             .then(() => {
-                assert.equal(vm.$el.querySelectorAll('.form-field_errors').length, 1);
-                assert.equal(vm.$el.querySelectorAll('.form-field_errors li').length, 2);
+                assert.equal(vm.$el.querySelectorAll('.field-errors').length, 1);
+                assert.equal(vm.$el.querySelectorAll('.field-errors li').length, 2);
                 done();
             })
             .catch(done);

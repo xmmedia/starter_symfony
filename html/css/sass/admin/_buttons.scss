@@ -1,44 +1,29 @@
-button, .button {
-    padding: 0.55em 1em;
-    background: $button-background;
-    box-shadow: none;
-    color: rgba($button-text, 0.8);
-    border: none;
-    font-weight: 100;
-    letter-spacing: 1.1px;
-    border-radius: 5px;
+button,
+[type=submit],
+[type="button"],
+[type="reset"],
+.button {
+    @apply py-2 px-4 text-white bg-blue-dark shadow-none border-2 border-blue-dark rounded tracking-wide;
     transition: all 0.35s ease-in-out;
     &:hover {
-        color: rgba($button-text, 1);
-        background: lighten($button-background, 5%);
+        @apply bg-blue-darker border-blue-darker;
         transition: all 0.25s ease;
     }
     &:disabled {
-        background: lighten($button-background, 15%);
+        @apply opacity-75;
     }
 }
 
-// a button for deletion specifically, turns red when hovered
-.button-action-delete {
-    font-size: 0.8em;
-    color: $button-delete-color;
-    border: 1px solid rgba($button-delete-color, 0.5);
-    background: $button-delete-background;
+.button {
     &:hover {
-        color: $button-delete-color-hover;
-        border-color: $button-delete-background-hover;
-        background: $button-delete-background-hover;
+        @apply no-underline;
     }
 }
 
 .button-as_link {
-    padding: 0;
-    background: none;
-    font-weight: 200;
-    letter-spacing: 0;
+    @apply p-0 bg-transparent tracking-normal;
     transition: none;
     &:hover {
-        text-decoration: underline;
-        background: none;
+        @apply no-underline bg-transparent;
     }
 }
