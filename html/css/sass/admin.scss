@@ -16,7 +16,8 @@ html {
 
 // needed to ensure positioning works
 body {
-    @apply relative z-0 overflow-hidden;
+    @apply relative z-0;
+    overflow-x: hidden;
 }
 
 a {
