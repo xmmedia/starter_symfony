@@ -1,5 +1,5 @@
 <template>
-    <a href="" @click.stop.prevent="toggleMenu">Menu</a>
+    <a href="" @click.stop.prevent="toggleMenu" class="ml-4">Menu</a>
 </template>
 
 <script>
