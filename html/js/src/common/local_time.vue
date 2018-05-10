@@ -9,32 +9,18 @@ export default {
             type: String,
             required: true
         },
-        format: {
-            type: String,
-            default: 'YYYY-MM-DD HH:mm'
-        },
         locale: {
             type: String,
             default: 'en-ca',
         }
     },
-    data () {
-        return {
-            displayTime: '',
-        }
+
+    computed: {
+        displayTime () {
+            const str = new Date(this.datetime).toISOString();
+
+            return str.substring(0, 10)+' '+str.substring(11, 16);
+        },
     },
-
-    mounted () {
-        import('moment-timezone').then(this.setDisplayTime);
-    },
-
-    methods: {
-        setDisplayTime (moment) {
-            moment.locale(this.locale);
-
-            this.displayTime = moment.tz(this.datetime, moment.tz.guess())
-                .format(this.format);
-        }
-    }
 }
 </script>
