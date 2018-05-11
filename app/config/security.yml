@@ -33,6 +33,7 @@ security:
 #                delete_cookies:
 #                    cart: { path: null, domain: null }
             anonymous: true
+            logout_on_user_change: true
 
     access_control:
         # @todo-symfony
