@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use Knp\Component\Pager\Paginator;
+use Knp\Component\Pager\PaginatorInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,7 +20,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/pattern-library-public", name="pattern_library_public")
      */
-    public function patternLibraryPublicAction(Paginator $paginator)
+    public function patternLibraryPublicAction(PaginatorInterface $paginator)
     {
         $pagination = $paginator->paginate(
             range(1, 10), /* some random data */
@@ -36,7 +36,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/pattern-library-admin", name="pattern_library_admin")
      */
-    public function patternLibraryAdminAction(Paginator $paginator)
+    public function patternLibraryAdminAction(PaginatorInterface $paginator)
     {
         $pagination = $paginator->paginate(
             range(1, 10), /* some random data */
