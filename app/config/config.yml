@@ -64,7 +64,7 @@ doctrine:
         password: '%database_password%'
         charset:  utf8mb4
         # @todo-symfony update if required
-        server_version: 5.6
+        server_version: '5.7'
         default_table_options:
             charset: utf8mb4
             collate: utf8mb4_unicode_ci
