@@ -57,13 +57,13 @@ deploy:
     - yarn install --non-interactive
     - yarn build
     # ensure based paths exist
-    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "mkdir -p $RELEASES $SHARED $DEPLOY_CACHE $SHARED/var $SHARED/html/uploads"
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "mkdir -p $RELEASES $SHARED $DEPLOY_CACHE $SHARED/var $SHARED/html/uploads $SHARED/html/media/cache"
     # sync files to deployment cache
     - rsync --archive --stats --human-readable --no-perms --exclude ".idea/" --exclude "node_modules/" --exclude "html/app_dev.php" --exclude "html/config.php" -e "ssh -p $REMOTE_PORT" . $REMOTE_USER@$REMOTE_SERVER:$DEPLOY_CACHE
     # copy parameters file into place
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cp -a $DEPLOY_CACHE $RELEASE; cp -a $SHARED/parameters.yml $RELEASE/app/config/parameters.yml"
     # link shared folders
-    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $RELEASE/var; ln -s $SHARED/var $RELEASE/var; rm -rf $RELEASE/html/uploads; ln -s $SHARED/html/uploads $RELEASE/html/uploads"
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $RELEASE/var; ln -s $SHARED/var $RELEASE/var; rm -rf $RELEASE/html/uploads; ln -s $SHARED/html/uploads $RELEASE/html/uploads; rm -rf $RELEASE/html/media/cache; ln -s $SHARED/html/media/cache $RELEASE/html/media/cache"
     # switch to new version; run composer on server; db migrations
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -f $REMOTE_BASE/current; ln -s $RELEASE $REMOTE_BASE/current; cd $RELEASE; export SYMFONY_ENV=prod; php composer.phar run-script post-update-cmd; php bin/console doctrine:migrations:migrate --no-interaction --no-debug --allow-no-migration"
     # clear opcache
