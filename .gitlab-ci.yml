@@ -49,7 +49,6 @@ deploy:
     - node --version
     # setup vars for paths
     - TIMESTAMP=$(date +%s); RELEASE="$RELEASES/$TIMESTAMP"
-    - RELEASES="$REMOTE_BASE/releases"; TIMESTAMP=$(date +%s); RELEASE="$RELEASES/$TIMESTAMP"; SHARED="$REMOTE_BASE/shared"; DEPLOY_CACHE="$REMOTE_BASE/deploy-cache"
     - echo "Paths:"; echo $REMOTE_BASE; echo $RELEASE; echo $SHARED; echo $CACHE
     - echo "Remote:"; echo $REMOTE_USER@$REMOTE_SERVER:$REMOTE_PORT
     # install php dependencies
