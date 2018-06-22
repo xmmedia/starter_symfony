@@ -55,6 +55,8 @@ deploy:
     # Install node/JS dependencies
     - yarn install --non-interactive
     - yarn build
+    # add .revision file
+    - git rev-parse --verify --short HEAD > .revision
     # ensure based paths exist
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "mkdir -p $RELEASES $SHARED $DEPLOY_CACHE $SHARED/var $SHARED/html/uploads $SHARED/html/media/cache"
     # sync files to deployment cache
