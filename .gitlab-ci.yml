@@ -26,7 +26,6 @@ before_script:
   #- echo "$SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts
   - chmod 644 ~/.ssh/known_hosts
   # Install packages
-  - apt-get update -yqq
   - apt-get install gnupg2 build-essential libssl-dev -yqq
   - curl -sL https://deb.nodesource.com/setup_8.x | bash -
   # Install git, the php image doesn't have installed
