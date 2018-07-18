@@ -1,6 +1,6 @@
 .sidebar_nav-submenu_arrow {
     // half the height minus half the height of the arrow element, plus 0.2em for visual weight of element
-    top: calc(50% - 0.8em);
+    top: calc(50% - 0.8rem);
     padding: 0 0.1em;
     border: none;
     border-left: 1px solid config('colors.grey-darker');
