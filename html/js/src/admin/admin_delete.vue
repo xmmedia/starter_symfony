@@ -6,6 +6,8 @@
 
         <modal name="admin-delete"
                height="auto"
+               :adaptive="true"
+               :scrollable="true"
                transition="md">
             <div slot="top-right" class="text-4xl pr-6">
                 <a href="" @click.prevent="close" class="hover:no-underline text-white">×</a>
