@@ -17,7 +17,7 @@
 {% block header %}
     <nav class="fixed pin-l z-10 w-24 h-full text-center text-white bg-black fill-current sidebar_nav-wrap">
         <a href="{{ path('admin_dashboard') }}" class="flex items-center justify-center w-24 border-b border-grey-darker" style="height: 3.75rem; padding: 0.65rem 0;">
-            <img src="/images/logo.svg" width="80" height="22" class="block my-0 mx-auto" style="max-width: 5rem; max-height: 2.3rem;" alt="{{ 'app.parameter.name'|trans }}">
+            <img src="/images/logo.svg" width="80" class="block my-0 mx-auto" style="max-width: 5rem; max-height: 2.3rem;" alt="{{ 'app.parameter.name'|trans }}">
         </a>
         <ul class="w-24 h-full overflow-y-scroll list-reset sidebar_nav-nav">
             {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
@@ -65,8 +65,8 @@
 {% block content_wrap %}
     <header class="header-wrap-small">
         <menu-small></menu-small>
-        <a href="{{ path('admin_dashboard') }}">
-            <img src="/images/logo.svg" width="80" height="22" alt="{{ 'app.parameter.name'|trans }}">
+        <a href="{{ path('admin_dashboard') }}" class="mr-4">
+            <img src="/images/logo.svg" width="80" alt="{{ 'app.parameter.name'|trans }}">
         </a>
     </header>
     <div class="content-wrap js-content-wrap">
