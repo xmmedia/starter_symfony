@@ -26,6 +26,12 @@ security:
                 login_path:   fos_user_security_login
                 failure_path: fos_user_security_login
                 check_path:   fos_user_security_check
+            remember_me:
+                secret:   '%secret%'
+                name:     'remember-me'
+                lifetime: 2592000 # 30 days
+                path:     /
+                secure:   true
             logout:
                 path:   fos_user_security_logout
                 # @todo-symfony change to correct path
