@@ -13,8 +13,12 @@ admin_dashboard:
         sharedAge:   3600
 
 xm_security_activate:
-    prefix: /activate
+    prefix:   /activate
     resource: '@XMSecurityBundle/Resources/config/routing/activate.xml'
+
+xm_security_confirmation:
+    prefix:   /admin/user/resend-confirmation
+    resource: '@XMSecurityBundle/Resources/config/routing/resend_confirmation.xml'
 
 xm_user_admin:
     resource: '@XMUserAdminBundle/Resources/config/routing.yml'
