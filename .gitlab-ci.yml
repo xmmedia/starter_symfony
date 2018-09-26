@@ -52,7 +52,7 @@ deploy:
     # install php dependencies
     - php composer.phar install --no-dev --optimize-autoloader --no-interaction --no-progress --no-scripts --no-plugins
     # Install node/JS dependencies
-    - yarn install --non-interactive
+    - yarn install --non-interactive --frozen-lockfile
     - yarn build
     # add .revision file
     - git rev-parse --verify --short HEAD > .revision
